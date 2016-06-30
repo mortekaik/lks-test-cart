@@ -1,0 +1,251 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #F1F0ED;
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+/*шапка*/
+
+
+/*фиксированное плавающее меню*/
+
+#top_nav {
+    bottom: 0;
+    position: fixed;
+    z-index: 1000;
+    width: 950px;
+    height: 25px;
+    background: #eee;
+    padding-left: 10px;
+    padding-top: 5px;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 35px;
+    width: 50px;
+    height: 15px;
+    background: red;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    background: white;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+
+.price {
+    display: block;
+    float: right;
+    z-index: 1000;
+    font-family: "Impact", "Price", sans-serif;
+    font-style: italic;
+    font-size: 25px;
+    color: red;
+    text-align: right;
+    white-space: nowrap;
+    line-height: 1;
+    text-shadow: -0.05em -0.02em 0px #FFF, -0.07em 0.05em 0px #FFF, 0.07em -0.05em 0px #FFF, 0.05em 0.05em 0px #FFF, 0.08em 0.08em 0px #707070, -0.03em 0.08em 0px #707070;
+}
+
+.block {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    -border: 1px solid red;
+}
+
+.top-menu {
+    position: absolute;
+    height: 30px;
+    width: 920px;
+    top: 120px;
+}
+
+.product {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    width: 120px;
+    height: 200px;
+    background: white;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+
+.img {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+    z-index: 100;
+}
+
+.img img {
+    width: 80px;
+    margin-left: 20px;
+    margin-top: 0px;
+}
+
+.block-header {
+    height: 150px;
+}
+
+.block-footer {
+    height: 200px;
+    margin-top: 10px;
+    border: 1px solid red;
+}
+
+.block-content {
+    min-height: 400px;
+    margin-top: 10px;
+}
+
+.left-menu {
+    float: left;
+    width: 300px;
+    min-height: 500px;
+    border: 1px solid red;
+}
+
+.news {
+    float: left;
+    width: 300px;
+    margin-top: 10px;
+    min-height: 250px;
+    border: 1px solid red;
+}
+
+.slider {
+    float: right;
+    width: 650px;
+    min-height: 250px;
+    border: 1px solid red;
+    background: #b0b0b0;
+}
+
+.deals {
+    float: right;
+    width: 650px;
+    min-height: 150px;
+    border: 1px solid red;
+    margin-top: 10px;
+}
+
+.vendors {
+    float: right;
+    width: 650px;
+    min-height: 100px;
+    border: 1px solid red;
+    margin-top: 10px;
+}
+
+.logo {
+    position: relative;
+    left: 40px;
+    width: 80px;
+    border: 1px solid red;
+}
+
+#wrap {
+    min-height: 100%;
+    border: 1px solid red;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 250px;
+}
+
+
+/* must be same height as the footer */
+
+#footer {
+    position: relative;
+    margin-top: -250px;
+    /* negative value of footer height */
+    height: 250px;
+    clear: both;
+    background: white;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px -3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+    height: 200px;
+    clear: both;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px -3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+
+.main-menu {
+    list-style: none;
+    width: 300px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid red;
+}
+
+.main-menu li {
+    margin-bottom: 8px;
+    margin: 0px;
+}
+
+.main-menu a {
+    display: block;
+    padding: 8px 14px;
+    color: black;
+    -border: 1px solid red;
+    margin-bottom: -1px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+#top-link {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    display: none;
+}
+
+
+/*Opera Fix*/
+
+body:before {
+    content: "";
+    height: 100%;
+    float: left;
+    width: 0;
+    margin-top: -32767px;
+    /
+}
+
+<! - [! Если IE 7]> <Тип стиль="текст / CSS"> #wrap {
+    дисплей: таблица;
+    высота: 100%
+}
+
+</ Стиль> <! [ENDIF] ->

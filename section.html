@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ЛКС - лабораторное и промышленное оборудование</title>
+    <link href="footer.css" rel="stylesheet" type="text/css">
+    <script src="scrypt/jquery-1.9.1.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="script/html5.js"></script>	 
+     <![endif]-->
+    <script>
+    var h_hght = 120; // высота шапки
+    var h_mrg = 0; // отступ когда шапка уже не видна
+
+    $(function() {
+        $(window).scroll(function() {
+            var top = $(this).scrollTop();
+            var elem = $('#top_nav');
+            if (top + h_mrg < h_hght) {
+                elem.css('top', (h_hght - top));
+                $("#top-link").css("display", "none");
+            } else {
+                elem.css('top', h_mrg);
+                $("#top-link").css("display", "block");
+            }
+        });
+    });
+
+    $(function() {
+        $("a[href='#top-link']").click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, "slow");
+            return false;
+        });
+    });
+
+    $(init);
+
+    function init() {
+        $('.button').bind('click', pulsate);
+    }
+
+    function pulsate() {
+        $(this).fadeOut();
+        $(this).fadeIn();
+    }
+    $(function() {
+    	
+    });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="block block-header">
+                <img src="lks-logo.jpg" class="logo" width="80px" />
+                <div class="top-menu" id="top_nav"></div>
+            </div>
+        </div>
+        <div id="main">
+            <div id="content">
+                <div class="block block-content clearfix">
+                    <div class="left-menu" id="cart">
+                        Корзина
+                        <ul class="main-menu">
+                            <li><a href="#">Пусто</a></li>
+                        </ul>
+                    </div>
+                    <div class="slider"></div>
+                    <div class="deals">
+                        <div class="product"><span class="price">1000.-</span><span class="button" id="product_1"></span>
+                        </div>
+                        <div class="product"><span class="price">2000.-</span><span class="button" id="product_2"></span>
+                        </div>
+                        <div class="product"><span class="price">3000.-</span><span class="button" id="product_3"></span>
+                        </div>
+                        <div class="product"><span class="price">4000.-</span><span class="button" id="product_4"></span>
+                        </div>
+                        <div class="product"><span class="price">5000.-</span><span class="button" id="product_5"></span>
+                        </div>
+                    </div>
+                    <div class="vendors"></div>
+                    <div class="news"></div>
+                    <div class="vendors"></div>
+                    <div class="vendors"></div>
+                </div>
+            </div>
+            <div id="side">
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer">
+            <div class="block block-footer">
+            </div>
+        </div>
+    </div>
+    <div id="top-link"><a href='#top-link'>Back to Top</a></div>
+</body>
+
+</html>
