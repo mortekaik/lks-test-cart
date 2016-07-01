@@ -1,0 +1,25 @@
+<div class="product-table">
+    <h2><a href="?view=product&amp;goods_id=<?=$product['goods_id']?>"><?=$product['name']?></a></h2>
+    <div class="product-table-img-main">
+        <div class="product-table-img">
+            <a href="?view=product&amp;goods_id=<?=$product['goods_id']?>"><img src="<?=PRODUCT?><?=$product['img']?>" alt="" /></a>
+        </div>
+    </div>
+    <p>Цена : <span id="price"><?=$product['price']?></span></p>
+    <a class="buyitem" href="?view=addtocart&amp;goods_id=<?=$product['goods_id']?>"><img class="addtocard-index" src="img/addcard.jpg" alt="Добавить в корзину" /></a>
+</div>
+
+<div class="basket">
+    <h2><span>Корзина</span></h2>
+    <div>
+        <p>
+            <?php if(isset($_SESSION['total_quantity'])): ?> Товаров в корзине:
+            <br />
+            <span id="bought"><?=$_SESSION['total_quantity']?></span> на сумму
+            <span id="sum"><?=$_SESSION['total_sum']?></span> руб.
+            <a href="?view=cart"><img src="img/oformit.jpg" alt="" /></a>
+            <?php else: ?> Корзина пуста
+            <?php endif; ?>
+        </p>
+    </div>
+</div>
