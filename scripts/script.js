@@ -12,24 +12,29 @@ $(document).ready(function() {
 		console.log(productId);
 		var productPrice = ($(this).prev('.price').text()).slice(0, -2);
 		console.log(productPrice);
-		// $.ajax ({
-		// 	url: 'cart.php',
-		// 	type: 'POST',
-		// 	data: {
-		// 		productID: productID,
-		// 		productPrice: productPrice
-		// 	}
-		// 	success: function (res) {
-		// 		if (res) {
-		// 			$('.empty-cart').fadeOut();
-		// 			$('.item-count').fadeIn();
-		// 			$('.item-sum').fadeIn();
-		// 		}
-		// 	},
-		// 	error: function() {
-		// 		alert("Something wrong ...");
-		// 	}
-		// });
-		// return false;
-	});
+		$.ajax({
+			url: 'samplehtml.html',
+			type: 'POST',
+			data: {
+				productId: productId,
+				productPrice: productPrice
+			},
+			success: function (data) {
+				$('.empty-cart').html(data);
+			},
+			error: function() {
+					alert('Something wrong...')
+			}
+		});
+			// success: function (data) {
+				// if (data) {
+				// 	$('.empty-cart').fadeOut();
+				// 	$('.item-count').fadeIn();
+				// 	$('.item-sum').fadeIn();
+				// }
+			// },
+			// error: function() {
+			// 	alert("Something wrong ...");
+			// }
+		});
 });
