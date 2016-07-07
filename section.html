@@ -65,12 +65,8 @@
             <div id="content">
                 <div class="block block-content clearfix">
                     <div class="left-menu" id="cart">
-                        Корзина
-                        <ul class="main-menu">
-                            <li class="empty-cart"><a href="#">Пусто</a></li>
-                            <li class="item-count"><a href="#">Кол-во: </a><span id="count"></span></li>
-                            <li class="item-sum"><a href="#">Сумма: </a><span id="sum"></span></li>
-                        </ul>
+                        <img src="/icon-cart.png" width="32" height="23" alt="Cart">
+                        <a id="cart-slot" href="#">Корзина пуста</a>
                     </div>
                     <div class="slider"></div>
                     <div class="deals">
@@ -102,6 +98,13 @@
         </div>
     </div>
     <div id="top-link"><a href='#top-link'>Back to Top</a></div>
+    
+    <div id="modal_cart">   <!-- Модальное окно корзины -->
+        <span id="modal_cart_close">X</span>     <!-- Кнoпкa зaкрыть -->
+        <!-- Сюда добавляется разметка из обработчика -->
+    </div>
+    <div id="overlay"></div> <!-- Пoдлoжкa -->
+
 </body>
 
 </html>
