@@ -1,11 +1,26 @@
 $(document).ready(function () {
-	var btnDeals = $('.button');
+	$('.deals').on('click', '.button', addToCart); // добавление товара в корзину по клику
+	
+	$('#cart').on('click', '#empty-cart', function() { // клик по пустой корзине
+		return false;
+	});
 
-	$(btnDeals).on('click', addToCart); // добавление товара в корзину по клику
-	$('#cart-slot').on('click', moveToCart);
+	$('#cart').on('click', '#cart-slot', function() { // переход в окно корзины
+		moveToCart();
+		$('body').addClass('lock');
+		$('#overlay').css('display', 'block');
+		$('#modal_cart').css('visibility', 'visible'); // показываем окно
+		
+		$('#modal_cart_close, .modal_cart_close_btn').click( function(){ // лoвим клик
+			$('#modal_cart').css('visibility', 'hidden'); // скрываем окно
+			$('#overlay').css('display', 'none');
+			$('body').removeClass('lock');
+		});
+		return false;
+	});
 
 	/* функция добавления кол-ва товара и суммы в корзину */
-	function addToCart(btnDeals) {
+	function addToCart() {
 		// var productId = ($(btnDeals).attr('id')).split('_')[1];
 		var productId = ($(this).attr('id')).slice(8);
 		console.log(productId);
@@ -20,10 +35,10 @@ $(document).ready(function () {
 				productPrice: productPrice
 			},
 			success: function (data) {
-				if (data == '0') {
-					$('#cart-slot').html('Пусто');
-				} else {
-					$('#cart-slot').html(data);
+				if (data !== '0') {
+					$('#empty-cart').hide();
+					$('#cart').append(data);
+					console.log(data);
 				}
 			},
 			error: function() {
@@ -38,35 +53,11 @@ $(document).ready(function () {
 			url: 'samplehtml.html',
 			type: 'POST',
 			success: function(data) {
-				if (data !== 0) {
-					$('#modal_cart').append(data);
-					loadCart();
-				}	
+				$(data).prependTo('#modal_cart');
 			},
 			error: function() {
 				alert('something error...');
 			}
 		});
 	}
-
-	function loadCart() { // переход в окно корзины
-		$('body').addClass('lock'); // лочим скролл у body
-		$('#overlay').fadeIn(400, // пoкaзывaем пoдлoжку 
-		 	function(){ // пoсле выпoлнения предыдущей aнимaции
-				$('#modal_cart') 
-					.css('display', 'block') // показываем окно
-					.animate({opacity: 1, top: '50%'}, 200); // прибaвляем прoзрaчнoсть oднoвременнo сo съезжaнием вниз
-		});
-	};
-	/* Зaкрытие мoдaльнoгo oкнa, тo же сaмoе в oбрaтнoм пoрядке */
-	$('#modal_cart_close, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
-		$('#modal_cart')
-			.animate({opacity: 0, top: '45%'}, 200,  // меняем прoзрaчнoсть нa 0 и двигaем oкнo вверх
-				function(){ // пoсле aнимaции
-					$(this).css('display', 'none'); // скрываем окно;
-					$('#overlay').fadeOut(400); // скрывaем пoдлoжку
-				}
-			);
-		$('body').removeClass('lock'); // разлочим скроллы у body
-	});
 });
