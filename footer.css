@@ -149,7 +149,7 @@ body {
 /* Начало стилей модального окна корзины */
 #modal_cart {
     width: 500px; 
-    min-height: 200px; /* Рaзмеры дoлжны быть фиксирoвaны */
+    min-height: 200px;
     border-radius: 5px;
     border: 3px #000 solid;
     background: #fff;
