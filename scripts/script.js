@@ -21,14 +21,14 @@ $(document).ready(function () {
             return false;
         });
 
-	$('.deals').on('click', '.button', function() { // добавление товара в корзину по клику
+	$('.deals').on('click', '.button', function(e) { // добавление товара в корзину по клику
 		$(this).fadeOut().fadeIn().toggleClass('button btn-added').text('To Cart');
 		//var productId = ($(this).attr('id')).split('_')[1];
 		var productId = ($(this).attr('id')).slice(8);
 		console.log(productId);
 		var productPrice = ($(this).prev('.price').text()).slice(0, -2);
 		console.log(productPrice);
-		addToCart();
+		addToCart(e);
 		$('#overlay').css('display', 'block'); // показываем подложку
 		$('#modal_cart').css('visibility', 'visible'); // показываем окно
 		
@@ -63,22 +63,19 @@ $(document).ready(function () {
 		});
 	});
 
+	function getAnswer(response) {
+		console.log('Ответ от сервера: ' + response);
+	}
+
 	/* функция добавления кол-ва товара и суммы в корзину */
 	function addToCart() {
 		$.ajax({
 			url: 'answer.html',
 			type: 'POST',
-			dataType: 'html',
 			success: function (data) {
 				if (data !== '0') {
-					$('#empty-cart').hide();
-					$('#cart').append(data);
-					$(data).each(function() {
-						var answer = ($(this)).split('___');
-					});
-					$('<span>' + data + '<\/span>').prependTo('#modal_cart');
 					console.log(data);
-					console.log(answer);
+					getAnswer(data);
 				}
 			},
 			error: function() {
@@ -86,7 +83,7 @@ $(document).ready(function () {
 			}
 		});
 	}
-
+	
 	function deleteFromCart() {
 		$('#cart-slot, #cart .delete-item').remove();
 		$('#empty-cart').show();
