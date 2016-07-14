@@ -1,3 +1,11 @@
+<?php  function __autoload($class_name)
+    {
+        include_once($class_name . '.class.php');
+    }
+
+    $cart = new Cart;
+?>
+
 <!doctype html>
 <html>
 
@@ -6,7 +14,7 @@
     <title>ЛКС - лабораторное и промышленное оборудование</title>
     <link href="footer.css" rel="stylesheet" type="text/css">
     <script src="scripts/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/cart.js"></script>
     <!--[if lt IE 9]>
       <script src="script/html5.js"></script>	 
      <![endif]-->
@@ -25,7 +33,7 @@
                 <div class="block block-content clearfix">
                     <div class="left-menu" id="cart">
                         <img src="/icon-cart.png" width="32" height="23" alt="Cart">
-                        <a id="empty-cart" href="#">Корзина пуста</a>
+                        <?php  echo $cart->getCart_small(); ?>
                     </div>
                     <div class="slider"></div>
                     <div class="deals">
