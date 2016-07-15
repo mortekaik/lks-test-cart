@@ -11,23 +11,33 @@ class Cart extends Router
 
         if (count($this->cart['productid']) > 0) {
             $small .= implode(',', $this->cart['productid']) . $delimiter;
-            $small .= '<ul class="cart-menu">';
+            $small .= '<ul class="cart-list">';
             foreach ($this->cart['productid'] as $key => $value) {
-                $small .= '<li class="cart-item"><a href="#">Товар (id: ' . $value . ')  - ' . $this->cart['num'][$key] . ' шт.</a></li>';
+                $small .= '<li class="cart-list-item"><a href="#">Товар (id: ' . $value . ')  - ' . $this->cart['num'][$key] . ' шт.</a></li>';
             }
             $small .= '</ul>';
             $small .= $delimiter;
             if (isset($this->post['post']) && $this->post['post'] == 'add_cart' && ctype_digit($this->post['productid']) && ctype_digit($this->post['num'])) {
                 $small .= 'В корзину добавлен товар (id: ' . $this->post['productid'] . ')  - ' . $this->post['num'] . ' шт.';
             }
-            $small .= $delimiter.'Корзина: '.array_sum($this->cart['num']).' шт.';
+            $small .= $delimiter.'<span class="page-cart">Корзина: '.array_sum($this->cart['num']).' шт.</span>';
         }
         else
         {
-            $small .= '<span class="page-cart_empty">Корзина пуста</span>';
-            //$small .= $delimiter.'<span>Корзина пуста</span>';
+            $small .= $delimiter.'<span class="page-cart_empty">Корзина пуста</span>';
         }
-        return $small;
+        $array_small = explode($delimiter, $small);
+        $array_small2['id'] = $array_small[0];
+        $array_small2['cart'] = $array_small[1];
+        $array_small2['div'] = $array_small[2];
+        $array_small2['pageCart'] = $array_small[3];
+        $array_small = $array_small2;
+        return $array_small;
+    }
+
+    public function getCart_small_json()
+    {
+        return json_encode($this->getCart_small(),  JSON_UNESCAPED_UNICODE);
     }
 
     public function Cart()

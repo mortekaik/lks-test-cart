@@ -23,7 +23,6 @@ $(document).ready(function () {
 
 	$('.deals').on('click', '.button', function(e) { // добавление товара в корзину по клику
 		$(this).fadeOut().fadeIn().toggleClass('button btn-added').text('To Cart');
-		//var productId = ($(this).attr('id')).split('_')[1];
 		var productId = ($(this).attr('id')).slice(8);
 		console.log(productId);
 		var productPrice = ($(this).prev('.price').text()).slice(0, -2);

@@ -33,7 +33,7 @@
                 <div class="block block-content clearfix">
                     <div class="left-menu" id="cart">
                         <img src="/icon-cart.png" width="32" height="23" alt="Cart">
-                        <?php  echo $cart->getCart_small(); ?>
+                        <?php  echo $cart->getCart_small(); /*print_r($cart->getCart_small());*/ ?>
                     </div>
                     <div class="slider"></div>
                     <div class="deals">

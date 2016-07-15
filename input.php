@@ -6,6 +6,6 @@ function __autoload($class_name)
 }
 
 $cart = new Cart;
-echo $cart->getCart_small();
+echo $cart->getCart_small_json();
 
 ?>
