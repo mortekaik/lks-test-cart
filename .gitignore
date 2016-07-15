@@ -2,6 +2,11 @@
 
 jquery*.js
 
+# PHP files
+
+Database.class.php
+Router.class.php
+
 # Folders
 
 /old

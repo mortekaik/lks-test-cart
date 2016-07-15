@@ -7,13 +7,13 @@ class Cart extends Router
 
     public function getCart_small()
     {
-        $delimiter = '№№№1';
+        $delimiter = '@@@';
 
         if (count($this->cart['productid']) > 0) {
             $small .= implode(',', $this->cart['productid']) . $delimiter;
-            $small .= '<ul class="main-menu">';
+            $small .= '<ul class="cart-menu">';
             foreach ($this->cart['productid'] as $key => $value) {
-                $small .= '<li class="empty-cart"><a href="#">Товар (id: ' . $value . ')  - ' . $this->cart['num'][$key] . ' шт.</a></li>';
+                $small .= '<li class="cart-item"><a href="#">Товар (id: ' . $value . ')  - ' . $this->cart['num'][$key] . ' шт.</a></li>';
             }
             $small .= '</ul>';
             $small .= $delimiter;
@@ -24,7 +24,8 @@ class Cart extends Router
         }
         else
         {
-            $small .= $delimiter.'<span>Корзина пуста</span>';
+            $small .= '<span class="page-cart_empty">Корзина пуста</span>';
+            //$small .= $delimiter.'<span>Корзина пуста</span>';
         }
         return $small;
     }

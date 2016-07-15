@@ -27,21 +27,30 @@ $(document).ready(function() {
             console.log(idOfBtn);
         var productId = idOfBtn.slice(idOfBtn.indexOf('_')+1);
             console.log(productId);
-        var answer = $.ajax({ 
+        $.ajax({ 
             type: 'POST',
-            url: 'answer.html',
+            url: '../input.php',
             data: {
                 post: 'add_cart',
                 productid: productId,
                 num: 1
             },
+            success: function(data) {
+                console.log(data);
+                getAnswer(data);
+            },
             error: function() {
                 alert('Something wrong ...');
             }
-        });
-        var pageCart = answer.done(function(data) {
-            return data;
-        });
-        console.log(pageCart);
-    });
+        }); // конец ajax-запроса
+    }); // конец добавления товара в корзину
+
+    var answer = [];
+    function getAnswer(response) {
+        answer = response.split('\@\@\@');
+        console.log(answer);
+        // $(answer).each(function() {
+        //     $(this).find()
+        // })
+    }
 }); // end of ready function
