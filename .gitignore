@@ -4,8 +4,8 @@ jquery*.js
 
 # PHP files
 
-Database.class.php
-Router.class.php
+Database*.php
+Router*.php
 
 # Folders
 
