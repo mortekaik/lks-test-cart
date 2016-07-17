@@ -31,14 +31,16 @@ $(document).ready(function() {
         $.ajax({ 
             type: 'POST',
             url: '../input.php',
+            cache: false,
+            dataType: 'json',
             data: {
                 post: 'add_cart',
                 productid: productId,
                 num: 1
             },
-            dataType: 'json',
             success: function(data) {
-                if (!!data) {
+                if (data !== '') {
+                    console.log(data);
                     getAnswer(data);
                 }
             },
@@ -58,8 +60,20 @@ $(document).ready(function() {
 
     function getAnswer(response) { // функция, которая распределяет ответ сервера на страницу
         $('.page-cart_empty').hide();
-        $(response.pageCart).appendTo('#cart');
-        $('#modal_cart').prepend(response.cart);
+        var $pageCart = $(response.pageCart);
+            if ($('#cart .image-cart').next().length > 0) { 
+                $('.page-cart').remove();
+                $($pageCart).appendTo('#cart');
+            } else { 
+                $($pageCart).appendTo('#cart');
+            }
+        var $itemModalCart = $(response.cart);
+        if ($('#modal_cart #modal_cart_close').siblings('ul').length > 0) {
+            $('ul.cart-list').remove();
+             $('#modal_cart').prepend($itemModalCart);
+        } else {
+            $('#modal_cart').prepend($itemModalCart);
+        }
     } // end of getAnswer
 
     $('#cart').on('click', '.page-cart', function(e) { // переход в окно корзины

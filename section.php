@@ -32,7 +32,7 @@
             <div id="content">
                 <div class="block block-content clearfix">
                     <div class="left-menu" id="cart">
-                        <img src="/icon-cart.png" width="32" height="23" alt="Cart">
+                        <img class="image-cart" src="/icon-cart.png" width="32" height="23" alt="Cart">
                         <?php  echo $cart->getCart_small(); /*print_r($cart->getCart_small());*/ ?>
                     </div>
                     <div class="slider"></div>
@@ -66,8 +66,8 @@
     </div>
     <div id="top-link"><a href='#top-link'>Back to Top</a></div>
     
-    <div id="modal_cart">   <!-- Модальное окно корзины -->
-        <span id="modal_cart_close">X</span>    <!-- Кнoпкa зaкрыть -->
+    <div id="modal_cart"> <!-- Модальное окно корзины -->
+        <span id="modal_cart_close">X</span> <!-- Кнoпкa зaкрыть -->
         <!-- Сюда добавляется разметка из обработчика -->
         <button class="modal_cart_close_btn">Close</button>
     </div>
