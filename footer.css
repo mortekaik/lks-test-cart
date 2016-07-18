@@ -161,7 +161,7 @@ body {
 /*.left-menu a:hover {
     border-bottom: none;
 }*/
-.left-menu span.page-cart {
+#cart span.page-cart {
     display: inline-block;
     margin-left: 10px;
     font-size: 1.2em;
@@ -170,7 +170,7 @@ body {
     cursor: pointer;
     border-bottom: 1px dashed #f00;
 }
-.left-menu span.page-cart:hover {
+#cart span.page-cart:hover {
     border-bottom: none; 
 }
 
