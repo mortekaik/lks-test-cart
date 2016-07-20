@@ -189,6 +189,10 @@ body {
     z-index: 1005; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
     padding: 20px 10px;
 }
+/* ссылки на товары в модальном окне*/
+#modal_cart li {
+    display: block;
+}
 /* Кнoпкa Х зaкрыть */
 #modal_cart #modal_cart_close {
     width: 21px;
@@ -253,7 +257,9 @@ body {
 /* Счетчик товара в модальном окне корзины (+ "//" -) */
 .spinner-wrap {
     box-sizing: border-box;
+    display: inline-block;
     width: 78px;
+    margin-left: 25px;
     position: relative;
     text-align: center;
     /*border: 1px solid #000;*/
