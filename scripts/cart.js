@@ -93,6 +93,18 @@ $(document).ready(function() {
         }
     } // end of getAnswer
 
+    $('.spinner-wrap input').each(function(){
+        var $spinInput = $(this);
+        $spinInput.parent().on('click', 'a.spin-down', function() {
+            $spinInput.val(Math.max( parseInt( $spinInput.val() )--, 0 ));
+            return false;
+        });
+        $spinInput.parent().on('click', 'a.spin-up', function() {
+            $spinInput.val (parseInt($spinInput.val())++);
+            return false;
+        });
+    });
+    
     $('#cart').on('click', '.page-cart', function(e) { // переход в окно корзины
         e.preventDefault(); // отменяем переход по ссылке
         $('#overlay').css('display', 'block'); // показываем подложку
@@ -104,6 +116,7 @@ $(document).ready(function() {
         $('#overlay').css('display', 'block'); // показываем подложку
         $('#modal_cart').css('visibility', 'visible'); // показываем окно
     });
+
     $('#modal_cart').on('click', '.delete-item', function() { // удаляем товар из корзины и из корзины, которая на странице
         deleteFromCart();
         $(this).hide(); // скрываем кнопку удаления товара
