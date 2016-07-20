@@ -68,9 +68,6 @@
     
     <div id="modal_cart"> <!-- Модальное окно корзины -->
         <span id="modal_cart_close">X</span> <!-- Кнoпкa зaкрыть -->
-        <div class="spinner-wrap">
-            
-        </div>
         <!-- Сюда добавляется разметка из обработчика -->
         <button class="modal_cart_close_btn">Close</button>
     </div>
