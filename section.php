@@ -69,6 +69,15 @@
     <div id="modal_cart"> <!-- Модальное окно корзины -->
         <span id="modal_cart_close">X</span> <!-- Кнoпкa зaкрыть -->
         <!-- Сюда добавляется разметка из обработчика -->
+        <div class="spinner-wrap">
+            <a class="spin-button spin-down">
+                    <span class="spin-icon spin-icon-minus">-</span>
+            </a>
+            <input class="spin-input" name="spin-input" value="1" data-price="" data-id="" type="text">
+            <a class="spin-button spin-up">
+                <span class="spin-icon spin-icon-plus">+</span>
+            </a>
+        </div>
         <button class="modal_cart_close_btn">Close</button>
     </div>
     <div id="overlay"></div> <!-- Пoдлoжкa -->

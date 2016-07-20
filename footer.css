@@ -15,9 +15,7 @@ body {
     overflow: hidden;
 }
 
-
 /*шапка*/
-
 
 /*фиксированное плавающее меню*/
 
@@ -60,7 +58,7 @@ body {
     cursor: pointer;
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
 }
-}
+
 .header {
     width: 960px;
     margin-left: auto;
@@ -202,9 +200,9 @@ body {
     display: block;
 }
 /* Еще кнопка-закрывашка */
-#modal_cart button { 
+#modal_cart .modal_cart_close_btn { 
   display: block;
-  border: 1px solid #eee;
+  border: 1px solid #ba3329;
   border-radius: 3px;
   line-height: 20px;
   padding: 0 15px;
@@ -212,16 +210,13 @@ body {
   transition: none;
   cursor: pointer;
   font-size: 1.1em;
-}
-
-#modal_cart .modal_cart_close_btn {
-  background-color: #f00;
-  /*background-image: linear-gradient(to bottom, #ed6d64, #ed574c);*/
-  border: 1px solid #ba3329;
-  box-shadow: inset 0 1px 0 #ffb0aa, inset 0 -1px 0 #d44d44, inset 0 0 0 1px #ed837b, 0 2px 4px rgba(0, 0, 0, 0.2);  
   color: #fff;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  background-color: #f00;
+  /*background-image: linear-gradient(to bottom, #ed6d64, #ed574c);*/
+  box-shadow: inset 0 1px 0 #ffb0aa, inset 0 -1px 0 #d44d44, inset 0 0 0 1px #ed837b, 0 2px 4px rgba(0, 0, 0, 0.2);  
 }
+
 #modal_cart .modal_cart_close_btn:hover, #modal_cart .modal_cart_close_btn:focus {
   background: #ed574c;
   border-color: #870c03;
@@ -246,7 +241,7 @@ body {
     position:fixed; /* всегдa перекрывaет весь сaйт */
     background-color:#000; /* чернaя */
     opacity:0.5; /* нo немнoгo прoзрaчнa */
-    -moz-opacity:0.5;  фикс прозрачности для старых браузеров 
+    -moz-opacity:0.5;  /*фикс прозрачности для старых браузеров */
     filter:alpha(opacity=80);
     width:100%; 
     height:100%; /* рaзмерoм вo весь экрaн */
@@ -255,7 +250,39 @@ body {
     cursor:pointer;
     display:none; /* в oбычнoм сoстoянии её нет) */
 }
-
+/* Счетчик товара в модальном окне корзины (+ "//" -) */
+.spinner-wrap {
+    box-sizing: border-box;
+    width: 78px;
+    position: relative;
+    text-align: center;
+    /*border: 1px solid #000;*/
+}
+.spinner-wrap a {
+    box-sizing: border-box;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 25px;
+    line-height: 25px;
+    background-image: linear-gradient(#fff,#e2e2e2);
+    /*border: 1px solid #000;*/
+    vertical-align: top;
+}
+.spinner-wrap a.spin-up {
+    margin-left: -4px;
+}
+.spinner-wrap .spin-input {
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    margin-left: -4px;
+    /*border: 1px solid #000;*/
+}
+.spinner-wrap .spin-icon {
+    display: block;
+}
 /* Окончание стилей модального окна корзины */
 
 .news {
