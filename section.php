@@ -32,20 +32,30 @@
                 <div class="block block-content clearfix">
                     <div class="left-menu" id="cart">
                         <img class="image-cart" src="/icon-cart.png" width="32" height="23" alt="Cart">
-                        <?php  print_r($cart->getCart_small());			
-						?>
+                        <!-- <?php  print_r($cart->getCart_small());			
+						?> -->
                     </div>
                     <div class="slider"></div>
                     <div class="deals">
-                        <div class="product"><span class="price">1000.-</span><span class="<? $cart->check_product('1'); ?>" id="product_1"></span>
+                        <div class="product">
+                            <span class="price">1000.-</span>
+                            <span class="<? $cart->check_product('1'); ?>" id="product_1"></span>
                         </div>
-                        <div class="product"><span class="price">2000.-</span><span class="<? $cart->check_product('2'); ?>" id="product_2"></span>
+                        <div class="product">
+                          <span class="price">2000.-</span>
+                          <span class="<? $cart->check_product('2'); ?>" id="product_2"></span>
                         </div>
-                        <div class="product"><span class="price">3000.-</span><span class="<? $cart->check_product('3'); ?>" id="product_3"></span>
+                        <div class="product">
+                        <span class="price">3000.-</span>
+                        <span class="<? $cart->check_product('3'); ?>" id="product_3"></span>
                         </div>
-                        <div class="product"><span class="price">4000.-</span><span class="<? $cart->check_product('4'); ?>" id="product_4"></span>
+                        <div class="product">
+                        <span class="price">4000.-</span>
+                        <span class="<? $cart->check_product('4'); ?>" id="product_4"></span>
                         </div>
-                        <div class="product"><span class="price">5000.-</span><span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
+                        <div class="product">
+                        <span class="price">5000.-</span>
+                        <span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
                         </div>
                     </div>
                     <div class="vendors"></div>

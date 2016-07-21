@@ -91,19 +91,30 @@ $(document).ready(function() {
         } else {
             $('#modal_cart').prepend($itemModalCart);
         }
-    } // end of getAnswer
 
-    $('.spinner-wrap input').each(function(){
-        var $spinInput = $(this);
-        $spinInput.parent().on('click', 'a.spin-down', function() {
-            $spinInput.val(Math.max( parseInt( $spinInput.val() )--, 0 ));
-            return false;
+        var $cart = $('#cart ul.cart-list li.cart-list-item');
+        console.log($cart);
+        $($cart).each(function(){
+            console.log($(this));
+            var $spinWrap = $(this).children('.spinner-wrap');
+            console.log($spinWrap);
+            var $spinInput = $($spinWrap).children('.spin-input').val();
+                console.log($spinInput);
+            $($spinWrap).on('click', 'a.spin-down', function() {
+                if (typeof $spinInput === 'number') {
+                    $spinInput.val(parseInt($spinInput.val())--, 0);
+                }
+                return false;
+            });
+            $($spinWrap).on('click', 'a.spin-up', function() {
+                if (typeof $spinInput === 'number') {
+                    $spinInput.val(parseInt($spinInput.val())++);
+                    console.log($spinInput);
+                }
+                return false;
+            });
         });
-        $spinInput.parent().on('click', 'a.spin-up', function() {
-            $spinInput.val (parseInt($spinInput.val())++);
-            return false;
-        });
-    });
+    } // end of getAnswer
     
     $('#cart').on('click', '.page-cart', function(e) { // переход в окно корзины
         e.preventDefault(); // отменяем переход по ссылке
