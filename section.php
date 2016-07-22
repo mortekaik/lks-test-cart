@@ -79,7 +79,8 @@
     <div id="modal_cart"> <!-- Модальное окно корзины -->
         <span id="modal_cart_close">X</span> <!-- Кнoпкa зaкрыть -->
         <!-- Сюда добавляется разметка из обработчика -->
-        <button class="modal_cart_close_btn">Close</button>
+        <button class="modal_cart_btn close_btn">Close</button>
+        <button class="modal_cart_btn delete_all_btn">Delete All</button>
     </div>
     <div id="overlay"></div> <!-- Пoдлoжкa -->
 

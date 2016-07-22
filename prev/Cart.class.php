@@ -8,10 +8,10 @@ class Cart extends Router
     public function getCart_small()
     {
         if (count($this->cart['productid']) > 0) {
-            $array_small['id'] = implode(',', $this->cart['productid']);
+            $array_small['id'] = explode(',', 'product_'.implode(',product_', $this->cart['productid']));
             $array_small['cart'] = '<ul class="cart-list">';
             foreach ($this->cart['productid'] as $key => $value) {
-                $array_small['cart'] .= '<li class="cart-list-item" data-id="' . $value .'"><a href="#">Товар (id: ' . $value . ')  - ' . $this->cart['num'][$key] . ' шт.</a></li>';
+                $array_small['cart'] .= '<li class="cart-list-item"><a href="#" data-id="' . $value . '">Товар (id: ' . $value . ')  - ' . $this->cart['num'][$key] . ' шт.</a><span class="spinner-wrap"><a class="spin-button spin-down" href="#"><span class="spin-icon spin-icon-minus">-</span></a><input class="spin-input" name="spin-input" value="' . $this->cart['num'][$key] . '" type="text"><a class="spin-button spin-up" href="#"><span class="spin-icon spin-icon-plus">+</span></a></span></li>';
             }
             $array_small['cart'] .= '</ul>';
             if (isset($this->post['post']) && $this->post['post'] == 'add_cart' && ctype_digit($this->post['productid']) && ctype_digit($this->post['num'])) {
@@ -24,6 +24,17 @@ class Cart extends Router
             $array_small['pageCart'] = '<span class="page-cart_empty">Корзина пуста</span>';
         }
         return $array_small;
+    }
+
+    public function check_product($a)
+    {
+        if(isset($this->cart['productid']) && in_array($a, $this->cart['productid'])){
+            echo 'btn-added';
+        }
+        else
+        {
+            echo 'button';
+        }
     }
 
     public function getCart_small_json()
