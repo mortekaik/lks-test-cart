@@ -60,9 +60,7 @@
                     </div>
                     <div class="vendors"></div>
                     <div class="news"><?php echo $q['cart']; ?></div>
-                    <div class="vendors" id="del_all">
-                        <button class="modal_cart_btn delete_all_btn">Обнулить корзину</button>
-                    </div>
+                    <div class="vendors" id="del_all"><button class="modal_cart_btn delete_all_btn">Обнулить корзину</button></div>
                     <div class="vendors"></div>
                 </div>
             </div>
