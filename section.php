@@ -3,6 +3,7 @@
         include_once($class_name . '.class.php');
     }
     $cart = new Cart;
+    $q = $cart->getCart_small();
 	 ?>
 
 <!doctype html>
@@ -13,6 +14,7 @@
     <title>ЛКС - лабораторное и промышленное оборудование</title>
     <link href="footer.css" rel="stylesheet" type="text/css">
     <script src="scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="scripts/1.js"></script>
     <script type="text/javascript" src="scripts/cart.js"></script>
     <!--[if lt IE 9]>
       <script src="script/html5.js"></script>	 
@@ -31,26 +33,36 @@
             <div id="content">
                 <div class="block block-content clearfix">
                     <div class="left-menu" id="cart">
-                        <img class="image-cart" src="/icon-cart.png" width="32" height="23" alt="Cart">
-                        <?php  print_r($cart->getCart_small());			
-						?>
+                        <?php  echo $q['pageCart']; ?>
                     </div>
                     <div class="slider"></div>
                     <div class="deals">
-                        <div class="product"><span class="price">1000.-</span><span class="<? $cart->check_product('1'); ?>" id="product_1"></span>
+                        <div class="product">
+                            <span class="price">1000.-</span>
+                            <span class="<? $cart->check_product('1'); ?>" id="product_1"></span>
                         </div>
-                        <div class="product"><span class="price">2000.-</span><span class="<? $cart->check_product('2'); ?>" id="product_2"></span>
+                        <div class="product">
+                          <span class="price">2000.-</span>
+                          <span class="<? $cart->check_product('2'); ?>" id="product_2"></span>
                         </div>
-                        <div class="product"><span class="price">3000.-</span><span class="<? $cart->check_product('3'); ?>" id="product_3"></span>
+                        <div class="product">
+                        <span class="price">3000.-</span>
+                        <span class="<? $cart->check_product('3'); ?>" id="product_3"></span>
                         </div>
-                        <div class="product"><span class="price">4000.-</span><span class="<? $cart->check_product('4'); ?>" id="product_4"></span>
+                        <div class="product">
+                        <span class="price">4000.-</span>
+                        <span class="<? $cart->check_product('4'); ?>" id="product_4"></span>
                         </div>
-                        <div class="product"><span class="price">5000.-</span><span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
+                        <div class="product">
+                        <span class="price">5000.-</span>
+                        <span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
                         </div>
                     </div>
                     <div class="vendors"></div>
-                    <div class="news"></div>
-                    <div class="vendors"></div>
+                    <div class="news"><?php echo $q['cart']; ?></div>
+                    <div class="vendors" id="del_all">
+                        <button class="modal_cart_btn delete_all_btn">Обнулить корзину</button>
+                    </div>
                     <div class="vendors"></div>
                 </div>
             </div>
@@ -64,12 +76,12 @@
             </div>
         </div>
     </div>
-    <div id="top-link"><a href='#top-link'>Back to Top</a></div>
+    <div id="top-link"><a href='#top-link'>Вверх</a></div>
     
     <div id="modal_cart"> <!-- Модальное окно корзины -->
-        <span id="modal_cart_close">X</span> <!-- Кнoпкa зaкрыть -->
+        <!-- Кнoпкa зaкрыть -->
+        <?php echo $q['last']; ?>
         <!-- Сюда добавляется разметка из обработчика -->
-        <button class="modal_cart_close_btn">Close</button>
     </div>
     <div id="overlay"></div> <!-- Пoдлoжкa -->
 
