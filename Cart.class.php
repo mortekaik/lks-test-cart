@@ -100,13 +100,9 @@ class Cart extends Router
             }
         }
         if (isset($this->post['post']) && $this->post['post'] == 'del_cart_all') {
-<<<<<<< HEAD
             unset($this->cart['productid']);
             unset($this->cart['num']);
             $result = $this->db_select('UPDATE cart SET cart=? WHERE ID=?', array('', $this->userid));
-=======
-            $result = $this->db_select('UPDATE cart SET cart=? WHERE ID=?', array('',$this->userid));
->>>>>>> 9afb1bae2dd205409805d55041763249fa74c010
         }
     }
 
