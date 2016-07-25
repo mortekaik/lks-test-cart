@@ -44,30 +44,38 @@ $(document).ready(function () {
         modal('open');
     })
 
-    $('#modal_cart').on('click', '.spin-down', function (e) { // - 1 к количеству товара
+    $('#modal_cart').on('click', '.spin-down', function (e) { // - 1 к количеству товара в модальном окне
         e.preventDefault();
         var productId = $('#spin-id').text();
         cart_processor({'post': 'product_down', 'productid': productId});
     });
 
-    $('#modal_cart').on('click', '.spin-up', function (e) { // + 1 к количеству товара
+    $('#modal_cart').on('click', '.spin-up', function (e) { // + 1 к количеству товара в модальном окне
         e.preventDefault();
         var productId = $('#spin-id').text();
         cart_processor({'post': 'product_up', 'productid': productId});
     });
 
-    $('.news').on('click', '.spin-down', function (event) { // - 1 к количеству товара
-        event.preventDefault();
-        console.log(event.data);
-        // cart_processor({'post': 'product_down', 'productid': productId});
+    $('.news').on('click', '.spin-down', function (e) { // - 1 к количеству товара
+        e.preventDefault();
+        var prodId = $(this).parent().parent().find('#page-cart-spin').text();
+        cart_processor({'post': 'product_down', 'productid': prodId});
+    });
+
+    $('.news').on('click', '.spin-up', function (e) { // + 1 к количеству товара
+        e.preventDefault();
+        var prodId = $(this).parent().parent().find('#page-cart-spin').text();
+        cart_processor({'post': 'product_up', 'productid': prodId});
     });
 
     $('body').on('click', '.delete_all_btn', function () { // удаляем все товары из корзины и из корзины, которая на странице
+        var $btnAdded = $('.deals > .product').find('span.btn-added');
+        $btnAdded.toggleClass('btn-added button');
         modal('close');
         cart_processor({'post': 'del_cart_all'});
     });
 
-    $('body').on('click', '#modal_cart_close, .close_btn, #overlay', function () { // удаляем все товары из корзины и из корзины, которая на странице
+    $('body').on('click', '#modal_cart_close, .close_btn, #overlay', function() {
         modal('close');
     });
 }); // end of ready function

@@ -11,10 +11,10 @@ class Cart extends Router
             $array_small['id'] = explode(',', 'product_' . implode(',product_', $this->cart['productid']));
             $array_small['cart'] = '<ul class="cart-list">';
             foreach ($this->cart['productid'] as $key => $value) {
-                $array_small['cart'] .= '<li class="cart-list-item"><a href="#" data-id="' . $value . '">Товар (id: ' . $value . ')  - ' .
+                $array_small['cart'] .= '<li class="cart-list-item"><a href="#" data-id="' . $value . '">Товар (id: <span id="page-cart-spin">' . $value . '</span>)  - ' .
                     $this->cart['num'][$key] . ' шт.</a><span class="spinner-wrap"><a class="spin-button spin-down" href="#"><span class="spin-icon spin-icon-minus">
-                    -</span></a><input class="spin-input" name="spin-input" value="' . $this->cart['num'][$key] .
-                    '" type="text"><a class="spin-button spin-up" href="#"><span class="spin-icon spin-icon-plus">+</span></a></span></li>';
+                    -</span></a> ' . $this->cart['num'][$key] .
+                    ' <a class="spin-button spin-up" href="#"><span class="spin-icon spin-icon-plus">+</span></a></span></li>';
             }
             $array_small['cart'] .= '</ul>';
             $last_key = max(array_keys($this->cart['productid']));
