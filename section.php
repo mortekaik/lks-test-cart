@@ -12,8 +12,10 @@
 <head>
     <meta charset="utf-8">
     <title>ЛКС - лабораторное и промышленное оборудование</title>
-    <link href="footer.css" rel="stylesheet" type="text/css">
+    <link type="text/css" href="css/footer.css" rel="stylesheet">
+    <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
     <script src="scripts/jquery-1.12.4.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/1.js"></script>
     <script type="text/javascript" src="scripts/cart.js"></script>
     <!--[if lt IE 9]>
@@ -25,7 +27,7 @@
     <div id="wrap">
         <div class="header">
             <div class="block block-header">
-                <img src="lks-logo.jpg" class="logo" width="80px" />
+                <img src="img/lks-logo.jpg" class="logo" width="80px" />
                 <div class="top-menu" id="top_nav"></div>
             </div>
         </div>
