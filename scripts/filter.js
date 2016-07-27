@@ -4,10 +4,10 @@ $(document).ready(function () {
 		range: true,
 		min: 0,
 		max: 1000,
-		values: [100, 500],
+		values: [0, 1000],
 		slide: function( event, ui ) {
-			$('#price-from').html(ui.values[0]);
-			$('#price-to').html(ui.values[1]);
+			$('#price-from').val(ui.values[0]);
+			$('#price-to').val(ui.values[1]);
 		}
 		});
 	
@@ -19,8 +19,12 @@ $(document).ready(function () {
 		var valTo = $(this).val();
 		$('.price-slider').slider("values", 1, valTo);
 	});
-
-
-
 	// конец слайдера цены
+
+	// выделение всех чебоксов
+	$('.producer-list').on('change', 'input[type=checkbox]', function() {
+		var $this = $(this);
+		var $checkbox = $('input[name=producer]');
+		
+	});
 });

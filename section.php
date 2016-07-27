@@ -47,9 +47,9 @@
                                     <p>Цена</p>
                                     <p>
                                         <label for="price-from">От:</label>
-                                        <input type="text" name="from" id="price-from" value="">
+                                        <input type="text" name="from" id="price-from" value="0">
                                         <label for="price-to">до:</label>
-                                        <input type="text" name="to" id="price-to" value="">
+                                        <input type="text" name="to" id="price-to" value="1000">
                                     </p>
                                     <div class="price-slider"></div>
                                 </article>
@@ -59,7 +59,7 @@
                                     <p>Производитель</p>
                                     <ul class="producer-list">
                                         <li class="producer-list-item"><span>
-                                        <input id="producer_All" type="checkbox" name="producerAll">
+                                        <input title="Check All" id="producer_All" type="checkbox" name="producer">
                                         <label for="producer_All">Выбрать всё</label>
                                         </span></li>
                                         <li class="producer-list-item"><span>
