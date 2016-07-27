@@ -18,6 +18,7 @@
     <script src="scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/1.js"></script>
     <script type="text/javascript" src="scripts/cart.js"></script>
+    <script type="text/javascript" src="scripts/filter.js"></script>
     <!--[if lt IE 9]>
       <script src="script/html5.js"></script>	 
      <![endif]-->
@@ -38,26 +39,66 @@
                         <?php  echo $q['pageCart']; ?>
                     </div>
                     <div class="slider"></div>
+                    <div class="filter-aside">
+                        <form id="filterForm" action="" method="post">
+                            <fieldset id="filter">
+                                <legend class="fltr-legend">Фильтр</legend>
+                                <article class="filter-block fltr-price">
+                                    <p>Цена</p>
+                                    <p>
+                                        <label for="price-from">От:</label>
+                                        <input type="text" name="from" id="price-from" value="">
+                                        <label for="price-to">до:</label>
+                                        <input type="text" name="to" id="price-to" value="">
+                                    </p>
+                                    <div class="price-slider"></div>
+                                </article>
+                                <input type="hidden" class="hidden price-from_hidden" value="2" name="min-price" >
+                                <input type="hidden" class="hidden price-to_hidden" value="100" name="max-price">
+                                <article class="filter-block fltr-manufacturer">
+                                    <p>Производитель</p>
+                                    <ul class="producer-list">
+                                        <li class="producer-list-item"><span>
+                                        <input id="producer_All" type="checkbox" name="producerAll">
+                                        <label for="producer_All">Выбрать всё</label>
+                                        </span></li>
+                                        <li class="producer-list-item"><span>
+                                        <input title="A&D" id="producer_1" type="checkbox" name="producer" value="1">
+                                        <label for="producer_1">A&D</label>
+                                        </span></li>
+                                        <li class="producer-list-item"><span>
+                                        <input title="ACOM" id="producer_2" type="checkbox" name="producer" value="2">
+                                        <label for="producer_2">ACOM</label>
+                                        </span></li>
+                                        <li class="producer-list-item"><span>
+                                        <input title="Vesta" id="producer_3" type="checkbox" name="producer" value="3">
+                                        <label for="producer_3">Vesta</label>
+                                        </span></li>
+                                    </ul>
+                                </article>
+                            </fieldset>
+                        </form>
+                    </div>
                     <div class="deals">
                         <div class="product">
                             <span class="price">1000.-</span>
                             <span class="<? $cart->check_product('1'); ?>" id="product_1"></span>
                         </div>
                         <div class="product">
-                          <span class="price">2000.-</span>
-                          <span class="<? $cart->check_product('2'); ?>" id="product_2"></span>
+                            <span class="price">2000.-</span>
+                            <span class="<? $cart->check_product('2'); ?>" id="product_2"></span>
                         </div>
                         <div class="product">
-                        <span class="price">3000.-</span>
-                        <span class="<? $cart->check_product('3'); ?>" id="product_3"></span>
+                            <span class="price">3000.-</span>
+                            <span class="<? $cart->check_product('3'); ?>" id="product_3"></span>
                         </div>
                         <div class="product">
-                        <span class="price">4000.-</span>
-                        <span class="<? $cart->check_product('4'); ?>" id="product_4"></span>
+                            <span class="price">4000.-</span>
+                            <span class="<? $cart->check_product('4'); ?>" id="product_4"></span>
                         </div>
                         <div class="product">
-                        <span class="price">5000.-</span>
-                        <span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
+                            <span class="price">5000.-</span>
+                            <span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
                         </div>
                     </div>
                     <div class="vendors"></div>
@@ -68,25 +109,23 @@
                     <div class="vendors"></div>
                 </div>
             </div>
-            <div id="side">
-            </div>
+            <div id="side"></div>
         </div>
-    </div>
-    <div id="footer">
-        <div class="footer">
+        <div id="footer">
+            <div class="footer">
             <div class="block block-footer">
             </div>
         </div>
-    </div>
-    <div id="top-link"><a href='#top-link'>Вверх</a></div>
-    
-    <div id="modal_cart"> <!-- Модальное окно корзины -->
-        <!-- Кнoпкa зaкрыть -->
-        <?php echo $q['last']; ?>
-        <!-- Сюда добавляется разметка из обработчика -->
-    </div>
-    <div id="overlay"></div> <!-- Пoдлoжкa -->
+        </div>
+        <div id="top-link"><a href='#top-link'>Вверх</a></div>
 
+        <div id="modal_cart"> <!-- Модальное окно корзины -->
+        <!-- Кнoпкa зaкрыть -->
+            <?php echo $q['last']; ?>
+        <!-- Сюда добавляется разметка из обработчика -->
+        </div>
+        <div id="overlay"></div> <!-- Пoдлoжкa -->
+    </div>
 </body>
 
 </html>

@@ -138,7 +138,7 @@ body {
 .left-menu {
     float: left;
     width: 300px;
-    min-height: 500px;
+    min-height: 150px;
     border: 1px solid red;
     text-align: center;
     padding-top: 10px;
@@ -159,6 +159,35 @@ body {
 /*.left-menu a:hover {
     border-bottom: none;
 }*/
+.filter-aside {
+    float: left;
+    position: relative;
+    width: 300px;
+    min-height: 350px;
+    border: 1px solid red;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.filter-aside article input,
+.filter-aside article label {
+    vertical-align: middle;
+}
+.filter-block {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #c5c5c5;
+}
+.filter-block p:first-child {
+    margin: 0;
+}
+.fltr-price input {
+    width: 50px;
+    margin-right: 10px;
+}
+.price-slider {
+    margin-top: 10px;
+}
+
 #cart span.page-cart {
     display: inline-block;
     margin-left: 10px;
