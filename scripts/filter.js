@@ -21,10 +21,11 @@ $(document).ready(function () {
 	});
 	// конец слайдера цены
 
-	// выделение всех чебоксов
+	// выборка выделенных чекбоксов
 	$('.producer-list').on('change', 'input[type=checkbox]', function() {
 		var $this = $(this);
 		var $checkbox = $('input[name=producer]');
 		
 	});
 });
+

@@ -48,20 +48,16 @@
                                     <p>
                                         <label for="price-from">От:</label>
                                         <input type="text" name="from" id="price-from" value="0">
+                                        <input type="hidden" class="hidden price-from_hidden" value="2" name="from" >
                                         <label for="price-to">до:</label>
                                         <input type="text" name="to" id="price-to" value="1000">
+                                        <input type="hidden" class="hidden price-to_hidden" value="100" name="to">
                                     </p>
                                     <div class="price-slider"></div>
                                 </article>
-                                <input type="hidden" class="hidden price-from_hidden" value="2" name="min-price" >
-                                <input type="hidden" class="hidden price-to_hidden" value="100" name="max-price">
                                 <article class="filter-block fltr-manufacturer">
                                     <p>Производитель</p>
                                     <ul class="producer-list">
-                                        <li class="producer-list-item"><span>
-                                        <input title="Check All" id="producer_All" type="checkbox" name="producer">
-                                        <label for="producer_All">Выбрать всё</label>
-                                        </span></li>
                                         <li class="producer-list-item"><span>
                                         <input title="A&D" id="producer_1" type="checkbox" name="producer" value="1">
                                         <label for="producer_1">A&D</label>
