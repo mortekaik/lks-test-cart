@@ -56,6 +56,8 @@ $(document).ready(function () {
 	// jquery UI Autocomplete
 	$('#search-type').autocomplete ({
 		source: function(request, response) {
+			var $search = $('#search-type').val();
+			console.log($search);
 			$.ajax({
 				url: 'input.php',
 				type: 'POST',
@@ -63,7 +65,7 @@ $(document).ready(function () {
 				cache: false,
 				data: {
 					post: 'search',
-					searchField: request.term
+					searchField: $search
 				},
 				success: function(data) {
 					console.log(data);
