@@ -77,9 +77,7 @@ $(document).ready(function () {
 		// disabled: true,
 		// delay: 300,
 		select: function(event, ui) {
-			// alert('Event: ' + event.type + '\nValue: ' + ui.item.value);
-			$('<p/>').text(ui.item ? ui.item.value : 'Nothing is selected').prependTo('#log');
-			$('#log').attr('scrollTop, 0');
+			alert('Event: ' + event.type + '\nValue: ' + ui.item.value);
 		}
 	});
 	
