@@ -12,8 +12,8 @@
 <head>
     <meta charset="utf-8">
     <title>ЛКС - лабораторное и промышленное оборудование</title>
-    <link type="text/css" href="css/footer.css" rel="stylesheet">
     <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
+    <link type="text/css" href="css/footer.css" rel="stylesheet">
     <script src="scripts/jquery-1.12.4.min.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/1.js"></script>
@@ -37,20 +37,27 @@
                 <div class="block block-content clearfix">
                     <div class="left-menu" id="cart">
                         <?php  echo $q['pageCart']; ?>
+                        <div id="searchFilter">
+                            <form id="searchForm" action="section.php" method="post">
+                                <label for="search-type">Search</label>
+                                <input type="text" id="search-type" name="search" placeholder="Input something"><br>
+                                <div id="log"></div>
+                            </form>
+                        </div>
                     </div>
                     <div class="slider"></div>
                     <div class="filter-aside">
-                        <form id="filterForm" action="" method="post">
+                        <form id="filterForm" enctype="multipart/form-data" action="section.php" method="post">
                             <fieldset id="filter">
                                 <legend class="fltr-legend">Фильтр</legend>
                                 <article class="filter-block fltr-price">
                                     <p>Цена</p>
                                     <p>
                                         <label for="price-from">От:</label>
-                                        <input type="text" name="from" id="price-from" value="0">
+                                        <input type="text" name="from" id="price-from" value="1">
                                         <input type="hidden" class="hidden price-from_hidden" value="2" name="from" >
                                         <label for="price-to">до:</label>
-                                        <input type="text" name="to" id="price-to" value="1000">
+                                        <input type="text" name="to" id="price-to" value="2">
                                         <input type="hidden" class="hidden price-to_hidden" value="100" name="to">
                                     </p>
                                     <div class="price-slider"></div>
