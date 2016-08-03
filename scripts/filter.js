@@ -54,41 +54,38 @@ $(document).ready(function () {
 	// конец слайдера цены
 
 	// jquery UI Autocomplete
-	$('#search-type').autocomplete ({
-		source: function(request, response) {
-			var $search = $('#search-type').val();
-			console.log($search);
-			$.ajax({
-				url: 'input.php',
-				type: 'POST',
-				dataType: 'json',
-				cache: false,
-				data: {
-					post: 'search',
-					searchField: $search
-				},
-				success: function(data) {
-					console.log(data);
+	function search_pros (request) {
+		$.ajax({
+			url: 'search.php',
+			type: 'POST',
+			dataType: 'json',
+			cache: false,
+			data: {
+				post: 'search',
+				searchField: $search
+			},
+			success: function(data) {
+				console.log(data);
+				if (data !== '') {
+					search_allocator(data);
 				}
-			});
-		},
-		minLength: 3,
-		// appendTo: ,
-		// disabled: true,
-		// delay: 300,
+			}
+		});
+	}
+	var searchResult = [];
+	function search_allocator(response) {
+		return searchResult = $.map(response);
+		$('#search-log').prepend(response);
+    }
+    console.log(searchResult);
+    var $search = $('#search-type').val();
+
+	$('#search-type').autocomplete ({
+		source: search_pros({'post': 'search', 'searchField': $search}),
+		minLength: 2,
 		select: function(event, ui) {
-			alert('Event: ' + event.type + '\nValue: ' + ui.item.value);
+
 		}
 	});
-	
-
-	// $('#searchForm').on('click', '#search', function() {
-	// 	$('#search-type').autocomplete('search');
-	// });
-	// $('#searchForm').on('click', '#close', function() {
-	// 	$('search-type').autocomplete('close');
-	// });
-
-
 });
 

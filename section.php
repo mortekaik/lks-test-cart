@@ -35,19 +35,21 @@
         <div id="main">
             <div id="content">
                 <div class="block block-content clearfix">
-                    <div class="left-menu" id="cart">
+                    <div class="left-menu">
+                        <div id="cart">
                         <?php  echo $q['pageCart']; ?>
+                        </div>
                         <div id="searchFilter">
                             <form id="searchForm" action="section.php" method="post">
                                 <label for="search-type">Search</label>
                                 <input type="text" id="search-type" name="search" placeholder="Input something"><br>
-                                <div id="log"></div>
+                                <div id="log-search">X</div>
                             </form>
                         </div>
                     </div>
                     <div class="slider"></div>
                     <div class="filter-aside">
-                        <form id="filterForm" enctype="multipart/form-data" action="section.php" method="post">
+                        <form id="filterForm" enctype="multipart/form-data" action="section.php" method="get">
                             <fieldset id="filter">
                                 <legend class="fltr-legend">Фильтр</legend>
                                 <article class="filter-block fltr-price">
@@ -55,10 +57,10 @@
                                     <p>
                                         <label for="price-from">От:</label>
                                         <input type="text" name="from" id="price-from" value="1">
-                                        <input type="hidden" class="hidden price-from_hidden" value="2" name="from" >
                                         <label for="price-to">до:</label>
                                         <input type="text" name="to" id="price-to" value="2">
-                                        <input type="hidden" class="hidden price-to_hidden" value="100" name="to">
+                                        <input type="hidden" id="price-hidden" value="100" name="price-range">
+                                        <input type="submit" class="button price_btn" name="price-submit" value="Submit">
                                     </p>
                                     <div class="price-slider"></div>
                                 </article>
