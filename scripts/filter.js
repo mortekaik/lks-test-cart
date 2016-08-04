@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	// слайдер цены
+	/* ------------ слайдер цены ----- */
 	$('.price-slider').slider({
 		range: true,
 		min: 0,
@@ -51,41 +51,86 @@ $(document).ready(function () {
 		if(!/\d/.test(keyChar))	
 			return false;
 	}); 
-	// конец слайдера цены
+	/*------------ конец слайдера цены ------------------*/
 
-	// jquery UI Autocomplete
-	function search_pros (request) {
-		$.ajax({
-			url: 'search.php',
-			type: 'POST',
-			dataType: 'json',
-			cache: false,
-			data: {
-				post: 'search',
-				searchField: $search
-			},
-			success: function(data) {
-				console.log(data);
-				if (data !== '') {
-					search_allocator(data);
-				}
-			}
-		});
-	}
-	var searchResult = [];
-	function search_allocator(response) {
-		return searchResult = $.map(response);
-		$('#search-log').prepend(response);
-    }
-    console.log(searchResult);
-    var $search = $('#search-type').val();
-
+	/*------------ jquery UI Autocomplete ---------------*/
 	$('#search-type').autocomplete ({
-		source: search_pros({'post': 'search', 'searchField': $search}),
-		minLength: 2,
+		source: function(req, response) {
+			var $searchUrl = $('#searchForm').attr('action');
+			var $term = req.term;
+			$.ajax({
+				type: 'POST',
+				url: $searchUrl,
+				dataType: 'json',
+				cache: false,
+				data: {
+					post: 'search',
+					searchField: $term
+				},
+				success: function(data) {
+					response(data);
+				}
+			});
+		},
+		minLength: 1,
 		select: function(event, ui) {
-
+			log( ui.item ? "Selected: " + ui.item.value : "Nothing selected, input was " + this.value );
 		}
 	});
+	function log(message) {
+		$('#log-search').empty().prepend(message);
+	}
+	/*----------- end of jqueryUI autocomplete ----------*/
+
+	/*---------- фильтр товаров по чекбоксам ------------*/
+	$('.filterForm').on('click', 'input[type=checkbox]', function() {
+		var checkIdArr = new Array;
+		// var checkValues = new Array;
+		// var checkNames = new Array;
+		$(this).each(function() {
+			if ($(this).prop('checked')) {
+				var $checkVal = $(this).val();
+				checkIdArr = {
+					value: $checkVal
+				}
+				
+				// var $checkName = $(this).attr('name');
+				// console.log($checkName);
+				// var $checkId = $(this).attr('id');
+				// var $checkFilterId = $checkId.slice($checkId.indexOf('_') + 1);
+				// console.log($checkFilterId);
+			}
+
+		}).get();
+		console.log(checkIdArr);
+		var $checkUrl = $(this).closest('form').attr('action');
+	});
+
+			// $.ajax({
+			// 	type: 'POST',
+			// 	url: $checkUrl,
+			// 	dataType: 'json',
+			// 	data: {
+			// 		post: 'check_filter',
+			// 		checkboxValue: checkArr					
+			// 		//checkboxName: $checkName,
+			// 		//filterId: $checkFilterId
+			// 	},
+			// 	success: function (data) {
+   //              	if (data !== '') {
+   //                  	console.log(data);
+   //                  	// getResultFilter(data);
+   //              	}
+   //          	},
+	  //           error: function (error) {
+	  //               alert('Something wrong: ' + error.statusText);
+	  //               console.log(error);
+	  //           }
+			// });
 });
+
+// var $checkVal = $(elem).val();
+// var $checkName = $(elem).attr('name');
+// var $checkId = $(elem).attr('id');
+// var $checkFilterId = $checkId.slice($checkId.indexOf('_') + 1);
 

@@ -203,10 +203,7 @@ body {
 .filter-block {
     display: block;
     padding: 10px;
-    border-bottom: 1px solid #c5c5c5;
-}
-.filter-block p:first-child {
-    margin-bottom: 10px;
+    /*border-bottom: 1px solid #c5c5c5;*/
 }
 
 /* стили для инпутов и ползунка цены */

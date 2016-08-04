@@ -40,20 +40,19 @@
                         <?php  echo $q['pageCart']; ?>
                         </div>
                         <div id="searchFilter">
-                            <form id="searchForm" action="section.php" method="post">
+                            <form id="searchForm" action="search.php" method="post">
                                 <label for="search-type">Search</label>
                                 <input type="text" id="search-type" name="search" placeholder="Input something"><br>
-                                <div id="log-search">X</div>
+                                <div id="log-search"></div>
                             </form>
                         </div>
                     </div>
                     <div class="slider"></div>
                     <div class="filter-aside">
-                        <form id="filterForm" enctype="multipart/form-data" action="section.php" method="get">
-                            <fieldset id="filter">
-                                <legend class="fltr-legend">Фильтр</legend>
+                        <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="section.php" method="get">
+                            <fieldset class="filter-field filter-field_price">
+                                <legend class="fltr-legend fltr-legend_price">Цена</legend>
                                 <article class="filter-block fltr-price">
-                                    <p>Цена</p>
                                     <p>
                                         <label for="price-from">От:</label>
                                         <input type="text" name="from" id="price-from" value="1">
@@ -64,8 +63,12 @@
                                     </p>
                                     <div class="price-slider"></div>
                                 </article>
+                            </fieldset>
+                        </form>
+                        <form class="filterForm" id="filter-manufacturer" enctype="multipart/form-data" action="input.php" method="get">
+                            <fieldset class="filter-field filter-field_manufacturer">
+                                <legend class="fltr-legend fltr-legend_manufacturer">Производитель</legend>
                                 <article class="filter-block fltr-manufacturer">
-                                    <p>Производитель</p>
                                     <ul class="producer-list">
                                         <li class="producer-list-item"><span>
                                         <input title="A&D" id="producer_1" type="checkbox" name="producer" value="1">
