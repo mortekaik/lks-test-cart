@@ -82,55 +82,43 @@ $(document).ready(function () {
 	}
 	/*----------- end of jqueryUI autocomplete ----------*/
 
-	/*---------- фильтр товаров по чекбоксам ------------*/
-	$('.filterForm').on('click', 'input[type=checkbox]', function() {
-		var checkIdArr = new Array;
-		// var checkValues = new Array;
-		// var checkNames = new Array;
-		$(this).each(function() {
-			if ($(this).prop('checked')) {
-				var $checkVal = $(this).val();
-				checkIdArr = {
-					value: $checkVal
-				}
-				
-				// var $checkName = $(this).attr('name');
-				// console.log($checkName);
-				// var $checkId = $(this).attr('id');
-				// var $checkFilterId = $checkId.slice($checkId.indexOf('_') + 1);
-				// console.log($checkFilterId);
-			}
-
+	/*---------- выбор по чекбоксам в фильтре ------------*/
+	var $checkIdArr = [], $checkValArr = [];
+	$('.filterForm').on('change', 'input:checkbox', function() {
+		$checkIdArr = $('input:checkbox:checked').map(function() {
+			var checkboxId = $(this).attr('id');
+			var $checkFilterId = checkboxId.slice(checkboxId.indexOf('_') + 1);
+			return $checkFilterId;
 		}).get();
-		console.log(checkIdArr);
+		$checkValArr = $('input:checkbox:checked').map(function() {
+			var $checkboxVal = $(this).val();
+			return $checkboxVal;
+		}).get();
+
+		console.log($checkIdArr);
+		console.log($checkValArr);
 		var $checkUrl = $(this).closest('form').attr('action');
+		$.ajax({
+			type: 'POST',
+			url: $checkUrl,
+			dataType: 'json',
+			data: {
+				post: 'check_filter',
+				checkboxValue: $checkValArr,
+				checkboxId: $checkIdArr
+			},
+			success: function (data) {
+            	if (data !== '') {
+                	console.log(data);
+                	// getResultFilter(data);
+            	}
+        	},
+            error: function (error) {
+                alert('Something wrong: ' + error.statusText);
+                console.log(error);
+        	}
+		});
 	});
-
-			// $.ajax({
-			// 	type: 'POST',
-			// 	url: $checkUrl,
-			// 	dataType: 'json',
-			// 	data: {
-			// 		post: 'check_filter',
-			// 		checkboxValue: checkArr					
-			// 		//checkboxName: $checkName,
-			// 		//filterId: $checkFilterId
-			// 	},
-			// 	success: function (data) {
-   //              	if (data !== '') {
-   //                  	console.log(data);
-   //                  	// getResultFilter(data);
-   //              	}
-   //          	},
-	  //           error: function (error) {
-	  //               alert('Something wrong: ' + error.statusText);
-	  //               console.log(error);
-	  //           }
-			// });
+	/*---------- конец выбора по чекбоксам в фильтре ------------*/
 });
-
-// var $checkVal = $(elem).val();
-// var $checkName = $(elem).attr('name');
-// var $checkId = $(elem).attr('id');
-// var $checkFilterId = $checkId.slice($checkId.indexOf('_') + 1);
 

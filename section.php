@@ -65,7 +65,7 @@
                                 </article>
                             </fieldset>
                         </form>
-                        <form class="filterForm" id="filter-manufacturer" enctype="multipart/form-data" action="input.php" method="get">
+                        <form class="filterForm" id="filter-manufacturer" enctype="multipart/form-data" action="input.php" method="post">
                             <fieldset class="filter-field filter-field_manufacturer">
                                 <legend class="fltr-legend fltr-legend_manufacturer">Производитель</legend>
                                 <article class="filter-block fltr-manufacturer">
