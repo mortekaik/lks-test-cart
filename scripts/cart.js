@@ -67,7 +67,8 @@ $(document).ready(function () {
         var prodId = $(this).parent().parent().find('#page-cart-spin').text();
         cart_processor({'post': 'product_up', 'productid': prodId});
     });
-    $('.news').on('click', 'li.cart-list-item a', function(e) {
+    
+    $('.news').on('click', 'li.cart-list-item > a:first-child', function(e) {
         e.preventDefault();
         modal('open');
     });
