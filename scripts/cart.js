@@ -67,6 +67,10 @@ $(document).ready(function () {
         var prodId = $(this).parent().parent().find('#page-cart-spin').text();
         cart_processor({'post': 'product_up', 'productid': prodId});
     });
+    $('.news').on('click', 'li.cart-list-item a', function(e) {
+        e.preventDefault();
+        modal('open');
+    });
 
     $('body').on('click', '.delete_all_btn', function () { // удаляем все товары из корзины и из корзины, которая на странице
         var $btnAdded = $('.deals > .product').find('span.btn-added');

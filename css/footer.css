@@ -205,6 +205,9 @@ body {
     padding: 10px;
     /*border-bottom: 1px solid #c5c5c5;*/
 }
+.filter-block ul li.inv {
+    display: none;
+}
 
 /* стили для инпутов и ползунка цены */
 
@@ -527,7 +530,7 @@ body {
     float: left;
     width: 300px;
     margin-top: 10px;
-    min-height: 250px;
+    min-height: 150px;
     border: 1px solid red;
 }
 

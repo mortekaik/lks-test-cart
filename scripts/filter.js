@@ -120,5 +120,24 @@ $(document).ready(function () {
 		});
 	});
 	/*---------- конец выбора по чекбоксам в фильтре ------------*/
+
+	/*---------- отображение всех позиций в фильтре ------------*/
+	$('.filter-block ul>li a').each(function(i, elem) {
+		var $listItemValue = $(this).attr('class');
+		var $listId = $listItemValue.slice($listItemValue.indexOf('_') + 1);
+		if ($(this).hasClass('show-all_' + $listId)) {
+			$(this).on('click', function(e) { 
+				e.preventDefault();	
+				showAllValues($listId);
+			});
+		}
+	});
+	function showAllValues(id) {
+        $('.fltr-' + id + ' li.hidden').toggleClass('inv');
+        $('.show-all_' + id).text(function (i, text) {
+            return $.trim(text) == "Показать все" ? "Свернуть" : "Показать все";
+        });
+    }
+    /*---------- end of отображение всех позиций в фильтре ------------*/ 
 });
 
