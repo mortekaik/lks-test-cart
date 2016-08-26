@@ -49,7 +49,7 @@
                     </div>
                     <div class="slider"></div>
                     <div class="filter-aside">
-                        <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="section.php" method="get">
+                        <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="input.php" method="post">
                             <fieldset class="filter-field filter-field_price">
                                 <legend class="fltr-legend fltr-legend_price">Цена</legend>
                                 <article class="filter-block fltr-price">
@@ -59,7 +59,7 @@
                                         <label for="price-to">до:</label>
                                         <input type="text" name="to" id="price-to" value="2">
                                         <input type="hidden" id="price-hidden" value="100" name="price-range">
-                                        <input type="submit" class="button price_btn" name="price-submit" value="Submit">
+                                        <!-- <input type="submit" class="button price_btn" name="price-submit" value="Submit"> -->
                                     </p>
                                     <div class="price-slider"></div>
                                 </article>

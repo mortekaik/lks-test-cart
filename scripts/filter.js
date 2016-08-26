@@ -1,19 +1,40 @@
 $(document).ready(function () {
 	/* ------------ слайдер цены ----- */
+	var $priceUrl = $('#filter-price').attr('action');
 	$('.price-slider').slider({
 		range: true,
 		min: 0,
 		max: 1000,
 		values: [100, 500],
-		slide: function( event, ui ) {
+		slide: function(event, ui) {
 			$('#price-from').val(ui.values[0]);
 			$('#price-to').val(ui.values[1]);
+		},
+		stop: function() {
+			var $minPrice = $('#price-from').val();
+			console.log($minPrice);
+			var $maxPrice = $('#price-to').val();
+			console.log($maxPrice);
+			$.ajax({
+				type: 'POST',
+				url: $priceUrl,
+				dataType: 'json',
+				cache: false,
+				data: {
+					post: 'slider_price',
+					min_price: $minPrice,
+					max_price: $maxPrice
+				},
+				success: function(data) {
+					console.log(data);
+				}
+			});
 		}
 	});
 	
 	$('#price-from').val($(".price-slider").slider('values', 0));
 	$('#price-to').val($(".price-slider").slider('values', 1));
-	
+
 	// Изменение местоположения ползунка при вводе данных в первый элемент input
 	$("input#price-from").change(function() {
 	  	var value1 = $('input#price-from').val();
@@ -23,6 +44,21 @@ $(document).ready(function () {
 	  		$("input#price-from").val(value1);
 	  	}
 	  	$(".price-slider").slider("values", 0, value1);
+	  	console.log(value1 + ', ' + value2);
+	  	$.ajax({
+	        type: 'POST',
+	        url: $priceUrl,
+	        dataType: 'json',
+	        data: {
+	        	post: 'input-minPrice',
+	        	min_price: value1,
+	        	max_price: value2
+	        },
+	        cache: false,
+	        success: function(data){
+	            console.log(data);
+	        }
+	    });
 	});
 		      
 	// Изменение местоположения ползунка при вводе данных в второй элемент input 	
@@ -34,6 +70,21 @@ $(document).ready(function () {
 	  		$("input#price-to").val(value2);
 	  	}
 		$(".price-slider").slider("values", 1, value2);
+	  	console.log(value1 + ', ' + value2);
+	  	$.ajax({
+	        type: 'POST',
+	        url: $priceUrl,
+	        dataType: 'json',
+	        data: {
+	        	post: 'input-maxPrice',
+	        	min_price: value1,
+	        	max_price: value2
+	        },
+	        cache: false,
+	        success: function(data){
+	            console.log(data);
+	        }
+	    });
 	});
 
 	// фильтрация ввода в поля
