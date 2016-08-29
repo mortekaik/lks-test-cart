@@ -1,6 +1,17 @@
 $(document).ready(function () {
 	/* ------------ слайдер цены ----- */
 	var $priceUrl = $('#filter-price').attr('action');
+	
+	$checkIdArr = $('input:checkbox:checked').map(function() {
+		var checkboxId = $(this).attr('id');
+		var $checkFilterId = checkboxId.slice(checkboxId.indexOf('_') + 1);
+		return $checkFilterId;
+	}).get();
+	$checkValArr = $('input:checkbox:checked').map(function() {
+		var $checkboxVal = $(this).val();
+		return $checkboxVal;
+	}).get();
+
 	$('.price-slider').slider({
 		range: true,
 		min: 0,
@@ -15,6 +26,10 @@ $(document).ready(function () {
 			console.log($minPrice);
 			var $maxPrice = $('#price-to').val();
 			console.log($maxPrice);
+			
+			console.log($checkIdArr);
+			console.log($checkValArr);
+
 			$.ajax({
 				type: 'POST',
 				url: $priceUrl,
@@ -22,6 +37,8 @@ $(document).ready(function () {
 				cache: false,
 				data: {
 					post: 'slider_price',
+					checkboxValue: $checkValArr,
+					checkboxId: $checkIdArr,
 					min_price: $minPrice,
 					max_price: $maxPrice
 				},
@@ -45,12 +62,18 @@ $(document).ready(function () {
 	  	}
 	  	$(".price-slider").slider("values", 0, value1);
 	  	console.log(value1 + ', ' + value2);
+
+	  	console.log($checkIdArr);
+		console.log($checkValArr);
+
 	  	$.ajax({
 	        type: 'POST',
 	        url: $priceUrl,
 	        dataType: 'json',
 	        data: {
 	        	post: 'input-minPrice',
+	        	checkboxValue: $checkValArr,
+				checkboxId: $checkIdArr,
 	        	min_price: value1,
 	        	max_price: value2
 	        },
@@ -71,12 +94,18 @@ $(document).ready(function () {
 	  	}
 		$(".price-slider").slider("values", 1, value2);
 	  	console.log(value1 + ', ' + value2);
+
+	  	console.log($checkIdArr);
+		console.log($checkValArr);
+
 	  	$.ajax({
 	        type: 'POST',
 	        url: $priceUrl,
 	        dataType: 'json',
 	        data: {
 	        	post: 'input-maxPrice',
+	        	checkboxValue: $checkValArr,
+				checkboxId: $checkIdArr,
 	        	min_price: value1,
 	        	max_price: value2
 	        },
@@ -134,7 +163,8 @@ $(document).ready(function () {
 	/*----------- end of jqueryUI autocomplete ----------*/
 
 	/*---------- выбор по чекбоксам в фильтре ------------*/
-	var $checkIdArr = [], $checkValArr = [];
+	var $checkUrl = $("form input:checkbox").closest('form').attr('action');
+	
 	$('.filterForm').on('change', 'input:checkbox', function() {
 		$checkIdArr = $('input:checkbox:checked').map(function() {
 			var checkboxId = $(this).attr('id');
@@ -148,7 +178,12 @@ $(document).ready(function () {
 
 		console.log($checkIdArr);
 		console.log($checkValArr);
-		var $checkUrl = $(this).closest('form').attr('action');
+
+		var $minPrice = $('#price-from').val();
+		console.log($minPrice);
+		var $maxPrice = $('#price-to').val();
+		console.log($maxPrice);
+
 		$.ajax({
 			type: 'POST',
 			url: $checkUrl,
@@ -156,7 +191,9 @@ $(document).ready(function () {
 			data: {
 				post: 'check_filter',
 				checkboxValue: $checkValArr,
-				checkboxId: $checkIdArr
+				checkboxId: $checkIdArr,
+				min_price: $minPrice,
+				max_price: $maxPrice
 			},
 			success: function (data) {
             	if (data !== '') {
