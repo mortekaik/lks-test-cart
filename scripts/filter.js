@@ -125,7 +125,7 @@ $(document).ready(function () {
 			key = event.keyCode;
 		else if(event.which) 
 			key = event.which;
-		if(key == null || key == 0 || key == 8 || key == 13 || key == 9 || key == 46 || key == 37 || key == 39 ) 
+		if(key === null || key === 0 || key == 8 || key == 13 || key == 9 || key == 46 || key == 37 || key == 39 ) 
 			return true;
 		keyChar=String.fromCharCode(key);
 		if(!/\d/.test(keyChar))	
@@ -209,23 +209,33 @@ $(document).ready(function () {
 	});
 	/*---------- конец выбора по чекбоксам в фильтре ------------*/
 
+	/*---------- разворачивание пунктов меню категорий в фильтре ------------*/ 
+		//var $fltrBlock = $(".filter-block");
+		$('.filter-block ul').hide();
+		$('.filter-block ul > li:odd').css('background-color', '#efefef');
+		$('.filter-block').on('click', 'h3.fltr-heading', function() {
+			$(this).next().slideToggle();
+		});
+
+	/*---------- End of разворачивание пунктов меню категорий в фильтре ------------*/
+
 	/*---------- отображение всех позиций в фильтре ------------*/
-	$('.filter-block ul>li a').each(function(i, elem) {
-		var $listItemValue = $(this).attr('class');
-		var $listId = $listItemValue.slice($listItemValue.indexOf('_') + 1);
-		if ($(this).hasClass('show-all_' + $listId)) {
-			$(this).on('click', function(e) { 
-				e.preventDefault();	
-				showAllValues($listId);
-			});
-		}
-	});
-	function showAllValues(id) {
-        $('.fltr-' + id + ' li.hidden').toggleClass('inv');
-        $('.show-all_' + id).text(function (i, text) {
-            return $.trim(text) == "Показать все" ? "Свернуть" : "Показать все";
-        });
-    }
+	// $('.filter-block ul>li a').each(function(i, elem) {
+	// 	var $listItemValue = $(this).attr('class');
+	// 	var $listId = $listItemValue.slice($listItemValue.indexOf('_') + 1);
+	// 	if ($(this).hasClass('show-all_' + $listId)) {
+	// 		$(this).on('click', function(e) { 
+	// 			e.preventDefault();	
+	// 			showAllValues($listId);
+	// 		});
+	// 	}
+	// });
+	// function showAllValues(id) {
+ //        $('.fltr-' + id + ' li').toggleClass('inv');
+ //        $('.show-all_' + id).text(function (i, text) {
+ //            return $.trim(text) == "Показать все" ? "Свернуть" : "Показать все";
+ //        });
+ //    }
     /*---------- end of отображение всех позиций в фильтре ------------*/ 
 });
 

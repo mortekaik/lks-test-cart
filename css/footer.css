@@ -202,12 +202,51 @@ body {
 }
 .filter-block {
     display: block;
-    padding: 10px;
+    /*padding: 10px;*/
     /*border-bottom: 1px solid #c5c5c5;*/
+    width: 250px;
+    margin: 10px auto;
+    background: #fff;
+    border: 1px solid #d1d1d1;
+    padding: 4px;
+    font-family: Helvetica, Arial, sans-serif;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 0px 0px 10px #ddd;
+    -webkit-box-shadow: 0px 0px 10px #ddd;
 }
-.filter-block ul li.inv {
-    display: none;
-}
+
+.fltr-heading {
+    border-radius: 5px;
+    padding: 5px;
+    background: linear-gradient(center top, #efefef 0%, #e0e0e0 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #efefef),color-stop(1, #e0e0e0));
+    border: 1px solid #d1d1d1;
+    /*color: #c1c1c1;*/
+    color: #f00;
+    font-size: 13px;
+    font-weight: normal;
+    text-shadow: 1px 1px 0px #fff;
+    margin: 0;
+    cursor: pointer;
+    }
+.fltr-heading span {
+    float: right;
+    /*cursor: pointer;*/
+    }
+.fltr-heading span:hover {
+    text-shadow: 0px 0px 3px #a1eeff;
+    }
+.filter-block ul {
+    padding: 5px;
+    overflow: hidden;
+    margin:0;
+    }
+.filter-block ul li {
+    font-size: 13px;
+    /*color: #a1a1a1;*/
+    padding: 5px;
+    }
 
 /* стили для инпутов и ползунка цены */
 
@@ -224,7 +263,8 @@ body {
     border-radius: 5px;
 }
 
-.fltr-price input.price_btn {
+/* --- кнопка отправки значений слайдера цены --- */
+/*.fltr-price input.price_btn {
     display: inline-block;
     position: relative;
     top: 0;
@@ -236,8 +276,10 @@ body {
     background: #346F7D;
     color: #fff;
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-}
+}*/
 
+/* Jquery UI slider 
+----------------------*/
 .ui-slider {
     position: relative;
     text-align: left;
@@ -425,9 +467,9 @@ body {
     display: block;
 }
 /* ссылки на товары в модальном окне*/
-#modal_cart li {
+/*#modal_cart li {
     display: block;
-}
+}*/
 /* Кнoпкa Х зaкрыть */
 #modal_cart #modal_cart_close {
     width: 21px;
@@ -528,6 +570,7 @@ body {
 
 .news {
     float: left;
+    display: block;
     width: 300px;
     margin-top: 10px;
     min-height: 150px;

@@ -66,72 +66,68 @@
                             </fieldset>
                         </form>
                         <form class="filterForm" id="filter-producer" enctype="multipart/form-data" action="input.php" method="post">
-                            <fieldset class="filter-field filter-field_producer">
-                                <legend class="fltr-legend fltr-legend_producer">Производитель</legend>
-                                <article class="filter-block fltr-producer">
-                                    <ul class="list-producer">
-                                        <li class="list-item_producer"><span>
-                                        <input title="A&D" id="producer_1" type="checkbox" name="producer" value="1">
-                                        <label for="producer_1">A&D</label>
-                                        </span></li>
-                                        <li class="list-item_producer"><span>
-                                        <input title="ACOM" id="producer_2" type="checkbox" name="producer" value="2">
-                                        <label for="producer_2">ACOM</label>
-                                        </span></li>
-                                        <li class="list-item_producer"><span>
-                                        <input title="Vesta" id="producer_3" type="checkbox" name="producer" value="3">
-                                        <label for="producer_3">Vesta</label>
-                                        </span></li>
-                                        <li class="list-item_producer hidden inv"><span>
-                                        <input title="Sartorius" id="producer_4" type="checkbox" name="producer" value="4">
-                                        <label for="producer_4">Sartorius</label>
-                                        </span></li>
-                                        <li class="list-item_producer hidden inv"><span>
-                                        <input title="Gosmetr" id="producer_5" type="checkbox" name="producer" value="5">
-                                        <label for="producer_5">Gosmetr</label>
-                                        </span></li>
-                                        <li><a href="#" class="show-all_producer">Показать все</a></li>
-                                    </ul>
-                                </article>
-                            </fieldset>
+                            <article class="filter-block fltr-producer">
+                                <h3 class="fltr-heading fltr-heading_producer">Производитель<span class="fltr-heading_expand">+</span></h3>
+                                <ul class="list-producer">
+                                    <li class="list-item_producer"><span>
+                                    <input title="A&D" id="producer_1" type="checkbox" name="producer" value="1">
+                                    <label for="producer_1">A&D</label>
+                                    </span></li>
+                                    <li class="list-item_producer"><span>
+                                    <input title="ACOM" id="producer_2" type="checkbox" name="producer" value="2">
+                                    <label for="producer_2">ACOM</label>
+                                    </span></li>
+                                    <li class="list-item_producer"><span>
+                                    <input title="Vesta" id="producer_3" type="checkbox" name="producer" value="3">
+                                    <label for="producer_3">Vesta</label>
+                                    </span></li>
+                                    <li class="list-item_producer"><span>
+                                    <input title="Sartorius" id="producer_4" type="checkbox" name="producer" value="4">
+                                    <label for="producer_4">Sartorius</label>
+                                    </span></li>
+                                    <li class="list-item_producer"><span>
+                                    <input title="Gosmetr" id="producer_5" type="checkbox" name="producer" value="5">
+                                    <label for="producer_5">Gosmetr</label>
+                                    </span></li>
+                                    <!-- <li><a href="#" class="show-all_producer">Показать все</a></li> -->
+                                </ul>
+                            </article>
                         </form>
                         <form class="filterForm" id="filter-scalestype" enctype="multipart/form-data" action="input.php" method="post">
-                            <fieldset class="filter-field filter-field_scalestype">
-                                <legend class="fltr-legend fltr-legend_scalestype">Тип весов</legend>
-                                <article class="filter-block fltr-scalestype">
-                                    <ul class="list-scalestype">
-                                        <li class="list-item_scalestype"><span>
-                                        <input title="Ultramicroscales" id="scalestype_1" type="checkbox" name="scalestype" value="1">
-                                        <label for="scalestype_1">Ультрамикровесы</label>
-                                        </span></li>
-                                        <li class="list-item_scalestype"><span>
-                                        <input title="Microscales" id="scalestype_2" type="checkbox" name="scalestype" value="2">
-                                        <label for="scalestype_2">Микровесы</label>
-                                        </span></li>
-                                        <li class="list-item_scalestype"><span>
-                                        <input title="Analitics-scales" id="scalestype_3" type="checkbox" name="scalestype" value="3">
-                                        <label for="scalestype_3">Аналитические</label>
-                                        </span></li>
-                                        <li class="list-item_scalestype hidden inv"><span>
-                                        <input title="Laboratory-scales" id="scalestype_4" type="checkbox" name="scalestype" value="4">
-                                        <label for="scalestype_4">Лабораторные весы</label>
-                                        </span></li>
-                                        <li class="list-item_scalestype hidden inv"><span>
-                                        <input title="Portion scales" id="scalestype_5" type="checkbox" name="scalestype" value="5">
-                                        <label for="scalestype_5">Порционные весы</label>
-                                        </span></li>
-                                        <li class="list-item_scalestype hidden inv"><span>
-                                        <input title="Counting scales" id="scalestype_6" type="checkbox" name="scalestype" value="6">
-                                        <label for="scalestype_6">Счетные весы</label>
-                                        </span></li>
-                                        <li class="list-item_scalestype hidden inv"><span>
-                                        <input title="Platform scales" id="scalestype_7" type="checkbox" name="scalestype" value="7">
-                                        <label for="scalestype_7">Платформенные весы</label>
-                                        </span></li>
-                                        <li><a href="#" class="show-all_scalestype">Показать все</a></li>
-                                    </ul>
-                                </article>
-                            </fieldset>
+                            <article class="filter-block fltr-scalestype">
+                                <h3 class="fltr-heading fltr-heading_scalestype">Тип весов<span class="fltr-heading_expand">+</span></h3>
+                                <ul class="list-scalestype">
+                                    <li class="list-item_scalestype"><span>
+                                    <input title="Ultramicroscales" id="scalestype_1" type="checkbox" name="scalestype" value="1">
+                                    <label for="scalestype_1">Ультрамикровесы</label>
+                                    </span></li>
+                                    <li class="list-item_scalestype"><span>
+                                    <input title="Microscales" id="scalestype_2" type="checkbox" name="scalestype" value="2">
+                                    <label for="scalestype_2">Микровесы</label>
+                                    </span></li>
+                                    <li class="list-item_scalestype"><span>
+                                    <input title="Analitics-scales" id="scalestype_3" type="checkbox" name="scalestype" value="3">
+                                    <label for="scalestype_3">Аналитические</label>
+                                    </span></li>
+                                    <li class="list-item_scalestype"><span>
+                                    <input title="Laboratory-scales" id="scalestype_4" type="checkbox" name="scalestype" value="4">
+                                    <label for="scalestype_4">Лабораторные весы</label>
+                                    </span></li>
+                                    <li class="list-item_scalestype"><span>
+                                    <input title="Portion scales" id="scalestype_5" type="checkbox" name="scalestype" value="5">
+                                    <label for="scalestype_5">Порционные весы</label>
+                                    </span></li>
+                                    <li class="list-item_scalestype"><span>
+                                    <input title="Counting scales" id="scalestype_6" type="checkbox" name="scalestype" value="6">
+                                    <label for="scalestype_6">Счетные весы</label>
+                                    </span></li>
+                                    <li class="list-item_scalestype"><span>
+                                    <input title="Platform scales" id="scalestype_7" type="checkbox" name="scalestype" value="7">
+                                    <label for="scalestype_7">Платформенные весы</label>
+                                    </span></li>
+                                    <!-- <li><a href="#" class="show-all_scalestype">Показать все</a></li> -->
+                                </ul>
+                            </article>
                         </form>
                     </div>
                     <div class="deals">
