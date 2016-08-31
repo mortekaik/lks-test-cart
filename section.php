@@ -81,15 +81,15 @@
                                     <input title="Vesta" id="producer_3" type="checkbox" name="producer" value="3">
                                     <label for="producer_3">Vesta</label>
                                     </span></li>
-                                    <li class="list-item_producer"><span>
+                                    <li class="list-item_producer hidden inv"><span>
                                     <input title="Sartorius" id="producer_4" type="checkbox" name="producer" value="4">
                                     <label for="producer_4">Sartorius</label>
                                     </span></li>
-                                    <li class="list-item_producer"><span>
+                                    <li class="list-item_producer hidden inv"><span>
                                     <input title="Gosmetr" id="producer_5" type="checkbox" name="producer" value="5">
                                     <label for="producer_5">Gosmetr</label>
                                     </span></li>
-                                    <!-- <li><a href="#" class="show-all_producer">Показать все</a></li> -->
+                                    <li><a href="#" class="show-all_producer">Показать все</a></li>
                                 </ul>
                             </article>
                         </form>
@@ -109,23 +109,23 @@
                                     <input title="Analitics-scales" id="scalestype_3" type="checkbox" name="scalestype" value="3">
                                     <label for="scalestype_3">Аналитические</label>
                                     </span></li>
-                                    <li class="list-item_scalestype"><span>
+                                    <li class="list-item_scalestype hidden inv"><span>
                                     <input title="Laboratory-scales" id="scalestype_4" type="checkbox" name="scalestype" value="4">
                                     <label for="scalestype_4">Лабораторные весы</label>
                                     </span></li>
-                                    <li class="list-item_scalestype"><span>
+                                    <li class="list-item_scalestype hidden inv"><span>
                                     <input title="Portion scales" id="scalestype_5" type="checkbox" name="scalestype" value="5">
                                     <label for="scalestype_5">Порционные весы</label>
                                     </span></li>
-                                    <li class="list-item_scalestype"><span>
+                                    <li class="list-item_scalestype hidden inv"><span>
                                     <input title="Counting scales" id="scalestype_6" type="checkbox" name="scalestype" value="6">
                                     <label for="scalestype_6">Счетные весы</label>
                                     </span></li>
-                                    <li class="list-item_scalestype"><span>
+                                    <li class="list-item_scalestype hidden inv"><span>
                                     <input title="Platform scales" id="scalestype_7" type="checkbox" name="scalestype" value="7">
                                     <label for="scalestype_7">Платформенные весы</label>
                                     </span></li>
-                                    <!-- <li><a href="#" class="show-all_scalestype">Показать все</a></li> -->
+                                    <li><a href="#" class="show-all_scalestype">Показать все</a></li>
                                 </ul>
                             </article>
                         </form>

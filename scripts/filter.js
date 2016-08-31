@@ -211,7 +211,7 @@ $(document).ready(function () {
 
 	/*---------- разворачивание пунктов меню категорий в фильтре ------------*/ 
 		//var $fltrBlock = $(".filter-block");
-		$('.filter-block ul').hide();
+		// $('.filter-block ul').hide();
 		$('.filter-block ul > li:odd').css('background-color', '#efefef');
 		$('.filter-block').on('click', 'h3.fltr-heading', function() {
 			$(this).next().slideToggle();
@@ -219,23 +219,23 @@ $(document).ready(function () {
 
 	/*---------- End of разворачивание пунктов меню категорий в фильтре ------------*/
 
-	/*---------- отображение всех позиций в фильтре ------------*/
-	// $('.filter-block ul>li a').each(function(i, elem) {
-	// 	var $listItemValue = $(this).attr('class');
-	// 	var $listId = $listItemValue.slice($listItemValue.indexOf('_') + 1);
-	// 	if ($(this).hasClass('show-all_' + $listId)) {
-	// 		$(this).on('click', function(e) { 
-	// 			e.preventDefault();	
-	// 			showAllValues($listId);
-	// 		});
-	// 	}
-	// });
-	// function showAllValues(id) {
- //        $('.fltr-' + id + ' li').toggleClass('inv');
- //        $('.show-all_' + id).text(function (i, text) {
- //            return $.trim(text) == "Показать все" ? "Свернуть" : "Показать все";
- //        });
- //    }
-    /*---------- end of отображение всех позиций в фильтре ------------*/ 
+	/*---------- отображение всех позиций в каждом пункте меню категорий в фильтре ------------*/
+	$('.filter-block ul > li a').each(function(i, elem) {
+		var $listItemValue = $(this).attr('class');
+		var $listId = $listItemValue.slice($listItemValue.indexOf('_') + 1);
+		if ($(this).hasClass('show-all_' + $listId)) {
+			$(this).on('click', function(e) { 
+				e.preventDefault();	
+				showAllValues($listId);
+			});
+		}
+	});
+	function showAllValues(id) {
+        $('.fltr-' + id + ' li.hidden').slideToggle(300).toggleClass('inv');
+        $('.show-all_' + id).text(function (i, text) {
+            return $.trim(text) == "Показать все" ? "Свернуть" : "Показать все";
+        });
+    }
+    /*---------- end of отображение всех позиций в каждом пункте меню категорий в фильтре ------------*/ 
 });
 
