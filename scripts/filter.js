@@ -211,7 +211,7 @@ $(document).ready(function () {
 
 	/*---------- разворачивание пунктов меню категорий в фильтре ------------*/ 
 		//var $fltrBlock = $(".filter-block");
-		// $('.filter-block ul').hide();
+		// $('.filter-block h3').next().hide();
 		$('.filter-block ul > li:odd').css('background-color', '#efefef');
 		$('.filter-block').on('click', 'h3.fltr-heading', function() {
 			$(this).next().slideToggle();

@@ -191,7 +191,8 @@ body {
     float: left;
     position: relative;
     width: 300px;
-    min-height: 350px;
+    height: 100%;
+    /*min-height: 350px;*/
     border: 1px solid red;
     margin-top: 10px;
     padding-top: 10px;
@@ -251,8 +252,8 @@ body {
 
 /* стили для инпутов и ползунка цены */
 
-.fltr-price input {
-    margin-top: 0;
+.fltr-body_price {
+    margin-top: 10px;
 }
 .fltr-price input {
     width: 40px;
@@ -284,6 +285,7 @@ body {
 .ui-slider {
     position: relative;
     text-align: left;
+    margin: 5px;
     margin-top: 10px;
 }
 
@@ -574,6 +576,7 @@ body {
     display: block;
     width: 300px;
     margin-top: 10px;
+    margin-bottom: 5px;
     min-height: 150px;
     border: 1px solid red;
 }

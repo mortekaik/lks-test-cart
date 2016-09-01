@@ -19,6 +19,7 @@
     <script type="text/javascript" src="scripts/1.js"></script>
     <script type="text/javascript" src="scripts/cart.js"></script>
     <script type="text/javascript" src="scripts/filter.js"></script>
+    <!-- <script type="text/javascript" src="scripts/carousel.js"></script> -->
     <!--[if lt IE 9]>
       <script src="script/html5.js"></script>	 
      <![endif]-->
@@ -50,20 +51,19 @@
                     <div class="slider"></div>
                     <div class="filter-aside">
                         <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="input.php" method="post">
-                            <fieldset class="filter-field filter-field_price">
-                                <legend class="fltr-legend fltr-legend_price">Цена</legend>
-                                <article class="filter-block fltr-price">
-                                    <p>
-                                        <label for="price-from">От:</label>
-                                        <input type="text" name="from" id="price-from" value="1">
-                                        <label for="price-to">до:</label>
-                                        <input type="text" name="to" id="price-to" value="2">
-                                        <input type="hidden" id="price-hidden" value="100" name="price-range">
-                                        <!-- <input type="submit" class="button price_btn" name="price-submit" value="Submit"> -->
-                                    </p>
+                            <article class="filter-block fltr-price">
+                                <h3 class="fltr-heading fltr-heading_price">Цена<span class="fltr-heading_expand">+</span></h3>
+                                <div class="fltr-body_price">
+                                    <label for="price-from">От:</label>
+                                    <input type="text" name="from" id="price-from" value="1">
+                                    <label for="price-to">до:</label>
+                                    <input type="text" name="to" id="price-to" value="2">
+                                    <input type="hidden" id="price-hidden" value="100" name="price-range">
+                                    <!-- <input type="submit" class="button price_btn" name="price-submit" value="Submit"> -->
                                     <div class="price-slider"></div>
-                                </article>
-                            </fieldset>
+                                </div>
+                                <!-- <div class="price-slider"></div> -->
+                            </article>
                         </form>
                         <form class="filterForm" id="filter-producer" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-producer">
@@ -129,6 +129,7 @@
                                 </ul>
                             </article>
                         </form>
+                        <div class="news"> <?php echo $q['cart']; ?> </div>
                     </div>
                     <div class="deals">
                         <div class="product">
@@ -153,7 +154,6 @@
                         </div>
                     </div>
                     <div class="vendors"></div>
-                    <div class="news"><?php echo $q['cart']; ?></div>
                     <div class="vendors" id="del_all">
                         <button class="modal_cart_btn delete_all_btn">Обнулить корзину</button>
                     </div>
