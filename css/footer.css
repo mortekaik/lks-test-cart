@@ -469,10 +469,6 @@ body {
 #modal_cart li {
     display: block;
 }
-/* ссылки на товары в модальном окне*/
-/*#modal_cart li {
-    display: block;
-}*/
 /* Кнoпкa Х зaкрыть */
 #modal_cart #modal_cart_close {
     width: 21px;
@@ -581,7 +577,7 @@ body {
     border: 1px solid red;
 }
 
-.slider {
+.promo-slider {
     float: right;
     width: 650px;
     min-height: 250px;

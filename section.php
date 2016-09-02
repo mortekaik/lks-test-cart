@@ -48,7 +48,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="slider"></div>
+                    <div class="promo-slider"></div>
                     <div class="filter-aside">
                         <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-price">
@@ -62,7 +62,6 @@
                                     <!-- <input type="submit" class="button price_btn" name="price-submit" value="Submit"> -->
                                     <div class="price-slider"></div>
                                 </div>
-                                <!-- <div class="price-slider"></div> -->
                             </article>
                         </form>
                         <form class="filterForm" id="filter-producer" enctype="multipart/form-data" action="input.php" method="post">
@@ -153,7 +152,21 @@
                             <span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
                         </div>
                     </div>
-                    <div class="vendors"></div>
+                    <div class="slider-wrap">
+                        <div class="slider">
+                            <div class="slider-header">
+                                <h3>Brands</h3>
+                            </div>
+                            <div class="slider-controls"></div>
+                            <div class="slider-content">
+                            
+                                <div class="owl-controls">
+                                    <div class="owl-nav"></div>
+                                    <div class="owl-dots"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="vendors" id="del_all">
                         <button class="modal_cart_btn delete_all_btn">Обнулить корзину</button>
                     </div>
