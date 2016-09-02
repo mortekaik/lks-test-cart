@@ -19,7 +19,7 @@
     <script type="text/javascript" src="scripts/1.js"></script>
     <script type="text/javascript" src="scripts/cart.js"></script>
     <script type="text/javascript" src="scripts/filter.js"></script>
-    <!-- <script type="text/javascript" src="scripts/carousel.js"></script> -->
+    <script type="text/javascript" src="scripts/carousel.js"></script>
     <!--[if lt IE 9]>
       <script src="script/html5.js"></script>	 
      <![endif]-->
@@ -153,19 +153,53 @@
                         </div>
                     </div>
                     <div class="slider-wrap">
-                        <div class="slider">
-                            <div class="slider-header">
-                                <h3>Brands</h3>
-                            </div>
-                            <div class="slider-controls"></div>
-                            <div class="slider-content">
-                            
-                                <div class="owl-controls">
-                                    <div class="owl-nav"></div>
-                                    <div class="owl-dots"></div>
-                                </div>
-                            </div>
+                        <div class="carousel-header">
+                            <h3>Brands</h3>
                         </div>
+                        <div class="carousel shadow">
+                            <div class="carousel-button-left"><a href="#"></a></div>
+                            <div class="carousel-button-right"><a href="#"></a></div>
+                            <div class="carousel-wrapper"> 
+                               <ul class="carousel-items"> 
+                                  <li class="carousel-block">
+                                    <a class="q-item-info" href="#">
+                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                        <div class="q-item-text"><span>Весы A&D</span></div>
+                                    </a>
+                                  </li>
+                                  <li class="carousel-block">
+                                    <a class="q-item-info" href="#">
+                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                        <div class="q-item-text"><span>Весы A&D</span></div>
+                                    </a>
+                                  </li>
+                                  <li class="carousel-block">
+                                    <a class="q-item-info" href="#">
+                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                        <div class="q-item-text"><span>Весы A&D</span></div>
+                                    </a>
+                                  </li>
+                                  <li class="carousel-block">
+                                    <a class="q-item-info" href="#">
+                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                        <div class="q-item-text"><span>Весы A&D</span></div>
+                                    </a>
+                                  </li>
+                                  <li class="carousel-block">
+                                    <a class="q-item-info" href="#">
+                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                        <div class="q-item-text"><span>Весы A&D</span></div>
+                                    </a>
+                                  </li>
+                                  <li class="carousel-block">
+                                    <a class="q-item-info" href="#">
+                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                        <div class="q-item-text"><span>Весы A&D</span></div>
+                                    </a>
+                                  </li>
+                               </ul>
+                            </div>
+                       </div>
                     </div>
                     <div class="vendors" id="del_all">
                         <button class="modal_cart_btn delete_all_btn">Обнулить корзину</button>
