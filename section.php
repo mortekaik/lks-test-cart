@@ -20,6 +20,7 @@
     <script type="text/javascript" src="scripts/cart.js"></script>
     <script type="text/javascript" src="scripts/filter.js"></script>
     <script type="text/javascript" src="scripts/carousel.js"></script>
+    <script type="text/javascript" src="scripts/promo-slider.js"></script>
     <!--[if lt IE 9]>
       <script src="script/html5.js"></script>	 
      <![endif]-->
@@ -48,7 +49,14 @@
                             </form>
                         </div>
                     </div>
-                    <div class="promo-slider"></div>
+                    <div class="promo-slider">
+                        <div id="slider">
+                            <div class="slide"><img src="img/hw-slider/001.jpg" width="650" height="250"></div>
+                            <div class="slide"><img src="img/hw-slider/002.jpg" width="650" height="250"></div>
+                            <div class="slide"><img src="img/hw-slider/003.jpg" width="650" height="250"></div>
+                            <div class="slide"><img src="img/hw-slider/004.jpg" width="650" height="250"></div>
+                        </div>
+                    </div>
                     <div class="filter-aside">
                         <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-price">
@@ -160,8 +168,8 @@
                             <div class="carousel-button-left"><a href="#"></a></div>
                             <div class="carousel-button-right"><a href="#"></a></div>
                             <div class="carousel-wrapper"> 
-                               <ul class="carousel-items"> 
-                                  <li class="carousel-block">
+                               <ul class="carousel-items clearfix"> 
+                                <li class="carousel-block">
                                     <a class="q-item-info" href="#">
                                         <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
                                         <div class="q-item-text"><span>Весы A&D</span></div>
