@@ -14,12 +14,12 @@ $(document).on('click', ".carousel-button-left", function() {
 function left_carusel(carusel) {
     var block_width = $(carusel).find('.carousel-block').outerWidth();
     $(carusel).find(".carousel-items .carousel-block")
-    		  .eq(1).clone().prependTo($(carusel)
+    		  .eq(-1).clone().prependTo($(carusel)
     		  .find(".carousel-items"));
     $(carusel).find(".carousel-items").css({ "left": "-" + block_width + "px" });
     $(carusel).find(".carousel-items").animate({ left: "0px" }, 300) 
     $(carusel).find(".carousel-items .carousel-block")
-    		  .eq(i).remove();
+    		  .eq(-1).remove();
 }
 
 function right_carusel(carusel) {

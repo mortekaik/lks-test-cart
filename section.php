@@ -51,10 +51,10 @@
                     </div>
                     <div class="promo-slider">
                         <div id="slider">
-                            <div class="slide"><img src="img/hw-slider/001.jpg" width="650" height="250"></div>
-                            <div class="slide"><img src="img/hw-slider/002.jpg" width="650" height="250"></div>
-                            <div class="slide"><img src="img/hw-slider/003.jpg" width="650" height="250"></div>
-                            <div class="slide"><img src="img/hw-slider/004.jpg" width="650" height="250"></div>
+                            <div class="slide"><img src="img/slider/10574.jpg" width="650" height="250"></div>
+                            <div class="slide"><img src="img/slider/6586.jpg" width="650" height="250"></div>
+                            <div class="slide"><img src="img/slider/113.jpg" width="650" height="250"></div>
+                            <div class="slide"><img src="img/slider/113_1.jpg" width="650" height="250"></div>
                         </div>
                     </div>
                     <div class="filter-aside">
