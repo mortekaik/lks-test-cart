@@ -212,9 +212,9 @@ $(document).ready(function () {
 	/*---------- разворачивание пунктов меню категорий в фильтре ------------*/ 
 		//var $fltrBlock = $(".filter-block");
 		// $('.filter-block h3').next().hide();
-		$('.filter-block ul > li:odd').css('background-color', '#efefef');
 		$('.filter-block').on('click', 'h3.fltr-heading', function() {
 			$(this).next().slideToggle();
+			$(this).toggleClass('collapsed');
 		});
 
 	/*---------- End of разворачивание пунктов меню категорий в фильтре ------------*/
@@ -236,6 +236,59 @@ $(document).ready(function () {
             return $.trim(text) == "Показать все" ? "Свернуть" : "Показать все";
         });
     }
-    /*---------- end of отображение всех позиций в каждом пункте меню категорий в фильтре ------------*/ 
-});
+    /*---------- end of отображение всех позиций в каждом пункте меню категорий в фильтре ------------*/
+
+    /*---------- Подсказка к категориям фильтра ------------*/
+
+	$(document).on('click', '.info-tooltip_icon', function() {
+		if ( $(this).is('.active') ) return;
+		if ( !$(this).is('.mouseenter') ) {
+			$('.info-tooltip_icon').removeClass('active');
+			$('.info-tooltip_content').fadeOut();
+		}
+
+		var $this = $(this),
+			$content = $this.next('.info-tooltip_content'),
+			tooltipWidth = $content.outerWidth(true),
+			tooltipHeight = $content.outerHeight(true),
+			topCoord = $this.offset().top,
+			leftCoord = $this.offset().left;
+
+		if ( topCoord + tooltipHeight + 100 >= $(document).height() ) {
+			$content.addClass('bottom');
+		}
+		if ( leftCoord - tooltipWidth <= 50 ) {
+			$content.addClass('left');
+		}
+
+		if ( !$(this).is('.mouseenter') ) {
+			$this.toggleClass('active');
+			$content.fadeToggle();
+		} else {
+			$this.addClass('active');
+			$content.show();
+		}
+	});
+
+	$(document).on('mouseenter', '.filter-aside .info-tooltip', function() {
+		if ( $('.info-tooltip_icon', this).is('.active') ) return;
+		$('.info-tooltip_icon').removeClass('active');
+		$('.info-tooltip_content').fadeOut();
+		$('.info-tooltip_icon', this).addClass('mouseenter');
+		$('.info-tooltip_content', this).stop(true, true).fadeIn();
+	}).on('mouseleave', '.filter-aside .info-tooltip', function() {
+		if ( $('.info-tooltip_icon', this).is('.active') ) return;
+		$('.info-tooltip_icon', this).removeClass('mouseenter');
+		$('.info-tooltip_content', this).stop(true, true).fadeOut();
+	});
+
+	$(document).click(function(e) {
+		if ( $(e.target).closest('.info-tooltip').length ) return;
+		$('.info-tooltip_icon').removeClass('active');
+		$('.info-tooltip_content').fadeOut();
+		e.stopPropagation();
+	});
+
+    /*---------- end of подсказки к категориям фильтра ------------*/
+}); // End of ready function
 

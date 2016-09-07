@@ -60,7 +60,7 @@
                     <div class="filter-aside">
                         <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-price">
-                                <h3 class="fltr-heading fltr-heading_price">Цена<span class="fltr-heading_expand">+</span></h3>
+                                <h3 class="fltr-heading fltr-heading_price">Цена</h3>
                                 <div class="fltr-body_price">
                                     <label for="price-from">От:</label>
                                     <input type="text" name="from" id="price-from" value="1">
@@ -74,7 +74,14 @@
                         </form>
                         <form class="filterForm" id="filter-producer" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-producer">
-                                <h3 class="fltr-heading fltr-heading_producer">Производитель<span class="fltr-heading_expand">+</span></h3>
+                                <h3 class="fltr-heading fltr-heading_producer">Производитель
+                                    <div class="info-tooltip">
+                                        <span class="info-tooltip_icon">?</span>
+                                        <span class="info-tooltip_content left">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, atque. Aliquid debitis ea corrupti asperiores.</p>
+                                        </span>
+                                    </div>
+                                </h3>
                                 <ul class="list-producer">
                                     <li class="list-item_producer"><span>
                                     <input title="A&D" id="producer_1" type="checkbox" name="producer" value="1">
@@ -102,7 +109,14 @@
                         </form>
                         <form class="filterForm" id="filter-scalestype" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-scalestype">
-                                <h3 class="fltr-heading fltr-heading_scalestype">Тип весов<span class="fltr-heading_expand">+</span></h3>
+                                <h3 class="fltr-heading fltr-heading_scalestype">Тип весов
+                                    <div class="info-tooltip">
+                                        <span class="info-tooltip_icon">?</span>
+                                        <span class="info-tooltip_content left">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam repellendus inventore minima, consequatur aperiam velit!</p>
+                                        </span>
+                                    </div>
+                                </h3>
                                 <ul class="list-scalestype">
                                     <li class="list-item_scalestype"><span>
                                     <input title="Ultramicroscales" id="scalestype_1" type="checkbox" name="scalestype" value="1">
