@@ -1,13 +1,13 @@
 $(document).ready(function () {
 	/* ------------ слайдер цены ----- */
-	var $priceUrl = $('#filter-price').attr('action');
+	var $filterUrl = $('#filter-box').attr('action');
 	
-	$checkIdArr = $('input:checkbox:checked').map(function() {
+	$checkIdArr = $('#filter-box input:checkbox:checked').map(function() {
 		var checkboxId = $(this).attr('id');
 		var $checkFilterId = checkboxId.slice(checkboxId.indexOf('_') + 1);
 		return $checkFilterId;
 	}).get();
-	$checkValArr = $('input:checkbox:checked').map(function() {
+	$checkValArr = $('#filter-box input:checkbox:checked').map(function() {
 		var $checkboxVal = $(this).val();
 		return $checkboxVal;
 	}).get();
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
 			$.ajax({
 				type: 'POST',
-				url: $priceUrl,
+				url: $filterUrl,
 				dataType: 'json',
 				cache: false,
 				data: {
@@ -68,7 +68,7 @@ $(document).ready(function () {
 
 	  	$.ajax({
 	        type: 'POST',
-	        url: $priceUrl,
+	        url: $filterUrl,
 	        dataType: 'json',
 	        data: {
 	        	post: 'input-minPrice',
@@ -100,7 +100,7 @@ $(document).ready(function () {
 
 	  	$.ajax({
 	        type: 'POST',
-	        url: $priceUrl,
+	        url: $filterUrl,
 	        dataType: 'json',
 	        data: {
 	        	post: 'input-maxPrice',
@@ -163,9 +163,9 @@ $(document).ready(function () {
 	/*----------- end of jqueryUI autocomplete ----------*/
 
 	/*---------- выбор по чекбоксам в фильтре ------------*/
-	var $checkUrl = $("form input:checkbox").closest('form').attr('action');
+	// var $checkUrl = $("form input:checkbox").closest('form').attr('action');
 	
-	$('.filterForm').on('change', 'input:checkbox', function() {
+	$('.filter-block').on('change', 'input:checkbox', function() {
 		$checkIdArr = $('input:checkbox:checked').map(function() {
 			var checkboxId = $(this).attr('id');
 			var $checkFilterId = checkboxId.slice(checkboxId.indexOf('_') + 1);
@@ -186,7 +186,7 @@ $(document).ready(function () {
 
 		$.ajax({
 			type: 'POST',
-			url: $checkUrl,
+			url: $filterUrl,
 			dataType: 'json',
 			data: {
 				post: 'check_filter',
@@ -212,7 +212,7 @@ $(document).ready(function () {
 	/*---------- разворачивание пунктов меню категорий в фильтре ------------*/ 
 		//var $fltrBlock = $(".filter-block");
 		// $('.filter-block h3').next().hide();
-		$('.filter-block').on('click', 'h3.fltr-heading', function() {
+		$('.filter-aside').on('click', '.filter-block .fltr-heading', function() {
 			$(this).next().slideToggle();
 			$(this).toggleClass('collapsed');
 		});
@@ -240,19 +240,19 @@ $(document).ready(function () {
 
     /*---------- Подсказка к категориям фильтра ------------*/
 
-	$(document).on('click', '.info-tooltip_icon', function() {
-		if ( $(this).is('.active') ) return;
-		if ( !$(this).is('.mouseenter') ) {
+	$('.filter-aside').on('click', '.filter-block .info-tooltip_icon', function(event) {
+		
+		if ( !$(this).is('.active') ) {
 			$('.info-tooltip_icon').removeClass('active');
-			$('.info-tooltip_content').fadeOut();
+			$('.info-tooltip_content').fadeOut(600);
 		}
 
-		var $this = $(this),
-			$content = $this.next('.info-tooltip_content'),
-			tooltipWidth = $content.outerWidth(true),
-			tooltipHeight = $content.outerHeight(true),
-			topCoord = $this.offset().top,
-			leftCoord = $this.offset().left;
+		var $this 				= $(this),
+			$content 			= $this.next('.info-tooltip_content'),
+			tooltipWidth 		= $content.outerWidth(true),
+			tooltipHeight 		= $content.outerHeight(true),
+			topCoord 			= $this.offset().top,
+			leftCoord 			= $this.offset().left;
 
 		if ( topCoord + tooltipHeight + 100 >= $(document).height() ) {
 			$content.addClass('bottom');
@@ -261,32 +261,42 @@ $(document).ready(function () {
 			$content.addClass('left');
 		}
 
-		if ( !$(this).is('.mouseenter') ) {
+		if ( $this.is('.active') ) {
 			$this.toggleClass('active');
-			$content.fadeToggle();
+			$content.fadeToggle(600);
+			// return;
 		} else {
 			$this.addClass('active');
-			$content.show();
+			$content.fadeToggle(600);
 		}
+
+		// if ( !$(this).is('.mouseenter') ) {
+		// 	$this.toggleClass('active');
+		// 	$content.fadeToggle();
+		// } else {
+		// 	$this.addClass('active');
+		// 	$content.show();
+		// }
+		event.stopPropagation();
 	});
 
-	$(document).on('mouseenter', '.filter-aside .info-tooltip', function() {
-		if ( $('.info-tooltip_icon', this).is('.active') ) return;
-		$('.info-tooltip_icon').removeClass('active');
-		$('.info-tooltip_content').fadeOut();
-		$('.info-tooltip_icon', this).addClass('mouseenter');
-		$('.info-tooltip_content', this).stop(true, true).fadeIn();
-	}).on('mouseleave', '.filter-aside .info-tooltip', function() {
-		if ( $('.info-tooltip_icon', this).is('.active') ) return;
-		$('.info-tooltip_icon', this).removeClass('mouseenter');
-		$('.info-tooltip_content', this).stop(true, true).fadeOut();
-	});
+	// $('.filter-aside').on('mouseenter', '.filter-block .info-tooltip', function() {
+	// 	if ( $('.info-tooltip_icon', this).is('.active') ) return;
+	// 	$('.info-tooltip_icon').removeClass('active');
+	// 	$('.info-tooltip_content').fadeOut();
+	// 	$('.info-tooltip_icon', this).addClass('mouseenter');
+	// 	$('.info-tooltip_content', this).stop(true, true).fadeIn();
+	// }).on('mouseleave', '.filter-block .info-tooltip', function() {
+	// 	if ( $('.info-tooltip_icon', this).is('.active') ) return;
+	// 	$('.info-tooltip_icon', this).removeClass('mouseenter');
+	// 	$('.info-tooltip_content', this).stop(true, true).fadeOut();
+	// });
 
-	$(document).click(function(e) {
-		if ( $(e.target).closest('.info-tooltip').length ) return;
+	$(document).click(function(event) {
+		if ( $(event.target).closest('.info-tooltip').length ) return;
 		$('.info-tooltip_icon').removeClass('active');
 		$('.info-tooltip_content').fadeOut();
-		e.stopPropagation();
+		event.stopPropagation();
 	});
 
     /*---------- end of подсказки к категориям фильтра ------------*/

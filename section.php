@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div class="filter-aside">
-                        <form class="filterForm" id="filter-price" enctype="multipart/form-data" action="input.php" method="post">
+                        <form class="filterForm" id="filter-box" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-price">
                                 <h3 class="fltr-heading fltr-heading_price">Цена</h3>
                                 <div class="fltr-body_price">
@@ -71,13 +71,12 @@
                                     <div class="price-slider"></div>
                                 </div>
                             </article>
-                        </form>
-                        <form class="filterForm" id="filter-producer" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-producer">
                                 <h3 class="fltr-heading fltr-heading_producer">Производитель
                                     <div class="info-tooltip">
                                         <span class="info-tooltip_icon">?</span>
-                                        <span class="info-tooltip_content left">
+                                        <span class="info-tooltip_content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, atque. Aliquid debitis ea corrupti asperiores.</p>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, atque. Aliquid debitis ea corrupti asperiores.</p>
                                         </span>
                                     </div>
@@ -106,13 +105,11 @@
                                     <li><a href="#" class="show-all_producer">Показать все</a></li>
                                 </ul>
                             </article>
-                        </form>
-                        <form class="filterForm" id="filter-scalestype" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-scalestype">
                                 <h3 class="fltr-heading fltr-heading_scalestype">Тип весов
                                     <div class="info-tooltip">
                                         <span class="info-tooltip_icon">?</span>
-                                        <span class="info-tooltip_content left">
+                                        <span class="info-tooltip_content">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam repellendus inventore minima, consequatur aperiam velit!</p>
                                         </span>
                                     </div>
