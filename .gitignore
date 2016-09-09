@@ -7,7 +7,7 @@ jquery*.css
 
 Database*.php
 Router*.php
-
+upload*.php
 # Folders
 
 /css/images
