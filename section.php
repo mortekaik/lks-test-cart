@@ -223,7 +223,14 @@
                     <div class="vendors" id="del_all">
                         <button class="modal_cart_btn delete_all_btn">Обнулить корзину</button>
                     </div>
-                    <div class="vendors"></div>
+                    <div class="vendors">
+                        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="insFile" id="uploadFile" multiple="multiple">
+                            <br>
+                            <input type="submit" id="upload" value="Upload Files">
+                            <div id="data"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div id="side"></div>

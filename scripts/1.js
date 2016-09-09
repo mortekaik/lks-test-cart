@@ -20,4 +20,44 @@ $(document).ready(function() {
         }, "slow");
         return false;
     });
-});
+
+    /*-------- форма загрузки файлов на сервер ----------*/
+
+    var $uploadUrl = $('#uploadForm').attr('action');
+
+    $('#uploadForm').on('submit', function(e) {
+        e.preventDefault();
+        uploadFiles();
+    });
+
+    function uploadFiles() {
+        var $input = $("#uploadFile");
+        var fileAttr = $input.prop('files')[0];
+        // var data = $input.get(0);
+        // var formData = new FormData($input.get(0));
+        var formData = new FormData();
+
+        formData.append('insFile', $input.prop('files')[0]);
+        
+        console.log(fileAttr);
+
+        $.ajax({
+            url: $uploadUrl,
+            type: 'POST',
+            cache: false,
+            data: formData,
+            dataType: 'json',
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                if(data) {
+                    $input.replaceWith(data);
+                    // console.log(data);
+                }
+            }
+        });
+    }
+
+    /*-------- End of формы отправки ---------*/
+
+}); // End of Ready function

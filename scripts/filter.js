@@ -280,6 +280,9 @@ $(document).ready(function () {
 		event.stopPropagation();
 	});
 
+	$('.filter-aside').on('click', '.info-tooltip_content', function () {
+		return false;
+	});
 	// $('.filter-aside').on('mouseenter', '.filter-block .info-tooltip', function() {
 	// 	if ( $('.info-tooltip_icon', this).is('.active') ) return;
 	// 	$('.info-tooltip_icon').removeClass('active');

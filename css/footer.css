@@ -244,7 +244,6 @@ body {
     display: inline-block;
     position: relative;
     margin-left: 2px;
-    /*z-index: 5;*/
 }
 .info-tooltip_icon {
     display: block;
