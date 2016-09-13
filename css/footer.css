@@ -271,11 +271,12 @@ body {
     box-sizing: border-box;
     position: absolute;
     top: 24px;
-    right: -65px;
+    right: -63px;
     z-index: 10;
     font-size: 13px;
     font-weight: normal;
     line-height: normal;
+    cursor: default;
     background: #fff;
     border: 1px solid #bfbfbf;
     box-shadow: 0 0 8px 0 rgba(0,0,0,.3);
@@ -568,7 +569,8 @@ body {
   box-shadow: inset 0 1px 0 #ffb0aa, inset 0 -1px 0 #d44d44, inset 0 0 0 1px #ed837b, 0 2px 4px rgba(0, 0, 0, 0.2);  
 }
 
-#modal_cart .modal_cart_btn:hover, #modal_cart .modal_cart_btn:focus {
+#modal_cart .modal_cart_btn:hover,
+#modal_cart .modal_cart_btn:focus {
   background: #ed574c;
   border-color: #870c03;
   box-shadow: inset 0 1px 0 #ffb0aa, inset 0 -1px 0 #d44d44, inset 0 0 0 1px #ed837b;
@@ -850,6 +852,115 @@ body {
 }*/
 
 /*----- Конец стилей для карусели ------- */
+
+/*----- Стили для блока загрузки файлов ------- */
+
+#uploadForm {
+    padding: 0 30px 0 30px;
+}
+
+.nb-dropzone {
+    margin: 0 20px 20px;
+    position: relative;
+    padding: 20px;
+    text-align: center
+}
+
+._nb-normal-dropzone {
+    color: rgba(0, 0, 0, .8);
+    background: #ecebe9;
+    cursor: pointer
+}
+
+._nb-normal-dropzone:before {
+    border: 2px dashed rgba(0, 0, 0, .2);
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+._nb-normal-dropzone:hover {
+    background: #e2e1df
+}
+
+._nb-dropzone-head {
+    margin-bottom: 8px;
+    font: 1.25em/1.125em Arial, sans-serif
+}
+
+._nb-dropzone-text {
+    font-size: 13px;
+    line-height: 24px
+}
+
+._nb-dropzone-button {
+    margin-left: 8px
+}
+
+.dropzone-small .nb-dropzone {
+    margin: 1px 0 0;
+    padding: 40px;
+    color: inherit;
+    background: 0 0
+}
+
+.dropzone-small .nb-dropzone:before {
+    border: 2px dashed
+}
+
+.dropzone-small .nb-dropzone ._nb-dropzone-text {
+    font-size: 20px
+}
+
+.dropzone-small {
+    position: relative;
+    overflow: hidden;
+    /*margin-bottom: 40px;*/
+    color: rgba(0,0,0,.15);
+    transition: color .3s ease;
+}
+
+.dropzone-small:hover {
+    color: #000
+}
+
+.dropzone-small__upload {
+    position: absolute;
+    /*visibility: hidden;*/
+}
+
+.dropzone-small__logo {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px
+}
+
+.dropzone-small__close {
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    cursor: pointer;
+    transition: opacity .3s ease;
+    opacity: 0;
+    font-size: 13px
+}
+
+.dropzone-small:hover .dropzone-small__close {
+    opacity: .3
+}
+
+.dropzone-small:hover .dropzone-small__close:hover {
+    opacity: .5
+}
+
+.dropzone__content {
+    font-size: 20px
+}
+
+/*----- Конец стилей для блока загрузки файлов ------- */
 
 .vendors {
     float: right;

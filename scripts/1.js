@@ -25,13 +25,14 @@ $(document).ready(function() {
 
     var $uploadUrl = $('#uploadForm').attr('action');
 
-    $('#uploadForm').on('submit', function(e) {
+    $('#uploadForm').on('click', function(e) {
         e.preventDefault();
+        // e.stopPropagation();
         uploadFiles();
     });
 
     function uploadFiles() {
-        var $input = $("#uploadFile");
+        var $input = $(".dropzone-small__upload");
         var fileAttr = $input.prop('files')[0];
         // var data = $input.get(0);
         // var formData = new FormData($input.get(0));

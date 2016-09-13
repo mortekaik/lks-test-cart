@@ -225,10 +225,31 @@
                     </div>
                     <div class="vendors">
                         <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                            <input type="file" name="insFile" id="uploadFile" multiple="multiple">
-                            <br>
-                            <input type="submit" id="upload" value="Upload Files">
-                            <div id="data"></div>
+                            <!-- <input type="file" name="insFile" id="uploadFile" multiple="multiple"> -->
+                            <!-- <br> -->
+                            <!-- <input type="submit" id="upload" value="Upload Files"> -->
+                            <!-- <div id="data"></div> -->
+                            <div class="boxDropzone">
+                                <div class="dropzone-small">
+                                    <input type="file" multiple="multiple" class="dropzone-small__upload">
+                                        <div class="nb-dropzone _nb-normal-dropzone">
+                                            <div class="_nb-dropzone-text">
+                                                Загрузить файлы
+                                            </div>
+                                        </div>
+                                        <!-- <div class="dropzone-small__close">Скрыть
+                                        </div> -->
+                                </div>
+                            </div>
+                            <div class="view-boxListing">
+                                <div class="view-listing b-listing b-listing_view_icons b-listing_group-by_none">
+                                    <div class="view-resources b-listing__chunk">
+                                        <div class="view-container-desc"></div>
+                                    </div>
+                                    <div class="view-loaderPortion">
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
