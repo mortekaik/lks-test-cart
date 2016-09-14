@@ -7,13 +7,14 @@
 	 ?>
 
 <!doctype html>
-<html>
+<html class="no-js">
 
 <head>
     <meta charset="utf-8">
     <title>ЛКС - лабораторное и промышленное оборудование</title>
     <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
     <link type="text/css" href="css/footer.css" rel="stylesheet">
+    <link type="text/css" href="css/upload.css" rel="stylesheet">
     <script src="scripts/jquery-1.12.4.min.js"></script>
     <script src="scripts/jquery-ui.min.js"></script>
     <script type="text/javascript" src="scripts/1.js"></script>
@@ -24,6 +25,8 @@
     <!--[if lt IE 9]>
       <script src="script/html5.js"></script>	 
      <![endif]-->
+     <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
+     </script>
 </head>
 
 <body>
@@ -223,33 +226,21 @@
                     <div class="vendors" id="del_all">
                         <button class="modal_cart_btn delete_all_btn">Обнулить корзину</button>
                     </div>
-                    <div class="vendors">
-                        <form id="uploadForm" action="upload.php" method="post" enctype="multipart/form-data">
-                            <!-- <input type="file" name="insFile" id="uploadFile" multiple="multiple"> -->
-                            <!-- <br> -->
-                            <!-- <input type="submit" id="upload" value="Upload Files"> -->
-                            <!-- <div id="data"></div> -->
-                            <div class="boxDropzone">
-                                <div class="dropzone-small">
-                                    <input type="file" multiple="multiple" class="dropzone-small__upload">
-                                        <div class="nb-dropzone _nb-normal-dropzone">
-                                            <div class="_nb-dropzone-text">
-                                                Загрузить файлы
-                                            </div>
-                                        </div>
-                                        <!-- <div class="dropzone-small__close">Скрыть
-                                        </div> -->
-                                </div>
+                    <div class="upload-wrap">
+                        <form class="uploadform" action="upload.php" method="post" enctype="multipart/form-data">
+                            <div class="uploadform_zone">
+                                <svg class="uploadform_icon" xmlns="http://www.w3.org/2000/svg" width="50" height="43" viewBox="0 0 50 43">
+                                    <path d="M48.4 26.5c-.9 0-1.7.7-1.7 1.7v11.6h-43.3v-11.6c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v13.2c0 .9.7 1.7 1.7 1.7h46.7c.9 0 1.7-.7 1.7-1.7v-13.2c0-1-.7-1.7-1.7-1.7zm-24.5 6.1c.3.3.8.5 1.2.5.4 0 .9-.2 1.2-.5l10-11.6c.7-.7.7-1.7 0-2.4s-1.7-.7-2.4 0l-7.1 8.3v-25.3c0-.9-.7-1.7-1.7-1.7s-1.7.7-1.7 1.7v25.3l-7.1-8.3c-.7-.7-1.7-.7-2.4 0s-.7 1.7 0 2.4l10 11.6z"/>
+                                </svg>
+                                <input type="file" class="uploadform_file" name="files[]" id="uploadFile" data-multiple-caption="{count} files selected" multiple>
+                                <label for="uploadFile"><strong>Choose a file</strong>
+                                    <span class="uploadform_dragndrop"> or drag it here</span>
+                                </label>
+                                <button class="uploadform_button" type="submit">Upload</button>
                             </div>
-                            <div class="view-boxListing">
-                                <div class="view-listing b-listing b-listing_view_icons b-listing_group-by_none">
-                                    <div class="view-resources b-listing__chunk">
-                                        <div class="view-container-desc"></div>
-                                    </div>
-                                    <div class="view-loaderPortion">
-                                    </div>
-                                </div>
-                            </div>
+                            <div class="uploadform_uploading">Uploading&hellip;</div>
+                            <div class="uploadform_success">Done!</div>
+                            <div class="uploadform_error">Error! <span></span></div>
                         </form>
                     </div>
                 </div>

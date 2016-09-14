@@ -1,0 +1,168 @@
+.upload-wrap {
+    float: right;
+    width: 650px;
+    min-height: 100px;
+    border: 1px solid red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.uploadform {
+    font-size: 1.2em;
+    background-color: #F1F0ED;
+    /*#c8dadf*/
+    position: relative;
+    padding: 20px;
+}
+
+.uploadform.has-advanced-upload {
+    outline: 2px dashed #bfbfbf;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+}
+
+.uploadform.is-dragover {
+    background-color: #fff;
+}
+
+.uploadform_dragndrop,
+.uploadform_icon {
+    display: none;
+}
+
+.uploadform.has-advanced-upload .uploadform_dragndrop {
+    display: inline;
+}
+
+.uploadform.has-advanced-upload .uploadform_icon {
+    width: 100%;
+    height: 35px;
+    fill: #92b0b3;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.uploadform.is-uploading .uploadform_zone,
+.uploadform.is-success .uploadform_zone,
+.uploadform.is-error .uploadform_zone {
+    visibility: hidden;
+}
+
+.uploadform_uploading,
+.uploadform_success,
+.uploadform_error {
+    display: none;
+}
+
+.uploadform.is-uploading .uploadform_uploading,
+.uploadform.is-success .uploadform_success,
+.uploadform.is-error .uploadform_error {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    -webkit-transform: translateY( -50%);
+    transform: translateY( -50%);
+}
+
+.uploadform_uploading {
+    font-style: italic;
+}
+
+.uploadform_success {
+    -webkit-animation: appear-from-inside .25s ease-in-out;
+    animation: appear-from-inside .25s ease-in-out;
+}
+
+@-webkit-keyframes appear-from-inside {
+    from {
+        -webkit-transform: translateY( -50%) scale( 0);
+    }
+    75% {
+        -webkit-transform: translateY( -50%) scale( 1.1);
+    }
+    to {
+        -webkit-transform: translateY( -50%) scale( 1);
+    }
+}
+
+@keyframes appear-from-inside {
+    from {
+        transform: translateY( -50%) scale( 0);
+    }
+    75% {
+        transform: translateY( -50%) scale( 1.1);
+    }
+    to {
+        transform: translateY( -50%) scale( 1);
+    }
+}
+
+.uploadform_restart {
+    font-weight: 700;
+}
+
+.uploadform_restart:focus,
+.uploadform_restart:hover {
+    color: #39bfd3;
+}
+
+.js .uploadform_file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.js .uploadform_file + label {
+    max-width: 80%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.js .uploadform_file + label:hover strong,
+.uploadform_file:focus + label strong,
+.uploadform_file.has-focus + label strong {
+    color: #e0685f;
+    /*#39bfd3*/
+}
+
+.js .uploadform_file:focus + label,
+.js .uploadform_file.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.js .uploadform_file + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.no-js .uploadform_file + label {
+    display: none;
+}
+
+.no-js .uploadform_button {
+    display: block;
+}
+
+.uploadform_button {
+    font-weight: 700;
+    color: #e5edf1;
+    background-color: #39bfd3;
+    display: none;
+    padding: 8px 16px;
+    margin: 40px auto 0;
+}
+
+.uploadform_button:hover,
+.uploadform_button:focus {
+    background-color: #0f3c4b;
+}

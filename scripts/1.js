@@ -23,42 +23,134 @@ $(document).ready(function() {
 
     /*-------- форма загрузки файлов на сервер ----------*/
 
-    var $uploadUrl = $('#uploadForm').attr('action');
+    // feature detection for drag&drop upload
+    var isAdvancedUpload = function() {
+        var div = document.createElement('div');
+        return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
+    }();
 
-    $('#uploadForm').on('click', function(e) {
-        e.preventDefault();
-        // e.stopPropagation();
-        uploadFiles();
-    });
+        // applying the effect for every form
 
-    function uploadFiles() {
-        var $input = $(".dropzone-small__upload");
-        var fileAttr = $input.prop('files')[0];
-        // var data = $input.get(0);
-        // var formData = new FormData($input.get(0));
-        var formData = new FormData();
+    $('.uploadform').each( function() {
+        var $form        = $(this),
+            $uploadUrl   = $form.attr('action'),
+            $input       = $form.find('input[type="file"]'),
+            $label       = $form.find('label'),
+            $errorMsg    = $form.find('.uploadform_error span'),
+            $restart     = $form.find('.uploadform_restart'),
+            droppedFiles = false,
+            showFiles    = function(files) {
+                $label.text( files.length > 1 ? ( $input.attr('data-multiple-caption') || '' ).replace('{count}', files.length ) : files[0].name);
+            };
 
-        formData.append('insFile', $input.prop('files')[0]);
-        
-        console.log(fileAttr);
+        // letting the server side to know we are going to make an Ajax request
+        $form.append('<input type="hidden" name="ajax" value="1" />');
 
-        $.ajax({
-            url: $uploadUrl,
-            type: 'POST',
-            cache: false,
-            data: formData,
-            dataType: 'json',
-            processData: false,
-            contentType: false,
-            success: function (data) {
-                if(data) {
-                    $input.replaceWith(data);
-                    // console.log(data);
+        // automatically submit the form on file select
+        $input.on('change', function(e) {
+            showFiles(e.target.files);
+            $form.trigger('submit');
+        });
+
+        // drag&drop files if the feature is available
+        if (isAdvancedUpload) {
+            $form.addClass('has-advanced-upload') // letting the CSS part to know drag&drop is supported by the browser
+            .on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
+                // preventing the unwanted behaviours
+                e.preventDefault();
+                e.stopPropagation();
+            })
+            .on('dragover dragenter', function() {
+                $form.addClass('is-dragover');
+            })
+            .on('dragleave dragend drop', function() {
+                $form.removeClass('is-dragover');
+            })
+            .on('drop', function(e) {
+                droppedFiles = e.originalEvent.dataTransfer.files; // the files that were dropped
+                showFiles(droppedFiles);
+                $form.trigger('submit'); // automatically submit the form on file drop
+            });
+        }
+
+        // if the form was submitted
+
+        $form.on('submit', function(e) {
+            // preventing the duplicate submissions if the current one is in progress
+            if ($form.hasClass('is-uploading')) return false;
+            
+            $form.addClass('is-uploading').removeClass('is-error');
+
+            if (isAdvancedUpload) { // ajax file upload for modern browsers
+                e.preventDefault();
+                // gathering the form data
+                var ajaxData = new FormData($form.get(0));
+                if (droppedFiles) {
+                    $.each(droppedFiles, function(i, file) {
+                        ajaxData.append($input.attr('name'), file);
+                    });
                 }
+                console.log(ajaxData);
+                // ajax request
+                $.ajax({
+                    url:            $uploadUrl,
+                    type:           'post',
+                    data:           ajaxData,
+                    dataType:       'json',
+                    cache:          false,
+                    contentType:    false,
+                    processData:    false,
+                    complete: function() {
+                        $form.removeClass('is-uploading');
+                    },
+                    success: function(data) {
+                        $form.addClass(data.success == true ? 'is-success' : 'is-error');
+                        console.log(data);
+                        // if (!data.success) {
+                        //     $errorMsg.text(data.success);
+                        // }
+                    },
+                    error: function(data) {
+                        console.log(data);
+                        alert('Uploading Error! Something wrong!');
+                    }
+                });
+            }
+            // fallback Ajax solution upload for older browsers
+            else {
+                var iframeName  = 'uploadiframe' + new Date().getTime(),
+                    $iframe     = $('<iframe name="' + iframeName + '" style="display: none;"></iframe>');
+
+                $('body').append($iframe);
+                $form.attr('target', iframeName);
+
+                $iframe.one('load', function() {
+                    var data = $.parseJSON($iframe.contents().find('body').text());
+                    $form.removeClass('is-uploading').addClass(data.success == true ? 'is-success' : 'is-error')
+                         .removeAttr('target');
+                    if (!data.success) {
+                        $errorMsg.text(data.error);
+                    }
+                    $iframe.remove();
+                });
             }
         });
-    }
 
+        // restart the form if has a state of error/success
+        // $restart.on('click', function(e) {
+        //     e.preventDefault();
+        //     $form.removeClass('is-error is-success');
+        //     $input.trigger('click');
+        // });
+
+        // // Firefox focus bug fix for file input
+        // $input.on('focus', function() {
+        //      $input.addClass('has-focus');
+        // })
+        //     .on('blur', function() {
+        //         $input.removeClass('has-focus');
+        // });
+    });
     /*-------- End of формы отправки ---------*/
 
 }); // End of Ready function
