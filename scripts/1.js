@@ -31,7 +31,7 @@ $(document).ready(function() {
 
         // applying the effect for every form
 
-    $('.uploadform').each( function() {
+    $('.uploadform').each(function() {
         var $form        = $(this),
             $uploadUrl   = $form.attr('action'),
             $input       = $form.find('input[type="file"]'),
@@ -44,7 +44,7 @@ $(document).ready(function() {
             };
 
         // letting the server side to know we are going to make an Ajax request
-        $form.append('<input type="hidden" name="ajax" value="1" />');
+        // $form.append('<input type="hidden" name="ajax" value="1" />');
 
         // automatically submit the form on file select
         $input.on('change', function(e) {
@@ -68,6 +68,7 @@ $(document).ready(function() {
             })
             .on('drop', function(e) {
                 droppedFiles = e.originalEvent.dataTransfer.files; // the files that were dropped
+                console.log(droppedFiles);
                 showFiles(droppedFiles);
                 $form.trigger('submit'); // automatically submit the form on file drop
             });
@@ -85,12 +86,18 @@ $(document).ready(function() {
                 e.preventDefault();
                 // gathering the form data
                 var ajaxData = new FormData($form.get(0));
+                // var ajaxData = new FormData($input[0]);
+                // if (droppedFiles) {
+                //     $.each($input[0].files, function(i, file) {
+                //         ajaxData.append(i, file);
+                //     });
+                // }
+                
                 if (droppedFiles) {
                     $.each(droppedFiles, function(i, file) {
-                        ajaxData.append($input.attr('name'), file);
+                        ajaxData.append($input.prop('name'), file);
                     });
                 }
-                console.log(ajaxData);
                 // ajax request
                 $.ajax({
                     url:            $uploadUrl,
@@ -106,9 +113,9 @@ $(document).ready(function() {
                     success: function(data) {
                         $form.addClass(data.success == true ? 'is-success' : 'is-error');
                         console.log(data);
-                        // if (!data.success) {
-                        //     $errorMsg.text(data.success);
-                        // }
+                        if (!data.success) {
+                            $errorMsg.text(data.error);
+                        }
                     },
                     error: function(data) {
                         console.log(data);
@@ -126,9 +133,9 @@ $(document).ready(function() {
 
                 $iframe.one('load', function() {
                     var data = $.parseJSON($iframe.contents().find('body').text());
-                    $form.removeClass('is-uploading').addClass(data.success == true ? 'is-success' : 'is-error')
+                    $form.removeClass('is-uploading').addClass((data == true && data.error === 0) ? 'is-success' : 'is-error')
                          .removeAttr('target');
-                    if (!data.success) {
+                    if (!data) {
                         $errorMsg.text(data.error);
                     }
                     $iframe.remove();
