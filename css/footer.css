@@ -649,6 +649,15 @@ body {
     min-height: 150px;
     border: 1px solid red;
 }
+.desc-edit {
+    float: left;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    min-height: 150px;
+    border: 1px solid red;
+}
 
 /*----- Стили для промо-слайдера ------- */
 .promo-slider {

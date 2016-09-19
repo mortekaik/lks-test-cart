@@ -158,6 +158,41 @@ $(document).ready(function() {
         //         $input.removeClass('has-focus');
         // });
     });
-    /*-------- End of формы отправки ---------*/
+    /*-------- End of формы загрузки файлов---------*/
+
+    /*-------- Форма отправки данных из textarea/text ---------*/
+
+    $('.editForm').on('click', '#send-desc', function() {
+        var $editUrl = $('.editForm').attr('action');
+        var $this = $(this);
+        var $desc = $('#description').val();
+        console.log($desc);
+
+        $.ajax({
+            type: 'post',
+            url: $editUrl,
+            cache: false,
+            data: {
+                post: 'edit-desc',
+                desc: $desc
+            },
+            dataType: 'json',
+            success: function(response) {
+                console.log(response);
+                $('#resp').html($desc);
+                console.log($desc);
+                if (response) {
+                    $('#description').val("");
+                }
+            },
+            error: function(error) {
+                alert('Something wrong: ' + error.statusText);
+                console.log(error);
+            }
+        });
+        return false;
+    });
+
+    /*-------- End of формы отправки данных из textarea/text ---------*/
 
 }); // End of Ready function
