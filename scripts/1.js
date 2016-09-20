@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     /*-------- форма загрузки файлов на сервер ----------*/
 
-    // feature detection for drag&drop upload
+    //feature detection for drag&drop upload
     var isAdvancedUpload = function() {
         var div = document.createElement('div');
         return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
@@ -44,12 +44,12 @@ $(document).ready(function() {
             };
 
         // letting the server side to know we are going to make an Ajax request
-        // $form.append('<input type="hidden" name="ajax" value="1" />');
+        $form.append('<input type="hidden" name="ajax" value="1" />');
 
         // automatically submit the form on file select
         $input.on('change', function(e) {
-            showFiles(e.target.files);
             $form.trigger('submit');
+            showFiles(e.target.files);
         });
 
         // drag&drop files if the feature is available
@@ -86,16 +86,11 @@ $(document).ready(function() {
                 e.preventDefault();
                 // gathering the form data
                 var ajaxData = new FormData($form.get(0));
-                // var ajaxData = new FormData($input[0]);
-                // if (droppedFiles) {
-                //     $.each($input[0].files, function(i, file) {
-                //         ajaxData.append(i, file);
-                //     });
-                // }
                 
                 if (droppedFiles) {
                     $.each(droppedFiles, function(i, file) {
-                        ajaxData.append($input.prop('name'), file);
+                        ajaxData.append($input.attr('name'), file);
+                        console.log(file);
                     });
                 }
                 // ajax request
@@ -111,11 +106,11 @@ $(document).ready(function() {
                         $form.removeClass('is-uploading');
                     },
                     success: function(data) {
-                        $form.addClass(data.success == true ? 'is-success' : 'is-error');
+                        // $form.addClass(data.success == true ? 'is-success' : 'is-error');
                         console.log(data);
-                        if (!data.success) {
-                            $errorMsg.text(data.error);
-                        }
+                        // if (!data.success) {
+                        //     $errorMsg.text(data.error);
+                        // }
                     },
                     error: function(data) {
                         console.log(data);
@@ -143,29 +138,43 @@ $(document).ready(function() {
             }
         });
 
-        // restart the form if has a state of error/success
-        // $restart.on('click', function(e) {
-        //     e.preventDefault();
-        //     $form.removeClass('is-error is-success');
-        //     $input.trigger('click');
-        // });
+        //restart the form if has a state of error/success
+        $restart.on('click', function(e) {
+            e.preventDefault();
+            $form.removeClass('is-error is-success');
+            $input.trigger('click');
+        });
 
-        // // Firefox focus bug fix for file input
-        // $input.on('focus', function() {
-        //      $input.addClass('has-focus');
-        // })
-        //     .on('blur', function() {
-        //         $input.removeClass('has-focus');
-        // });
+        // Firefox focus bug fix for file input
+        $input.on('focus', function() {
+             $input.addClass('has-focus');
+        })
+            .on('blur', function() {
+                $input.removeClass('has-focus');
+        });
     });
+
+
     /*-------- End of формы загрузки файлов---------*/
 
     /*-------- Форма отправки данных из textarea/text ---------*/
 
+    var $checkField = $('#description'),
+        $editUrl = $('.editForm').attr('action');
+        btnState = $('#send-desc').prop('disabled', true);
+
+    $checkField.on('input', function() {
+        var emptyField = $(this).filter(function() {
+            var fieldValue = $(this).val();
+            return fieldValue == '';
+        }).length;
+        console.log(emptyField);
+        btnState.prop('disabled', emptyField);
+    });
+    
     $('.editForm').on('click', '#send-desc', function() {
-        var $editUrl = $('.editForm').attr('action');
         var $this = $(this);
-        var $desc = $('#description').val();
+        var $desc = $checkField.val();
         console.log($desc);
 
         $.ajax({
@@ -183,6 +192,7 @@ $(document).ready(function() {
                 console.log($desc);
                 if (response) {
                     $('#description').val("");
+                    btnState.prop('disabled', true);
                 }
             },
             error: function(error) {

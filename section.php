@@ -154,12 +154,12 @@
                         <div class="desc-edit">
                             <form class="editForm" id="edit-box" enctype="multipart/form-data" action="input.php" method="post">
                                 <p>
-                                <textarea id="description" name="decription" placeholder="Input description" rows="5" cols="35"></textarea>
+                                <textarea id="description" name="decription" placeholder="Input description" rows="5"></textarea>
                                 </p>
                                 <p>
-                                <input name="button" type="submit" value="Отправить" id="send-desc"> 
+                                <input name="button" type="submit" value="Сохранить" id="send-desc"> 
                                 </p>
-                                <p style="margin-top: 5px; border: 1px solid #000">
+                                <p>
                                 <span id="resp">Original Description</span>
                                 </p>
                             </form>
