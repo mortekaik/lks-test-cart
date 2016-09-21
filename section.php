@@ -154,7 +154,7 @@
                         <div class="desc-edit">
                             <form class="editForm" id="edit-box" enctype="multipart/form-data" action="input.php" method="post">
                                 <p>
-                                <textarea id="description" name="decription" placeholder="Input description" rows="5"></textarea>
+                                <textarea id="description" name="decription" placeholder="Input description" rows="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe soluta provident dolor. Nemo temporibus, nihil velit earum fugit, sit qui distinctio dolor illo, provident tempora sapiente repudiandae impedit possimus. Quas!</textarea>
                                 </p>
                                 <p>
                                 <input name="button" type="submit" value="Сохранить" id="send-desc"> 

@@ -161,12 +161,13 @@ $(document).ready(function() {
 
     var $checkField = $('#description'),
         $editUrl = $('.editForm').attr('action');
-        btnState = $('#send-desc').prop('disabled', true);
+        btnState = $('#send-desc').prop('disabled', true),
+        startState = $checkField.val();
 
     $checkField.on('input', function() {
         var emptyField = $(this).filter(function() {
             var fieldValue = $(this).val();
-            return fieldValue == '';
+            return fieldValue == '' || fieldValue == startState;
         }).length;
         console.log(emptyField);
         btnState.prop('disabled', emptyField);
@@ -191,7 +192,7 @@ $(document).ready(function() {
                 $('#resp').html($desc);
                 console.log($desc);
                 if (response) {
-                    $('#description').val("");
+                    $checkField.val($desc);
                     btnState.prop('disabled', true);
                 }
             },
