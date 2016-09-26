@@ -197,37 +197,37 @@
                             <div class="carousel-wrapper"> 
                                <ul class="carousel-items clearfix"> 
                                 <li class="carousel-block">
-                                    <a class="q-item-info" href="#">
+                                    <a class="q-item-info" href="#">0
                                         <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
                                         <div class="q-item-text"><span>Весы A&D</span></div>
                                     </a>
                                   </li>
                                   <li class="carousel-block">
-                                    <a class="q-item-info" href="#">
+                                    <a class="q-item-info" href="#">1
                                         <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
                                         <div class="q-item-text"><span>Весы A&D</span></div>
                                     </a>
                                   </li>
                                   <li class="carousel-block">
-                                    <a class="q-item-info" href="#">
+                                    <a class="q-item-info" href="#">2
                                         <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
                                         <div class="q-item-text"><span>Весы A&D</span></div>
                                     </a>
                                   </li>
                                   <li class="carousel-block">
-                                    <a class="q-item-info" href="#">
+                                    <a class="q-item-info" href="#">3
                                         <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
                                         <div class="q-item-text"><span>Весы A&D</span></div>
                                     </a>
                                   </li>
                                   <li class="carousel-block">
-                                    <a class="q-item-info" href="#">
+                                    <a class="q-item-info" href="#">4
                                         <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
                                         <div class="q-item-text"><span>Весы A&D</span></div>
                                     </a>
                                   </li>
                                   <li class="carousel-block">
-                                    <a class="q-item-info" href="#">
+                                    <a class="q-item-info" href="#">5
                                         <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
                                         <div class="q-item-text"><span>Весы A&D</span></div>
                                     </a>
