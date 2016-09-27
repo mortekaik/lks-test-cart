@@ -60,6 +60,24 @@
                             <div class="slide"><img src="img/slider/113_1.jpg" width="650" height="250"></div>
                         </div>
                     </div>
+                    <div class="gallery-box">
+                        <div class="view">
+                            <div class="big-image"><img src="img/medium/img11.jpg" alt="image11">
+                                <a href="#" class="prev"></a>
+                                <a href="#" class="next"></a>
+                            </div>
+                        </div>
+                        <div class="thumbnails clearfix">
+                            <a href="img/thumbs/img1.jpg" class="active"><img src="img/medium/img11.jpg" alt="image11"></a>
+                            <a href="img/thumbs/img2.jpg"><img src="img/medium/img12.jpg" alt="image12"></a>
+                            <a href="img/thumbs/img3.jpg"><img src="img/medium/img13.jpg" alt="image13"></a>
+                            <a href="img/thumbs/img4.jpg"><img src="img/medium/img14.jpg" alt="image14"></a>
+                            <a href="img/thumbs/img5.jpg"><img src="img/medium/img15.jpg" alt="image15"></a>
+                            <a href="img/thumbs/img6.jpg"><img src="img/medium/img16.jpg" alt="image16"></a>
+                            <a href="img/thumbs/img7.jpg"><img src="img/medium/img17.jpg" alt="image17"></a>
+                            <a href="img/thumbs/img8.jpg"><img src="img/medium/img18.jpg" alt="image18"></a>
+                        </div>
+                    </div>
                     <div class="filter-aside">
                         <form class="filterForm" id="filter-box" enctype="multipart/form-data" action="input.php" method="post">
                             <article class="filter-block fltr-price">

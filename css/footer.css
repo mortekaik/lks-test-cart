@@ -707,7 +707,7 @@ body {
 #slider {
     /* Оболочка слайдера */
     position: relative;
-    width: 650px;
+    width: 100%;
     height: 250px;
     overflow: hidden;
 }
@@ -780,6 +780,79 @@ body {
 
 
 /*----- End of cтилей для промо-слайдера ------- */
+
+/*----- Стили для галереи товара ------- */
+
+.gallery-box {
+    position: relative;
+    float: right;
+    width: 650px;
+    min-height: 300px;
+    margin-top: 10px;
+    border: 1px solid red;
+    background: #d2d2d2;
+}
+.view {
+  position:relative;
+  width: 100%;
+  height: 100%;
+}
+.big-image {
+    position: relative;
+    width: 95%;
+    height: 100%;
+    margin: 5px auto;
+    border: 1px solid #000;
+}
+.big-image img {
+  display: block;
+  width: 100%;
+  height: 300px;
+}
+.prev, .next{
+  display: block;
+  position: absolute;  
+  width: 40px;
+  height: 100%;
+  top: 0;
+  overflow: hidden;
+  text-indent: -999px;
+  opacity: 0.7;
+  z-index: 3;
+  outline: none !important;
+}
+.prev {
+    left: 10px;
+    background:url(../img/controls.png) left center no-repeat;
+}
+.next {
+    right: 10px;
+    background:url(../img/controls.png) right center no-repeat;
+}
+ 
+.thumbnails {
+  display: block;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid #000;
+}
+.thumbnails a {
+  display: inline-block;
+  /*float:left;*/
+  text-align: center;
+}
+.thumbnails a img{
+  width:142px;
+  height:80px;
+  border: 2px solid transparent;
+  display:block;
+}
+.thumbnails .active img{
+  border-color:#069;
+}
+
+/*----- End of cтилей для галереи товара ------- */
 
 .deals {
     float: right;
