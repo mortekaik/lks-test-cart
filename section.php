@@ -53,22 +53,24 @@
                         </div>
                     </div>
                     <div class="promo-slider">
-                        <div id="slider">
-                            <div class="slide"><img src="img/slider/10574.jpg" width="650" height="250"></div>
-                            <div class="slide"><img src="img/slider/6586.jpg" width="650" height="250"></div>
-                            <div class="slide"><img src="img/slider/113.jpg" width="650" height="250"></div>
-                            <div class="slide"><img src="img/slider/113_1.jpg" width="650" height="250"></div>
+                        <div class="slider-box">
+                            <ul id="slider">
+                                <li class="slide"><a href="#"><img src="img/slider/10574.jpg" width="650" height="250"></a></li>
+                                <li class="slide"><a href="#"><img src="img/slider/6586.jpg" width="650" height="250"></a></li>
+                                <li class="slide"><a href="#"><img src="img/slider/113.jpg" width="650" height="250"></a></li>
+                                <li class="slide"><a href="#"><img src="img/slider/113_1.jpg" width="650" height="250"></a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="gallery-box">
                         <div class="view">
-                            <div class="big-image"><img src="img/medium/img11.jpg" alt="image11">
+                            <div class="big-image"><a href="img/medium/img11.jpg" target="_blank"><img src="img/medium/img11.jpg" alt="image11"></a>
                                 <a href="#" class="prev"></a>
                                 <a href="#" class="next"></a>
                             </div>
                         </div>
                         <div class="thumbnails clearfix">
-                            <a href="img/thumbs/img1.jpg" class="active"><img src="img/medium/img11.jpg" alt="image11"></a>
+                            <a href="img/thumbs/img1.jpg" class="current"><img src="img/medium/img11.jpg" alt="image11"></a>
                             <a href="img/thumbs/img2.jpg"><img src="img/medium/img12.jpg" alt="image12"></a>
                             <a href="img/thumbs/img3.jpg"><img src="img/medium/img13.jpg" alt="image13"></a>
                             <a href="img/thumbs/img4.jpg"><img src="img/medium/img14.jpg" alt="image14"></a>

@@ -704,14 +704,14 @@ body {
     border: 1px solid red;
     background: #b0b0b0;
 }
-#slider {
-    /* Оболочка слайдера */
-    position: relative;
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
-}
 
+#slider {
+   /* Оболочка слайдера */
+   position: relative; /* позиционируем блок относительно основной области карусели */
+   width: 100%;
+   height: 250px;
+   overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области*/ 
+}
 .slide {
     /* Слайд */
     width: 100%;
@@ -840,7 +840,7 @@ body {
 .thumbnails a {
   display: inline-block;
   /*float:left;*/
-  text-align: center;
+  text-align: justify;
 }
 .thumbnails a img{
   width:142px;
@@ -848,7 +848,7 @@ body {
   border: 2px solid transparent;
   display:block;
 }
-.thumbnails .active img{
+.thumbnails .current img{
   border-color:#069;
 }
 
