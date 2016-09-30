@@ -248,16 +248,4 @@ $(document).ready(function() {
         position: "h",                        
         dirAutoSlide: false                     
     });
-
-    // запускаем promo-slider
-    // $('.slider-wrapper').Carousel({
-    //     // visible: 1,
-    //     rotateBy: 1,
-    //     speed: 2000,
-    //     btnNext: '.slider-box .carousel-button-right',
-    //     btnPrev: '.slider-box .carousel-button-left',
-    //     auto: false,
-    //     position: "h",                        
-    //     dirAutoSlide: false                     
-    // });
 });

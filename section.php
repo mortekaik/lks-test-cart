@@ -64,7 +64,7 @@
                     </div>
                     <div class="gallery-box">
                         <div class="view">
-                            <div class="big-image"><a href="img/medium/img11.jpg" target="_blank"><img src="img/medium/img11.jpg" alt="image11"></a>
+                            <div class="big-image"><img src="img/medium/img11.jpg" alt="image11">
                                 <a href="#" class="prev"></a>
                                 <a href="#" class="next"></a>
                             </div>
@@ -287,8 +287,14 @@
         </div>
         </div>
         <div id="top-link"><a href='#top-link'>Вверх</a></div>
-
-        <div id="modal_cart"> <!-- Модальное окно корзины -->
+        <!-- Всплывающее окно галереи с увеличенной картинкой -->
+        <div class="popup gallery-popup">
+            <div class="gallery-wrap">
+                <button type="button" class="popup_close">X</button>
+            </div>
+        </div>
+         <!-- Модальное окно корзины -->
+        <div id="modal_cart">
         <!-- Кнoпкa зaкрыть -->
             <?php echo $q['last']; ?>
         <!-- Сюда добавляется разметка из обработчика -->

@@ -123,4 +123,29 @@ $(document).ready(function(e) {
         $('.big-image img').attr({ src: prevSrc });  // Подменяется адрес большого изображения на адрес следующего
         return false;
     });
+
+    function modal(data) {
+        if (data == 'open') {
+            $('#overlay').css('display', 'block'); // показываем подложку
+            $('.gallery-popup').css('visibility', 'visible'); // показываем окно
+        }
+        if (data == 'close') {
+            $('.gallery-popup').css('visibility', 'hidden'); // скрываем окно
+            $('#overlay').css('display', 'none'); // скрываем подложку
+        }
+    }
+    $('.gallery-box').on('click', '.big-image img', function(e) {
+        // e.preventDefault();
+        var $img = $(this); // получаем картинку, ан которую кликнули
+        var $sourceImg = $img.attr('src'); // получаем путь к этой картинке из аттрибута src
+        $('.gallery-wrap').append('<img src="' + $sourceImg + '" class="popup_img"/>');
+        modal('open');
+    });
+
+    $('body').on('click', '.popup_close, #overlay', function() {    // Событие клика на затемненный фон и на кнопку X
+        modal('close');
+        setTimeout(function() { // Выставляем таймер
+          $('.gallery-popup img').remove(); // Удаляем разметку всплывающего окна
+        }, 400);
+    });
 });
