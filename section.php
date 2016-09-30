@@ -50,6 +50,17 @@
                                 <input type="text" id="search-type" name="search" placeholder="Input something"><br>
                                 <div id="log-search"></div>
                             </form>
+                            <form id="main-search-form" action="search.php" class="header-search-form-section" method="post" novalidate="novalidate">
+                            <div class="header-search-form input-autocomplete">
+                                <input placeholder="Поиск" class="header-search-input  sel-field-search valid" autocomplete="off" type="text" id="frm-search-text">
+                                <span class="font-icon icon-zoom header-search-icon">
+                                    <input type="submit" class="header-search-btn" value="">
+                                </span>
+                            </div>
+                            <div class="popup default active" style="display: block; top: 0px; width: 200px; left: 98px;">
+                                <ul class="search-list"></ul>
+                            </div>
+                        </form>
                         </div>
                     </div>
                     <div class="promo-slider">
@@ -70,14 +81,14 @@
                             </div>
                         </div>
                         <div class="thumbnails clearfix">
-                            <a href="img/thumbs/img1.jpg" class="current"><img src="img/medium/img11.jpg" alt="image11"></a>
-                            <a href="img/thumbs/img2.jpg"><img src="img/medium/img12.jpg" alt="image12"></a>
-                            <a href="img/thumbs/img3.jpg"><img src="img/medium/img13.jpg" alt="image13"></a>
-                            <a href="img/thumbs/img4.jpg"><img src="img/medium/img14.jpg" alt="image14"></a>
-                            <a href="img/thumbs/img5.jpg"><img src="img/medium/img15.jpg" alt="image15"></a>
-                            <a href="img/thumbs/img6.jpg"><img src="img/medium/img16.jpg" alt="image16"></a>
-                            <a href="img/thumbs/img7.jpg"><img src="img/medium/img17.jpg" alt="image17"></a>
-                            <a href="img/thumbs/img8.jpg"><img src="img/medium/img18.jpg" alt="image18"></a>
+                            <a href="#" class="current"><img src="img/medium/img11.jpg" alt="image11"></a>
+                            <a href="#"><img src="img/medium/img12.jpg" alt="image12"></a>
+                            <a href="#"><img src="img/medium/img13.jpg" alt="image13"></a>
+                            <a href="#"><img src="img/medium/img14.jpg" alt="image14"></a>
+                            <a href="#"><img src="img/medium/img15.jpg" alt="image15"></a>
+                            <a href="#"><img src="img/medium/img16.jpg" alt="image16"></a>
+                            <a href="#"><img src="img/medium/img17.jpg" alt="image17"></a>
+                            <a href="#"><img src="img/medium/img18.jpg" alt="image18"></a>
                         </div>
                     </div>
                     <div class="filter-aside">

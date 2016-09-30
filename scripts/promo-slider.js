@@ -134,8 +134,7 @@ $(document).ready(function(e) {
             $('#overlay').css('display', 'none'); // скрываем подложку
         }
     }
-    $('.gallery-box').on('click', '.big-image img', function(e) {
-        // e.preventDefault();
+    $('.gallery-box').on('click', '.big-image img', function() {
         var $img = $(this); // получаем картинку, ан которую кликнули
         var $sourceImg = $img.attr('src'); // получаем путь к этой картинке из аттрибута src
         $('.gallery-wrap').append('<img src="' + $sourceImg + '" class="popup_img"/>');
