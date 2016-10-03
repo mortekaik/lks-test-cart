@@ -128,10 +128,12 @@ $(document).ready(function(e) {
         if (data == 'open') {
             $('#overlay').css('display', 'block'); // показываем подложку
             $('.gallery-popup').css('visibility', 'visible'); // показываем окно
+            $('body').toggleClass('lock');
         }
         if (data == 'close') {
             $('.gallery-popup').css('visibility', 'hidden'); // скрываем окно
             $('#overlay').css('display', 'none'); // скрываем подложку
+            $('body').toggleClass('lock');
         }
     }
     $('.gallery-box').on('click', '.big-image img', function() {
