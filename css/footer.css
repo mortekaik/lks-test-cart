@@ -795,19 +795,33 @@ body {
 .view {
   position:relative;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .big-image {
+    display: block;
     position: relative;
     width: 95%;
     height: 100%;
     margin: 5px auto;
     border: 1px solid #000;
+    background-color: #fff;
 }
 .big-image img {
   display: block;
-  width: 100%;
-  height: 300px;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+  margin: 10px auto;
+}
+.big-image figcaption {
+    padding: 0.5em; 
+    background: none repeat scroll 0% 0% #FFF;
+    line-height: 1.3;
+    font-family: 'Roboto', sans-serif;  
+    font-weight: 400;
+    text-align: center;
+    /*border: 1px solid #000;*/
 }
 .prev, .next{
   display: block;
@@ -834,19 +848,18 @@ body {
   display: block;
   width: 95%;
   margin: 0 auto;
-  text-align: center;
-  border: 1px solid #000;
+  text-align: justify;
+  /*border: 1px solid #000;*/
 }
 .thumbnails a {
   display: inline-block;
-  /*float:left;*/
-  text-align: justify;
+  /*float: left;*/
 }
 .thumbnails a img{
-  width:142px;
-  height:80px;
+  /*display: block;*/
+  width: 80px;
+  height: 80px;
   border: 2px solid transparent;
-  display:block;
 }
 .thumbnails .current img{
   border-color:#069;

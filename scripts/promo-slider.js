@@ -77,9 +77,11 @@ $(document).ready(function(e) {
         var images = $(this).find('img');
         // var imgSrc = images.attr('src');
         var imgProp = getAttributes(images);
+        console.log(imgProp);
 
         $(".big-image img").attr(imgProp); // Подменяем аттрибуты большого изображения на аттрибуты выбранного
-        //.attr({ src: imgSrc });  
+        //.attr({ src: imgSrc });
+        $('.big-image figcaption').text(imgProp.title);
         $(this).siblings('a').removeClass('current'); // Удаляем класс .current со ссылки чтоб убрать рамку
         images.parent().addClass('current');         // Добавляем класс .current на выбранную миниатюру
         return false;

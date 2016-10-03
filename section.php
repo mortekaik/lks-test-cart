@@ -23,10 +23,12 @@
     <script type="text/javascript" src="scripts/carousel.js"></script>
     <script type="text/javascript" src="scripts/promo-slider.js"></script>
     <!--[if lt IE 9]>
-      <script src="script/html5.js"></script>	 
-     <![endif]-->
-     <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
-     </script>
+        <script src="scripts/html5shiv.min.js"></script>
+        <script src="scripts/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
+    </script>
 </head>
 
 <body>
@@ -75,20 +77,22 @@
                     </div>
                     <div class="gallery-box">
                         <div class="view">
-                            <div class="big-image"><img src="img/medium/img11.jpg" alt="image11">
+                            <figure class="big-image">
+                                <img src="img/medium/img11.jpg" alt="image11">
+                                <figcaption>Picture #011</figcaption>
                                 <a href="#" class="prev"></a>
                                 <a href="#" class="next"></a>
-                            </div>
+                            </figure>
                         </div>
                         <div class="thumbnails clearfix">
-                            <a href="#" class="current"><img src="img/medium/img11.jpg" alt="image11"></a>
-                            <a href="#"><img src="img/medium/img12.jpg" alt="image12"></a>
-                            <a href="#"><img src="img/medium/img13.jpg" alt="image13"></a>
-                            <a href="#"><img src="img/medium/img14.jpg" alt="image14"></a>
-                            <a href="#"><img src="img/medium/img15.jpg" alt="image15"></a>
-                            <a href="#"><img src="img/medium/img16.jpg" alt="image16"></a>
-                            <a href="#"><img src="img/medium/img17.jpg" alt="image17"></a>
-                            <a href="#"><img src="img/medium/img18.jpg" alt="image18"></a>
+                            <a href="#" class="current"><img src="img/medium/img11.jpg" alt="image11" title="Picture #011"></a>
+                            <a href="#"><img src="img/medium/img12.jpg" alt="image12" title="Picture #012"></a>
+                            <a href="#"><img src="img/medium/img13.jpg" alt="image13" title="Picture #013"></a>
+                            <a href="#"><img src="img/medium/img14.jpg" alt="image14" title="Picture #014"></a>
+                            <a href="#"><img src="img/medium/img15.jpg" alt="image15" title="Picture #015"></a>
+                            <a href="#"><img src="img/medium/img16.jpg" alt="image16" title="Picture #016"></a>
+                            <a href="#"><img src="img/medium/img17.jpg" alt="image17" title="Picture #017"></a>
+                            <a href="#"><img src="img/medium/img18.jpg" alt="image18" title="Picture #018"></a>
                         </div>
                     </div>
                     <div class="filter-aside">
