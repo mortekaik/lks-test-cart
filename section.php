@@ -304,9 +304,8 @@
         <div id="top-link"><a href='#top-link'>Вверх</a></div>
         <!-- Всплывающее окно галереи с увеличенной картинкой -->
         <div class="popup gallery-popup">
-            <div class="gallery-wrap">
-                <button type="button" class="popup_close">X</button>
-            </div>
+            <div class="gallery-wrap"></div>
+            <button type="button" class="popup_close">X</button>
         </div>
          <!-- Модальное окно корзины -->
         <div id="modal_cart">
