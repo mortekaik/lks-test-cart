@@ -146,8 +146,9 @@ $(document).ready(function(e) {
     }
     $('.gallery-box').on('click', '.big-image', function() {
         var $img = $(this).find('img'); // получаем картинку, на которую кликнули
-        var $sourceImg = $img.attr('src'); // получаем путь к этой картинке из аттрибута src
-        $('.gallery-wrap').append('<div class="popup_body"><img src="' + $sourceImg + '" class="popup_img"/></div>');
+        var $bigImgProp = getAttributes($img); // получаем атрибуты этой картинки
+        console.log($bigImgProp);
+        $('.gallery-wrap').append('<div class="popup_body"><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/></div>');
         var cloneGalleryThumbs = $('.gallery-box .thumbnails').clone();
         console.log(cloneGalleryThumbs);
         $('.gallery-wrap .popup_body').after(cloneGalleryThumbs);

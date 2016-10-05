@@ -84,15 +84,33 @@
                                 <a href="#" class="next"></a>
                             </figure>
                         </div>
-                        <div class="thumbnails clearfix">
-                            <a href="#" class="current"><img src="img/medium/img11.jpg" alt="image11" title="Picture #011"></a>
-                            <a href="#"><img src="img/medium/img12.jpg" alt="image12" title="Picture #012"></a>
-                            <a href="#"><img src="img/medium/img13.jpg" alt="image13" title="Picture #013"></a>
-                            <a href="#"><img src="img/medium/img14.jpg" alt="image14" title="Picture #014"></a>
-                            <a href="#"><img src="img/medium/img15.jpg" alt="image15" title="Picture #015"></a>
-                            <a href="#"><img src="img/medium/img16.jpg" alt="image16" title="Picture #016"></a>
-                            <a href="#"><img src="img/medium/img17.jpg" alt="image17" title="Picture #017"></a>
-                            <a href="#"><img src="img/medium/img18.jpg" alt="image18" title="Picture #018"></a>
+                        <div class="thumbnails">
+                            <ul class="thumbs-list">
+                                <li class="thumbs-item">
+                                    <a href="#" class="current"><img src="img/medium/img11.jpg" alt="image11" title="Picture #011"></a>
+                                </li>
+                                <li class="thumbs-item">
+                                    <a href="#"><img src="img/medium/img12.jpg" alt="image12" title="Picture #012"></a>
+                                </li>
+                                <li class="thumbs-item">
+                                    <a href="#"><img src="img/medium/img13.jpg" alt="image13" title="Picture #013"></a>
+                                </li>
+                                <li class="thumbs-item">
+                                    <a href="#"><img src="img/medium/img14.jpg" alt="image14" title="Picture #014"></a>
+                                </li>
+                                <li class="thumbs-item">
+                                    <a href="#"><img src="img/medium/img15.jpg" alt="image15" title="Picture #015"></a>
+                                </li>
+                                <li class="thumbs-item">
+                                    <a href="#"><img src="img/medium/img16.jpg" alt="image16" title="Picture #016"></a>
+                                </li>
+                                <li class="thumbs-item">
+                                    <a href="#"><img src="img/medium/img17.jpg" alt="image17" title="Picture #017"></a>
+                                </li>
+                                <li class="thumbs-item">
+                                    <a href="#"><img src="img/medium/img18.jpg" alt="image18" title="Picture #018"></a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div class="filter-aside">

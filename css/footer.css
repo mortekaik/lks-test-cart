@@ -600,7 +600,7 @@ body {
     height:100%; /* рaзмерoм вo весь экрaн */
     top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
     left:0;
-    cursor:pointer;
+    /*cursor:pointer;*/
     display:none; /* в oбычнoм сoстoянии её нет) */
 }
 /* Счетчик товара в модальном окне корзины (+ "//" -) */
@@ -848,26 +848,27 @@ body {
   display: block;
   width: 95%;
   margin: 0 auto;
-  text-align: justify;
-  /*border: 1px solid #000;*/
+  border: 1px solid #000;
+  overflow: hidden;
 }
-.thumbnails a {
-  display: inline-block;
-  /*float: left;*/
+.thumbsnails ul li {
+  float: left;
+  /*width: calc(100% * 1/6 - 10px);*/
+  width: 16%;
+  /*margin: 5px;*/
 }
-.thumbnails a img{
-  /*display: block;*/
-  width: 80px;
-  height: 80px;
+.thumbs-list a img{
+  display: block;
+  max-width: 100%;
   border: 2px solid transparent;
 }
-.thumbnails .current img{
+.thumbs-list .current img{
   border-color:#069;
 }
 .gallery-popup {
     display: block;
-    width: 95%;
-    height: 95%;
+    width: 75%;
+    height: 75%;
     position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
     z-index: 1005;  /*oкнo дoлжнo быть нaибoлее бoльшем слoе */
     top: 50%;  /*oтступaем сверху 50%*/
@@ -885,56 +886,53 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
     /*overflow: auto;*/
 }
 .gallery-popup .gallery-wrap .popup_body {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 70%;
+    max-height: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border: 1px solid #000;
 }
 .gallery-popup .gallery-wrap .popup_body img {
     display: block;
     max-width: 100%;
-    max-height: 80%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    /*margin-top: 5px;*/
+    max-height: 100%;
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid #000;
+    /*overflow: auto;*/
     /*z-index: 1006;*/
 }
 /* элементы списка картинок в модальном окне*/
 /*.gallery-popup li {
     display: block;
 }*/
-.gallery-popup .thumbnails {
+.gallery-popup .thumbs-list {
     display: block;
     position: relative;
     max-width: 100%;
+    width: 90%;
     max-height: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 5px auto;
-    margin-bottom: 0;
-    /*padding-top: 5px;*/
-    text-align: center;
+    height: auto;
+    margin: auto;
     border: 1px solid #000;
+    text-align: center;
     /*z-index: 1006;*/
 }
-.gallery-popup .thumbnails a {
+.gallery-popup .thumbs-list a {
     display: inline-block;
-    width: 70px;
-    height: 70px;
-    /*max-width: 100%;*/
-    /*max-height: 100%;*/
     /*float: left;*/
+    /*width: calc(100% * 1/8 - 10px); */
+    /*width: 80px;*/
+    /*height: 80px;*/
+    /*margin: 5px;*/
 }
-.gallery-popup .thumbnails a img{
+.gallery-popup .thumbs-list a img{
     display: block;
     /*width: 50px;*/
     /*height: 50px;*/
@@ -942,7 +940,7 @@ body {
     max-height: 100%;
     border: 2px solid transparent;
 }
-.gallery-popup .thumbnails .current img{
+.gallery-popup .thumbs-list .current img{
     border-color:#069;
 }
 
