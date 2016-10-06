@@ -85,9 +85,11 @@
                             </figure>
                         </div>
                         <div class="thumbnails">
+                            <div class="thumb-prev"><a href="#"></a></div>
+                            <div class="thumb-next"><a href="#"></a></div>
                             <ul class="thumbs-list">
-                                <li class="thumbs-item">
-                                    <a href="#" class="current"><img src="img/medium/img11.jpg" alt="image11" title="Picture #011"></a>
+                                <li class="thumbs-item current">
+                                    <a href="#"><img src="img/medium/img11.jpg" alt="image11" title="Picture #011"></a>
                                 </li>
                                 <li class="thumbs-item">
                                     <a href="#"><img src="img/medium/img12.jpg" alt="image12" title="Picture #012"></a>
@@ -322,7 +324,11 @@
         <div id="top-link"><a href='#top-link'>Вверх</a></div>
         <!-- Всплывающее окно галереи с увеличенной картинкой -->
         <div class="popup gallery-popup">
-            <div class="gallery-wrap"></div>
+            <div class="gallery-popup-content">
+                <div class="popup_header"></div>
+                <div class="popup_body"></div>
+                <div class="popup_footer clearfix"></div>
+            </div>
             <button type="button" class="popup_close">X</button>
         </div>
          <!-- Модальное окно корзины -->

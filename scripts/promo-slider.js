@@ -73,21 +73,21 @@ $(document).ready(function(e) {
         return attrs;
     }
 
-    $('.thumbnails a').click(function() {      // При нажатии на миниатюру
+    $('.thumbnails').on('click', '.thumbs-item a', function() {   // При нажатии на миниатюру
         var images = $(this).find('img');
         var imgProp = getAttributes(images);
         console.log(imgProp);
 
         $(".big-image img").attr(imgProp); // Подменяем аттрибуты большого изображения на аттрибуты выбранного
         $('.big-image figcaption').text(imgProp.title);
-        $(this).siblings('a').removeClass('current'); // Удаляем класс .current со ссылки чтоб убрать рамку
-        images.parent().addClass('current');         // Добавляем класс .current на выбранную миниатюру
+        $(this).parent().siblings('li').removeClass('current'); // Удаляем класс .current со ссылки чтоб убрать рамку
+        images.parents('li').addClass('current');         // Добавляем класс .current на выбранную миниатюру
         return false;
     });
 
-    $('.next').click(function() {                // При нажатии на кнопку "вперед"
-        var count = $('.thumbnails a').length;   // Общее количество изображений
-        var n = parseInt($('.thumbnails a').index($('.current')) + 1); // Порядковый номер текущего изображения
+    $('.gallery-box .view').on('click', '.next', function() {                // При нажатии на кнопку "вперед"
+        var count = $('.thumbnails ul > li').length;   // Общее количество изображений
+        var n = parseInt($('.thumbnails ul > li').index($('.current')) + 1); // Порядковый номер текущего изображения
         var activeImg = $('.thumbnails .current');     // Активное на данный момент изображение
         var nextSrc, nextImgProp;
 
@@ -97,10 +97,10 @@ $(document).ready(function(e) {
         $('.thumbnails .current').removeClass('current');   // Удаляется класс .current с предыдущей миниатюры
         activeImg.next().addClass('current');  // На миниатюру следующего изображения вешается класс .current
         } else {      // - Если текущее изображение последнее в списке
-        nextSrc = $('.thumbnails a').first().find('img'); // В переменную записываются атрибуты первого изображения
+        nextSrc = $('.thumbnails ul > li').first().find('img'); // В переменную записываются атрибуты первого изображения
         nextImgProp = getAttributes(nextSrc);
         $('.thumbnails .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
-        $('.thumbnails a').first().addClass('current');  // На первую миниатюру вешается класс .current
+        $('.thumbnails ul > li').first().addClass('current');  // На первую миниатюру вешается класс .current
         }
         $('.big-image img').attr(nextImgProp);  // Подменяем адрес большого изображения на адрес следующего
         $('.big-image figcaption').text(nextImgProp.title);
@@ -108,9 +108,9 @@ $(document).ready(function(e) {
     });
 
 
-    $('.prev').click(function() {   // При нажатии на кнопку "назад"
-        var count = $('.thumbnails a').length; // Общее количество изображений
-        var n = parseInt($('.thumbnails a').index($('.current')) + 1); // Порядковый номер текущего изображения
+    $('.gallery-box .view').on('click', '.prev', function() {   // При нажатии на кнопку "назад"
+        var count = $('.thumbnails ul > li').length; // Общее количество изображений
+        var n = parseInt($('.thumbnails ul > li').index($('.current')) + 1); // Порядковый номер текущего изображения
         var activeImg = $('.thumbnails .current');  // Активное на данный момент изображение
         var prevSrc, prevImgProp;
 
@@ -121,11 +121,11 @@ $(document).ready(function(e) {
         $('.thumbnails .current').removeClass('current');  // Удаляется класс .current активной до этого миниатюры
         activeImg.prev().addClass('current'); // На миниатюру изображения слева вешается класс .current
         } else {  // - Если текущее изображение первое
-        prevSrc = $('.thumbnails a:last').find('img'); // В переменную записываются атрибуты последнего изображения
+        prevSrc = $('.thumbnails ul > li:last').find('img'); // В переменную записываются атрибуты последнего изображения
         prevImgProp = getAttributes(prevSrc);
         console.log(prevImgProp);
         $('.thumbnails .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
-        $('.thumbnails a:last').addClass('current');  // На последнюю миниатюру вешается класс .current
+        $('.thumbnails ul > li:last').addClass('current');  // На последнюю миниатюру вешается класс .current
         }
         $('.big-image img').attr(prevImgProp);  // Подменяется адрес большого изображения на адрес следующего
         $('.big-image figcaption').text(prevImgProp.title);
@@ -148,10 +148,10 @@ $(document).ready(function(e) {
         var $img = $(this).find('img'); // получаем картинку, на которую кликнули
         var $bigImgProp = getAttributes($img); // получаем атрибуты этой картинки
         console.log($bigImgProp);
-        $('.gallery-wrap').append('<div class="popup_body"><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/></div>');
-        var cloneGalleryThumbs = $('.gallery-box .thumbnails').clone();
+        $('.gallery-popup-content .popup_body').append('<figure class="popup-img_big"><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/></figure>');
+        var cloneGalleryThumbs = $('.gallery-box .thumbnails').find('.thumb-prev, .thumb-next, .thumbs-list').clone(true);
         console.log(cloneGalleryThumbs);
-        $('.gallery-wrap .popup_body').after(cloneGalleryThumbs);
+        $('.gallery-popup-content .popup_footer').append(cloneGalleryThumbs);
         modal('open');
     });
 
