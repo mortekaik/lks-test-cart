@@ -248,4 +248,26 @@ $(document).ready(function() {
         position: "h",                        
         dirAutoSlide: false                     
     });
+
+    $('.gallery-box .thumbnails-wrapper').Carousel({
+        visible: 4,
+        rotateBy: 1,
+        speed: 800,
+        btnNext: '.gallery-box .thumb-next',
+        btnPrev: '.gallery-box .thumb-prev',
+        auto: false,
+        position: "h",                        
+        dirAutoSlide: false                     
+    });
+
+    $('.gallery-popup .thumbnails-wrapper').Carousel({
+        visible: 4,
+        rotateBy: 1,
+        speed: 600,
+        btnPrev: '.gallery-popup .thumb-prev',
+        btnNext: '.gallery-popup .thumb-next',
+        auto: false,
+        position: "h",                        
+        dirAutoSlide: false                     
+    });
 });

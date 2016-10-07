@@ -847,24 +847,31 @@ body {
 .thumbnails {
     display: block;
     position: relative;
+    max-width: 100%;  /*ширина всего блока */
     width: 95%;
-    height: 90px;
     margin: 0 auto;
+    background-color: #fff;
     border: 1px solid #000;
-    /*overflow: hidden;*/
+}
+.thumbnails-wrapper {
+    position: relative;
+    width: calc(100% * 0.5);
+    overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области */
+    padding: 5px 0;
+    margin: 0 auto;
+    /*border: 1px solid #000;*/
 }
 .thumbnails ul {
     position: relative;
-    width: 50%;
-    height: 100%;
-    margin: 0 auto;
+    width: 10000px;
     overflow: hidden;
     /*border: 1px solid #000;*/
 }
 .thumbnails ul li {
+    display: block;
+    position: relative;
     float: left;
-    width: calc(100% * 1/4 - 10px);
-    margin: 5px;
+    margin-right: 5px;
 }
 .thumbnails li img{
     display: block;
@@ -881,25 +888,23 @@ body {
    width: 25px; 
    height: 25px;
    position: absolute;
+   top: 0;
+   bottom: 0;
    z-index: 2;
    margin: auto;
    cursor: pointer;
    text-decoration: none;
-   /*visibility: hidden;*/
-   border: 1px solid #D8D8D8;
+   visibility: hidden;
+   /*border: 1px solid #D8D8D8;*/
 }
 .thumb-prev{
-   top: 0;
-   left: calc(25% - 27px);
-   bottom: 0;
+   left: calc(25% - 40px);
    background: url('../img/arrow_prev.png') 50% 50% no-repeat, white; 
    border-top-left-radius: 3px;
    border-bottom-left-radius: 3px;
 }
 .thumb-next{
-   top: 0;
-   right: calc(25% - 27px);
-   bottom: 0;
+   right: calc(25% - 40px);
    background: url('../img/arrow_next.png') 50% 50% no-repeat, white; 
    border-top-right-radius: 3px;
    border-bottom-right-radius: 3px;
@@ -929,16 +934,19 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    /*overflow: auto;*/
+    background: #fff;
+    border: 1px solid #f00;
 }
 .gallery-popup .popup_body {
     display: block;
     position: relative;
     width: 100%;
     height: 70%;
+    background: #fff;
     padding-top: 10px;
     padding-bottom: 30px;
     border: 1px solid #000;
+    /*overflow: auto;*/
 }
 .gallery-popup .popup_body figure {
     display: block;
@@ -948,7 +956,6 @@ body {
 }
 .gallery-popup .popup_body figure img {
     display: block;
-    position: relative;
     max-width: 100%;
     max-height: 100%;
     height: auto;
@@ -957,29 +964,36 @@ body {
 }
 .gallery-popup .popup_footer {
     display: block;
+    box-sizing: border-box;
     position: relative;
-    max-height: 100%;
-    height: 90px;
+    max-width: 100%;  /*ширина всего блока */
+    width: 100%;
+    min-height: 30%;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #000;
+}
+.gallery-popup .popup_footer .thumbnails-wrapper {
+    display: block;
+    width: calc(100% * 0.4 + 25px);
+    min-height: 100%;
+    height: auto;
+    overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области */
+    padding: 25px 0px;
     margin: 0 auto;
     border: 1px solid #000;
-    overflow: hidden;
 }
 .gallery-popup .popup_footer ul {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    margin: 0 auto;
+    position: relative;
+    width: 10000px;
     /*overflow: hidden;*/
     border: 1px solid #000;
 }
 .gallery-popup .popup_footer ul li {
+    display: block;
+    position: relative;
     float: left;
-    width: calc(100% * 1/4 - 10px);
-    margin: 5px;
+    margin-right: 5px;
 }
 .gallery-popup .popup_footer li img {
     display: block;

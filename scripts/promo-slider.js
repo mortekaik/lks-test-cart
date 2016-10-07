@@ -73,6 +73,17 @@ $(document).ready(function(e) {
         return attrs;
     }
 
+    var count = $('.thumbnails ul > li').length;   // Общее количество изображений
+    var elemOuterWidth = $('.thumbnails ul > li').outerWidth() + 5;
+    console.log(elemOuterWidth);
+    if (count > 4) {
+        $('.thumb-prev, .thumb-next').css({'visibility': 'visible'});
+    } else if (count < 4 && count > 1) {
+        $('.thumbs-list').css({'width': elemOuterWidth * count, 'margin': '0 auto'});
+    } else {
+        $('.gallery-box figure > a').css({'display': 'none'});
+        $('.thumbs-list').css({'width': elemOuterWidth * count, 'margin': '0 auto'});
+    }
     $('.thumbnails').on('click', '.thumbs-item a', function() {   // При нажатии на миниатюру
         var images = $(this).find('img');
         var imgProp = getAttributes(images);
@@ -148,8 +159,8 @@ $(document).ready(function(e) {
         var $img = $(this).find('img'); // получаем картинку, на которую кликнули
         var $bigImgProp = getAttributes($img); // получаем атрибуты этой картинки
         console.log($bigImgProp);
-        $('.gallery-popup-content .popup_body').append('<figure class="popup-img_big"><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/></figure>');
-        var cloneGalleryThumbs = $('.gallery-box .thumbnails').find('.thumb-prev, .thumb-next, .thumbs-list').clone(true);
+        $('.gallery-popup-content').append('<div class="popup_header"></div><div class="popup_body"><figure class="popup-img_big"><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/></figure></div><div class="popup_footer"></div>');
+        var cloneGalleryThumbs = $('.gallery-box .thumbnails').find('.thumb-prev, .thumb-next, .thumbnails-wrapper').clone(true);
         console.log(cloneGalleryThumbs);
         $('.gallery-popup-content .popup_footer').append(cloneGalleryThumbs);
         modal('open');
@@ -157,8 +168,10 @@ $(document).ready(function(e) {
 
     $('body').on('click', '.popup_close, #overlay', function() {    // Событие клика на затемненный фон и на кнопку X
         modal('close');
+        var $popupContent = $('.gallery-popup-content');
+        var $popupBlocks = $popupContent.find('.popup_header, .popup_body, .popup_footer');
         setTimeout(function() { // Выставляем таймер
-          $('.gallery-popup .popup_body, .gallery-popup .thumbnails').remove(); // Удаляем разметку всплывающего окна
+          $popupBlocks.remove(); // Удаляем разметку всплывающего окна
         }, 400);
     });
 });

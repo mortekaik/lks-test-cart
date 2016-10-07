@@ -78,7 +78,7 @@
                     <div class="gallery-box">
                         <div class="view">
                             <figure class="big-image">
-                                <img src="img/medium/img11.jpg" alt="image11">
+                                <img src="img/medium/img11.jpg" alt="image11" title="Picture #011">
                                 <figcaption>Picture #011</figcaption>
                                 <a href="#" class="prev"></a>
                                 <a href="#" class="next"></a>
@@ -87,32 +87,34 @@
                         <div class="thumbnails">
                             <div class="thumb-prev"><a href="#"></a></div>
                             <div class="thumb-next"><a href="#"></a></div>
-                            <ul class="thumbs-list">
-                                <li class="thumbs-item current">
-                                    <a href="#"><img src="img/medium/img11.jpg" alt="image11" title="Picture #011"></a>
-                                </li>
-                                <li class="thumbs-item">
-                                    <a href="#"><img src="img/medium/img12.jpg" alt="image12" title="Picture #012"></a>
-                                </li>
-                                <li class="thumbs-item">
-                                    <a href="#"><img src="img/medium/img13.jpg" alt="image13" title="Picture #013"></a>
-                                </li>
-                                <li class="thumbs-item">
-                                    <a href="#"><img src="img/medium/img14.jpg" alt="image14" title="Picture #014"></a>
-                                </li>
-                                <li class="thumbs-item">
-                                    <a href="#"><img src="img/medium/img15.jpg" alt="image15" title="Picture #015"></a>
-                                </li>
-                                <li class="thumbs-item">
-                                    <a href="#"><img src="img/medium/img16.jpg" alt="image16" title="Picture #016"></a>
-                                </li>
-                                <li class="thumbs-item">
-                                    <a href="#"><img src="img/medium/img17.jpg" alt="image17" title="Picture #017"></a>
-                                </li>
-                                <li class="thumbs-item">
-                                    <a href="#"><img src="img/medium/img18.jpg" alt="image18" title="Picture #018"></a>
-                                </li>
-                            </ul>
+                            <div class="thumbnails-wrapper">
+                                <ul class="thumbs-list clearfix">
+                                    <li class="thumbs-item current">
+                                        <a href="#"><img src="img/medium/img11.jpg" alt="image11" title="Picture #011"></a>
+                                    </li>
+                                    <li class="thumbs-item">
+                                        <a href="#"><img src="img/medium/img12.jpg" alt="image12" title="Picture #012"></a>
+                                    </li>
+                                    <!-- <li class="thumbs-item">
+                                        <a href="#"><img src="img/medium/img13.jpg" alt="image13" title="Picture #013"></a>
+                                    </li> -->
+                                    <!-- <li class="thumbs-item">
+                                        <a href="#"><img src="img/medium/img14.jpg" alt="image14" title="Picture #014"></a>
+                                    </li> -->
+                                    <!-- <li class="thumbs-item">
+                                        <a href="#"><img src="img/medium/img15.jpg" alt="image15" title="Picture #015"></a>
+                                    </li> -->
+                                    <!-- <li class="thumbs-item">
+                                        <a href="#"><img src="img/medium/img16.jpg" alt="image16" title="Picture #016"></a>
+                                    </li> -->
+                                    <!-- <li class="thumbs-item">
+                                        <a href="#"><img src="img/medium/img17.jpg" alt="image17" title="Picture #017"></a>
+                                    </li> -->
+                                    <!-- <li class="thumbs-item">
+                                        <a href="#"><img src="img/medium/img18.jpg" alt="image18" title="Picture #018"></a>
+                                    </li> -->
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="filter-aside">
@@ -250,43 +252,43 @@
                             <div class="carousel-button-left"><a href="#"></a></div>
                             <div class="carousel-button-right"><a href="#"></a></div>
                             <div class="carousel-wrapper"> 
-                               <ul class="carousel-items clearfix"> 
-                                <li class="carousel-block">
-                                    <a class="q-item-info" href="#">0
-                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-                                        <div class="q-item-text"><span>Весы A&D</span></div>
-                                    </a>
-                                  </li>
-                                  <li class="carousel-block">
-                                    <a class="q-item-info" href="#">1
-                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-                                        <div class="q-item-text"><span>Весы A&D</span></div>
-                                    </a>
-                                  </li>
-                                  <li class="carousel-block">
-                                    <a class="q-item-info" href="#">2
-                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-                                        <div class="q-item-text"><span>Весы A&D</span></div>
-                                    </a>
-                                  </li>
-                                  <li class="carousel-block">
-                                    <a class="q-item-info" href="#">3
-                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-                                        <div class="q-item-text"><span>Весы A&D</span></div>
-                                    </a>
-                                  </li>
-                                  <li class="carousel-block">
-                                    <a class="q-item-info" href="#">4
-                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-                                        <div class="q-item-text"><span>Весы A&D</span></div>
-                                    </a>
-                                  </li>
-                                  <li class="carousel-block">
-                                    <a class="q-item-info" href="#">5
-                                        <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-                                        <div class="q-item-text"><span>Весы A&D</span></div>
-                                    </a>
-                                  </li>
+                               <ul class="carousel-items clearfix">
+                                    <li class="carousel-block">
+                                        <a class="q-item-info" href="#">0
+                                            <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                            <div class="q-item-text"><span>Весы A&D</span></div>
+                                        </a>
+                                    </li>
+                                    <li class="carousel-block">
+                                        <a class="q-item-info" href="#">1
+                                            <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                            <div class="q-item-text"><span>Весы A&D</span></div>
+                                        </a>
+                                    </li>
+                                    <li class="carousel-block">
+                                        <a class="q-item-info" href="#">2
+                                            <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                            <div class="q-item-text"><span>Весы A&D</span></div>
+                                        </a>
+                                    </li>
+                                    <li class="carousel-block">
+                                        <a class="q-item-info" href="#">3
+                                            <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                            <div class="q-item-text"><span>Весы A&D</span></div>
+                                        </a>
+                                    </li>
+                                    <li class="carousel-block">
+                                        <a class="q-item-info" href="#">4
+                                            <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                            <div class="q-item-text"><span>Весы A&D</span></div>
+                                        </a>
+                                    </li>
+                                    <li class="carousel-block">
+                                        <a class="q-item-info" href="#">5
+                                            <img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+                                            <div class="q-item-text"><span>Весы A&D</span></div>
+                                        </a>
+                                    </li>
                                </ul>
                             </div>
                        </div>
@@ -324,11 +326,7 @@
         <div id="top-link"><a href='#top-link'>Вверх</a></div>
         <!-- Всплывающее окно галереи с увеличенной картинкой -->
         <div class="popup gallery-popup">
-            <div class="gallery-popup-content">
-                <div class="popup_header"></div>
-                <div class="popup_body"></div>
-                <div class="popup_footer clearfix"></div>
-            </div>
+            <div class="gallery-popup-content"></div>
             <button type="button" class="popup_close">X</button>
         </div>
          <!-- Модальное окно корзины -->
