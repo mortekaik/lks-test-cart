@@ -855,10 +855,10 @@ body {
 }
 .thumbnails-wrapper {
     position: relative;
-    width: calc(100% * 0.5);
+    width: calc(100% * 0.5 + 20px);
     overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области */
-    padding: 5px 0;
     margin: 0 auto;
+    padding: 5px 0;
     /*border: 1px solid #000;*/
 }
 .thumbnails ul {
@@ -871,7 +871,7 @@ body {
     display: block;
     position: relative;
     float: left;
-    margin-right: 5px;
+    margin-right: 4px;
 }
 .thumbnails li img{
     display: block;
@@ -920,7 +920,7 @@ body {
 .gallery-popup {
     display: block;
     width: 80%;
-    height: auto;
+    height: 80%;
     position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
     z-index: 1005;  /*oкнo дoлжнo быть нaибoлее бoльшем слoе */
     top: 50%;  /*oтступaем сверху 50%*/
@@ -941,6 +941,7 @@ body {
     display: block;
     position: relative;
     width: 100%;
+    max-height: auto;
     height: 70%;
     background: #fff;
     padding-top: 10px;
@@ -953,12 +954,12 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    border: 1px solid #000;
 }
 .gallery-popup .popup_body figure img {
     display: block;
     max-width: 100%;
     max-height: 100%;
-    height: auto;
     margin: 0 auto;
     border: 1px solid #000;
 }
@@ -968,32 +969,30 @@ body {
     position: relative;
     max-width: 100%;  /*ширина всего блока */
     width: 100%;
-    min-height: 30%;
+    max-height: 30%;
     margin: 0 auto;
-    /*background: #fff;*/
+    background: #fff;
     border: 1px solid #000;
 }
 .gallery-popup .popup_footer .thumbnails-wrapper {
     display: block;
-    width: calc(100% * 0.4 + 25px);
-    min-height: 100%;
-    height: auto;
+    width: calc(100% * 0.5 + 20px);
     overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области */
-    padding: 25px 0px;
+    padding: 0;
     margin: 0 auto;
     border: 1px solid #000;
 }
 .gallery-popup .popup_footer ul {
     position: relative;
     width: 10000px;
-    /*overflow: hidden;*/
+    overflow: hidden;
     border: 1px solid #000;
 }
 .gallery-popup .popup_footer ul li {
     display: block;
     position: relative;
     float: left;
-    margin-right: 5px;
+    margin-right: 4px;
 }
 .gallery-popup .popup_footer li img {
     display: block;

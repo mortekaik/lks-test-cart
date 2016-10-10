@@ -73,16 +73,21 @@ $(document).ready(function(e) {
         return attrs;
     }
 
-    var count = $('.thumbnails ul > li').length;   // Общее количество изображений
-    var elemOuterWidth = $('.thumbnails ul > li').outerWidth() + 5;
+    var $elemThumbOrder = $('.thumbnails ul > li');
+    console.log($elemThumbOrder);
+    var countElems = $elemThumbOrder.length;   // Общее количество изображений
+    console.log(countElems);
+    var marginRightProp = parseInt($elemThumbOrder.css('marginRight'));
+    console.log(marginRightProp);
+    var elemOuterWidth = $elemThumbOrder.outerWidth() + marginRightProp;
     console.log(elemOuterWidth);
-    if (count > 4) {
+    if (countElems > 4) {
         $('.thumb-prev, .thumb-next').css({'visibility': 'visible'});
-    } else if (count < 4 && count > 1) {
-        $('.thumbs-list').css({'width': elemOuterWidth * count, 'margin': '0 auto'});
+    } else if (countElems <= 4 && countElems > 1) {
+        $('.thumbs-list').css({'width': elemOuterWidth * countElems, 'margin': '0 auto'});
     } else {
         $('.gallery-box figure > a').css({'display': 'none'});
-        $('.thumbs-list').css({'width': elemOuterWidth * count, 'margin': '0 auto'});
+        $('.thumbs-list').css({'width': elemOuterWidth * countElems, 'margin': '0 auto'});
     }
     $('.thumbnails').on('click', '.thumbs-item a', function() {   // При нажатии на миниатюру
         var images = $(this).find('img');

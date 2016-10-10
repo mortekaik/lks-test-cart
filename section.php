@@ -104,15 +104,15 @@
                                     <li class="thumbs-item">
                                         <a href="#"><img src="img/medium/img15.jpg" alt="image15" title="Picture #015"></a>
                                     </li>
-                                    <!-- <li class="thumbs-item">
+                                    <li class="thumbs-item">
                                         <a href="#"><img src="img/medium/img16.jpg" alt="image16" title="Picture #016"></a>
-                                    </li> -->
-                                    <!-- <li class="thumbs-item">
+                                    </li>
+                                    <li class="thumbs-item">
                                         <a href="#"><img src="img/medium/img17.jpg" alt="image17" title="Picture #017"></a>
-                                    </li> -->
-                                    <!-- <li class="thumbs-item">
+                                    </li>
+                                    <li class="thumbs-item">
                                         <a href="#"><img src="img/medium/img18.jpg" alt="image18" title="Picture #018"></a>
-                                    </li> -->
+                                    </li>
                                 </ul>
                             </div>
                         </div>
