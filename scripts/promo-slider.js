@@ -89,7 +89,7 @@ $(document).ready(function(e) {
         $('.gallery-box figure > a').css({'display': 'none'});
         $('.thumbs-list').css({'width': elemOuterWidth * countElems, 'margin': '0 auto'});
     }
-    $('.thumbnails').on('click', '.thumbs-item a', function() {   // При нажатии на миниатюру
+    $('.thumbnails, .popup_footer').on('click', '.thumbs-item a', function() {   // При нажатии на миниатюру
         var images = $(this).find('img');
         var imgProp = getAttributes(images);
         console.log(imgProp);
@@ -168,6 +168,16 @@ $(document).ready(function(e) {
         var cloneGalleryThumbs = $('.gallery-box .thumbnails').find('.thumb-prev, .thumb-next, .thumbnails-wrapper').clone(true);
         console.log(cloneGalleryThumbs);
         $('.gallery-popup-content .popup_footer').append(cloneGalleryThumbs);
+        $('.gallery-popup .popup_footer .thumbnails-wrapper').Carousel({
+                visible: 4,
+                rotateBy: 1,
+                speed: 600,
+                btnPrev: '.gallery-popup .popup_footer .thumb-prev',
+                btnNext: '.gallery-popup .popup_footer .thumb-next',
+                auto: false,
+                position: "h",
+                dirAutoSlide: false                     
+            });
         modal('open');
     });
 

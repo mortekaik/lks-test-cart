@@ -79,6 +79,18 @@ $(document).ready(function() {
                 //size - размер для вычисления длины, зависит от ориентации карусели
                 var size = itemWidth;
 
+                if (settings.visible == 'auto') {
+                    var width = $(this).width();    
+                    settings.visible = Math.floor(width/itemWidth); 
+                }
+                
+                if (settings.visible >= itemsTotal) {
+                    $(settings.btnNext).css({'display': 'none'});
+                    $(settings.btnPrev).css({'display': 'none'});
+                    return false;
+                }
+                
+
                 if (settings.position == "v") { //Если карусель вертикальная то
                     size = itemHeight;
                 }
@@ -93,7 +105,7 @@ $(document).ready(function() {
                     $this.css({
                         'position': 'relative', // необходимо для нормального отображения в ИЕ6(7)
                         'overflow': 'hidden', // прячем все, что не влезает в контейнер
-                        // 'width': settings.visible * size + 'px', // ширину контейнера ставим равной ширине всех видимых элементов
+                        //'width': settings.visible * size + 'px', // ширину контейнера ставим равной ширине всех видимых элементов
                         //'height': itemHeight - settings.margin
                     });
                 }
@@ -114,7 +126,7 @@ $(document).ready(function() {
                 // else
                 //     $carousel.children('li').css({
                 //         'margin-left': settings.margin/2 + 'px',
-                //         'margin-right': settings.margin/2 + 'px',
+                //         'margin-right': settings.margin/2 + 'px'
                 //     });
                 // в зависимости от ориентации, увеличиваем длину или ширину карусели
                 if (settings.position == "v")
@@ -128,84 +140,94 @@ $(document).ready(function() {
                     $carousel.css({
                         'position': 'relative', // разрешаем сдвиг по оси
                         'width': 10000 + 'px', // увеличиваем ленту карусели
-                        // 'top': 0,
-                        // 'left': 0
+                        'top': 0,
+                        'left': 0
                     });
+                // Навели курсор на карусель
+                $this.on('mouseenter', function(e) { 
+                    e.stopPropagation();
+                    $this.addClass('hover');
+                });
+                //Убрали курсор с карусели
+                $this.on('mouseleave', function(e) { 
+                    e.stopPropagation();
+                    $this.removeClass('hover');
+                });
                 //прокрутка карусели в наравлении dir [true-вперед; false-назад]
                 function slide(dir) {
                     var direction = !dir ? -1 : 1; // устанавливаем заданное направление
                     var Indent = 0; // смещение (для ul)
-                    if (!running) {
-                        // если анимация завершена (или еще не запущена)
-                        running = true; // ставим флажок, что анимация в процессе
-                        if (intID) { // если запущен интервал
-                            window.clearInterval(intID); // очищаем интервал                                         
-                        }
-                        if (!dir) { // если мы мотаем к следующему элементу (так по умолчанию)
+                    if (!$this.is('.hover')) {
+                        if (!running) {
+                            // если анимация завершена (или еще не запущена)
+                            running = true; // ставим флажок, что анимация в процессе
+                            if (intID) { // если запущен интервал
+                                window.clearInterval(intID); // очищаем интервал                                         
+                            }
+                            if (!dir) { // если мы мотаем к следующему элементу (так по умолчанию)
+                                /*
+                                 * вставляем после последнего элемента карусели
+                                 * клоны стольких элементов, сколько задано
+                                 * в параметре rotateBy (по умолчанию задан один элемент)
+                                 */
+                                $carousel.children(':last').after($carousel.children().slice(0, settings.rotateBy).clone(true));
+                            } else { // если мотаем к предыдущему элементу
+                                /*
+                                 * вставляем перед первым элементом карусели
+                                 * клоны стольких элементов, сколько задано
+                                 * в параметре rotateBy (по умолчанию задан один элемент)
+                                 */
+                                $carousel.children(':first').before($carousel.children().slice(itemsTotal - settings.rotateBy, itemsTotal).clone(true));
+                                /*
+                                 * сдвигаем карусель (<ul>)  на ширину/высоту  элемента,
+                                 * умноженную на количество элементов, заданных
+                                 * в параметре rotateBy (по умолчанию задан один элемент)
+                                 */
+                                if (settings.position == "v")
+                                    $carousel.css('top', -size * settings.rotateBy + 'px');
+                                else $carousel.css('left', -size * settings.rotateBy + 'px');
+                            }
+
                             /*
-                             * вставляем после последнего элемента карусели
-                             * клоны стольких элементов, сколько задано
-                             * в параметре rotateBy (по умолчанию задан один элемент)
-                             */
-                            $carousel.children(':last').after($carousel.children().slice(0, settings.rotateBy).clone(true));
-                        } else { // если мотаем к предыдущему элементу
-                            /*
-                             * вставляем перед первым элементом карусели
-                             * клоны стольких элементов, сколько задано
-                             * в параметре rotateBy (по умолчанию задан один элемент)
-                             */
-                            $carousel.children(':first').before($carousel.children().slice(itemsTotal - settings.rotateBy, itemsTotal).clone(true));
-                            /*
-                             * сдвигаем карусель (<ul>)  на ширину/высоту  элемента,
-                             * умноженную на количество элементов, заданных
-                             * в параметре rotateBy (по умолчанию задан один элемент)
+                             * расчитываем  смещение
+                             * текущее значение  + ширина/высота  одного элемента * количество проматываемых элементов * на направление перемещения (1 или -1)
                              */
                             if (settings.position == "v")
-                                $carousel.css('top', -size * settings.rotateBy + 'px');
-                            else $carousel.css('left', -size * settings.rotateBy + 'px');
+                                Indent = parseInt($carousel.css('top')) + (size * settings.rotateBy * direction);
+                            else
+                                Indent = parseInt($carousel.css('left')) + (size * settings.rotateBy * direction);
+
+                            if (settings.position == "v")
+                                var animate_data = { 'top': Indent };
+                            else
+                                var animate_data = { 'left': Indent };
+                            // запускаем анимацию
+                            $carousel.animate(animate_data, {
+                                queue: false,
+                                duration: settings.speed,
+                                complete: function() {
+                                    // когда анимация закончена
+                                    if (!dir) { // если мы мотаем к следующему элементу (так по умолчанию)
+                                        // удаляем столько первых элементов, сколько задано в rotateBy
+                                        $carousel.children().slice(0, settings.rotateBy).remove();
+                                        // устанавливаем сдвиг в ноль
+                                        if (settings.position == "v")
+                                            $carousel.css('top', 0);
+                                        else $carousel.css('left', 0);
+                                    } else { // если мотаем к предыдущему элементу
+                                        // удаляем столько последних элементов, сколько задано в rotateBy
+                                        $carousel.children().slice(itemsTotal, itemsTotal + settings.rotateBy).remove();
+                                    }
+                                    if (settings.auto) { // если карусель должна проматываться автоматически
+                                        // запускаем вызов функции через интервал времени (auto)
+                                        intID = window.setInterval(function() { 
+                                            slide(settings.dirAutoSlide); 
+                                        }, 2000, settings.auto);
+                                    }
+                                    running = false; // отмечаем, что анимация завершена
+                                }
+                            });
                         }
-
-                        /*
-                         * расчитываем  смещение
-                         * текущее значение  + ширина/высота  одного элемента * количество проматываемых элементов * на направление перемещения (1 или -1)
-                         */
-                        if (settings.position == "v")
-                            Indent = parseInt($carousel.css('top')) + (size * settings.rotateBy * direction);
-                        else
-                            Indent = parseInt($carousel.css('left')) + (size * settings.rotateBy * direction);
-
-                        if (settings.position == "v")
-                            var animate_data = { 'top': Indent };
-                        else
-                            var animate_data = { 'left': Indent };
-                        // запускаем анимацию
-                        $carousel.animate(animate_data, {
-                            queue: false,
-                            duration: settings.speed,
-                            complete: function() {
-                                // когда анимация закончена
-                                if (!dir) { // если мы мотаем к следующему элементу (так по умолчанию)
-                                    // удаляем столько первых элементов, сколько задано в rotateBy
-                                    $carousel.children().slice(0, settings.rotateBy).remove();
-                                    // устанавливаем сдвиг в ноль
-                                    if (settings.position == "v")
-                                        $carousel.css('top', 0);
-                                    else $carousel.css('left', 0);
-                                } else { // если мотаем к предыдущему элементу
-                                    // удаляем столько последних элементов, сколько задано в rotateBy
-                                    $carousel.children().slice(itemsTotal, itemsTotal + settings.rotateBy).remove();
-                                }
-                                if (settings.auto) { // если карусель должна проматываться автоматически
-                                    // запускаем вызов функции через интервал времени (auto)
-                                    //if (!$(".carousel").is('.hover')) {
-                                    intID = window.setInterval(function() { 
-                                        slide(settings.dirAutoSlide); 
-                                    }, 2000, settings.auto);
-                                //}
-                                }
-                                running = false; // отмечаем, что анимация завершена
-                            }
-                        });
                     }
                     return false; // возвращаем false для того, чтобы не было перехода по ссылке
                 }
@@ -220,22 +242,15 @@ $(document).ready(function() {
 
                 if (settings.auto) { // если карусель должна проматываться автоматически
                     // запускаем вызов функции через временной интервал
-                    intID = window.setInterval(function() { 
-                        slide(settings.dirAutoSlide);
-                    }, settings.auto);
+                    // if (!$this.is('.hover')) {
+                        intID = window.setInterval(function() { 
+                            slide(settings.dirAutoSlide);
+                        }, settings.auto);
+                    // }
                 }
             });
         };
     })(jQuery);
-    
-     // Навели курсор на карусель
-    $(document).on('mouseenter', '.carousel', function() { 
-        $(this).addClass('hover');
-    });
-    //Убрали курсор с карусели
-    $(document).on('mouseleave', '.carousel', function() { 
-        $(this).removeClass('hover');
-    });
     
     // запускаем карусель
     $('.carousel-wrapper').Carousel({
@@ -246,26 +261,15 @@ $(document).ready(function() {
         btnPrev: '.carousel .carousel-button-left',
         auto: true,
         position: "h",                        
-        dirAutoSlide: false                     
-    });
+        dirAutoSlide: false,            
+    });         
 
     $('.gallery-box .thumbnails-wrapper').Carousel({
         visible: 4,
         rotateBy: 1,
         speed: 800,
-        btnNext: '.gallery-box .thumb-next',
         btnPrev: '.gallery-box .thumb-prev',
-        auto: false,
-        position: "h",                        
-        dirAutoSlide: false                     
-    });
-
-    $('.gallery-popup .thumbnails-wrapper').Carousel({
-        visible: 4,
-        rotateBy: 1,
-        speed: 600,
-        btnPrev: '.gallery-popup .thumb-prev',
-        btnNext: '.gallery-popup .thumb-next',
+        btnNext: '.gallery-box .thumb-next',
         auto: false,
         position: "h",                        
         dirAutoSlide: false                     
