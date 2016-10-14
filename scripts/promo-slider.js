@@ -164,10 +164,13 @@ $(document).ready(function(e) {
         var $img = $(this).find('img'); // получаем картинку, на которую кликнули
         var $bigImgProp = getAttributes($img); // получаем атрибуты этой картинки
         console.log($bigImgProp);
-        $('.gallery-popup-content').append('<div class="popup_header"></div><div class="popup_body"><figure class="popup-img_big"><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/></figure></div><div class="popup_footer"></div>');
+        $('.gallery-popup-content').append('<div class="popup_header"><figcaption>' + $bigImgProp.title + '</figcaption></div><div class="popup_body"><figure class="popup-img_big"><a href="#" class="prev"></a><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/><a href="#" class="next"></a></figure></div><div class="popup_footer"></div>');
         var cloneGalleryThumbs = $('.gallery-box .thumbnails').find('.thumb-prev, .thumb-next, .thumbnails-wrapper').clone(true);
         console.log(cloneGalleryThumbs);
         $('.gallery-popup-content .popup_footer').append(cloneGalleryThumbs);
+
+        var $widthFigure = $('.popup-img_big').outerWidth();
+        console.log($widthFigure);
         $('.gallery-popup .popup_footer .thumbnails-wrapper').Carousel({
                 visible: 4,
                 rotateBy: 1,
