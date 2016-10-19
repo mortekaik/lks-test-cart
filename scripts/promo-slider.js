@@ -169,18 +169,23 @@ $(document).ready(function(e) {
         console.log(cloneGalleryThumbs);
         $('.gallery-popup-content .popup_footer').append(cloneGalleryThumbs);
 
+        $('.gallery-popup .popup_footer .thumbnails-wrapper').Carousel({
+            visible: 4,
+            rotateBy: 1,
+            speed: 600,
+            btnPrev: '.gallery-popup .popup_footer .thumb-prev',
+            btnNext: '.gallery-popup .popup_footer .thumb-next',
+            auto: false,
+            position: "h",
+            dirAutoSlide: false                     
+        });
+
         var $widthFigure = $('.popup-img_big').outerWidth();
         console.log($widthFigure);
-        $('.gallery-popup .popup_footer .thumbnails-wrapper').Carousel({
-                visible: 4,
-                rotateBy: 1,
-                speed: 600,
-                btnPrev: '.gallery-popup .popup_footer .thumb-prev',
-                btnNext: '.gallery-popup .popup_footer .thumb-next',
-                auto: false,
-                position: "h",
-                dirAutoSlide: false                     
-            });
+        var $heightFigure = $('.popup-img_big').outerHeight();
+        console.log($heightFigure);
+
+
         modal('open');
     });
 
