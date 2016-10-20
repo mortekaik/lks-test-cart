@@ -822,8 +822,8 @@ body {
     text-align: center;
     /*border: 1px solid #000;*/
 }
-.prev, .next,
-.popup-img_big .prev, .popup-img_big .next {
+.prev, .next
+/*.popup-img_big .prev, .popup-img_big .next*/ {
     display: block;
     position: absolute;  
     width: 40px;
@@ -839,16 +839,11 @@ body {
     left: 10px;
     background:url(../img/controls.png) left center no-repeat;
 }
-.popup-img_big .prev {
-    left: 327.875px;
-}
 .next {
     right: 10px;
     background:url(../img/controls.png) right center no-repeat;
 }
-.popup-img_big .next {
-    right: 327.875px;
-}
+
 .thumbnails {
     display: block;
     position: relative;
@@ -947,12 +942,14 @@ body {
 }
 .gallery-popup .popup_body {
     display: block;
+    /*display: flex;*/
     flex-grow: 1;
     position: relative;
     width: 100%;
-    height: 80%;
+    height: 75%;
     /*background: #fff;*/
-    /*border: 1px solid #000;*/
+    border: transparent;
+    overflow: auto;
 }
 .gallery-popup .popup_body figure {
     display: block;
@@ -970,22 +967,23 @@ body {
 }
 .gallery-popup .popup_footer {
     flex-shrink: 1;
-    /*display: block;
-    /*position: relative;*/
+    display: flex;
+    /*display: block;*/
+    position: relative;
     max-width: 100%;  /*ширина всего блока */
     width: 100%;
     /*min-height: 0;*/
-    max-height: 20%;
+    max-height: 25%;
     margin: 0 auto;
     /*background: #fff;*/
-    /*border: 1px solid #000;*/
+    border: transparent;
     /*overflow: auto;*/
 }
 .gallery-popup .popup_footer .thumbnails-wrapper {
     display: block;
     width: calc(100% * 0.5 + 20px);
     overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области */
-    padding: 0;
+    padding: 10px;
     margin: 0 auto;
     /*border: 1px solid #000;*/
 }

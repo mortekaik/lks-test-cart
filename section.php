@@ -101,9 +101,9 @@
                                     <li class="thumbs-item">
                                         <a href="#"><img src="img/medium/img14.jpg" alt="image14" title="Picture #014"></a>
                                     </li>
-                                    <!-- <li class="thumbs-item">
+                                    <li class="thumbs-item">
                                         <a href="#"><img src="img/medium/img15.jpg" alt="image15" title="Picture #015"></a>
-                                    </li> -->
+                                    </li>
                                     <!-- <li class="thumbs-item">
                                         <a href="#"><img src="img/medium/img16.jpg" alt="image16" title="Picture #016"></a>
                                     </li> -->
@@ -319,9 +319,8 @@
         </div>
         <div id="footer">
             <div class="footer">
-            <div class="block block-footer">
+                <div class="block block-footer"></div>
             </div>
-        </div>
         </div>
         <div id="top-link"><a href='#top-link'>Вверх</a></div>
         <!-- Всплывающее окно галереи с увеличенной картинкой -->
