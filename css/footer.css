@@ -972,7 +972,6 @@ body {
     position: relative;
     max-width: 100%;  /*ширина всего блока */
     width: 100%;
-    /*min-height: 0;*/
     max-height: 25%;
     margin: 0 auto;
     /*background: #fff;*/
@@ -981,9 +980,9 @@ body {
 }
 .gallery-popup .popup_footer .thumbnails-wrapper {
     display: block;
-    width: calc(100% * 0.5 + 20px);
+    width: 326px;
     overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области */
-    padding: 10px;
+    padding: 10px 5px;
     margin: 0 auto;
     /*border: 1px solid #000;*/
 }
@@ -1004,6 +1003,12 @@ body {
     width: 75px;
     height: 75px;
     border: 2px solid transparent;
+}
+.gallery-popup .popup_footer .thumb-prev {
+   left: 215px;
+}
+.gallery-popup .popup_footer .thumb-next {
+   right: 215px;
 }
 .gallery-popup .popup_footer .current img{
     border-color:#069;

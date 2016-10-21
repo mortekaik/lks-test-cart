@@ -98,13 +98,11 @@ $(document).ready(function(e) {
         $('.big-image figcaption, .popup_header figcaption').text(imgProp.title);
         $(this).parent().siblings('li').removeClass('current'); // Удаляем класс .current со ссылки чтоб убрать рамку
         images.parents('li').addClass('current');         // Добавляем класс .current на выбранную миниатюру
+        // updateButtonsPosition();
         return false;
     });
 
-    $('.gallery-box .view').on('click', '.prev, .next', function() {
-        return false;
-    });
-    $('.popup .popup_body .popup-img_big').on('click', '.next', function() {                // При нажатии на кнопку "вперед"
+    $('.gallery-box .view').on('click', '.next', function() {                // При нажатии на кнопку "вперед"
         var count = $('.thumbnails-wrapper ul > li').length;   // Общее количество изображений
         var n = parseInt($('.thumbnails-wrapper ul > li').index($('.current')) + 1); // Порядковый номер текущего изображения
         var activeImg = $('.thumbnails-wrapper .current');     // Активное на данный момент изображение
@@ -121,13 +119,13 @@ $(document).ready(function(e) {
         $('.thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
         $('.thumbnails-wrapper ul > li').first().addClass('current');  // На первую миниатюру вешается класс .current
         }
-        $('.big-image img, .popup-img_big img').attr(nextImgProp);  // Подменяем адрес большого изображения на адрес следующего
-        $('.big-image figcaption, .popup_header figcaption').text(nextImgProp.title);
+        $('.big-image img').attr(nextImgProp);  // Подменяем адрес большого изображения на адрес следующего
+        $('.big-image figcaption').text(nextImgProp.title);
         return false;
     });
 
 
-    $('.popup .popup_body .popup-img_big').on('click', '.prev', function() {   // При нажатии на кнопку "назад"
+    $('.gallery-box .view').on('click', '.prev', function() {   // При нажатии на кнопку "назад"
         var count = $('.thumbnails-wrapper ul > li').length; // Общее количество изображений
         var n = parseInt($('.thumbnails-wrapper ul > li').index($('.current')) + 1); // Порядковый номер текущего изображения
         var activeImg = $('.thumbnails-wrapper .current');  // Активное на данный момент изображение
@@ -146,8 +144,8 @@ $(document).ready(function(e) {
         $('.thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
         $('.thumbnails-wrapper ul > li:last').addClass('current');  // На последнюю миниатюру вешается класс .current
         }
-        $('.big-image img, .popup-img_big img').attr(prevImgProp);  // Подменяется адрес большого изображения на адрес следующего
-        $('.big-image figcaption, .popup_header figcaption').text(prevImgProp.title);
+        $('.big-image img').attr(prevImgProp);  // Подменяется адрес большого изображения на адрес следующего
+        $('.big-image figcaption').text(prevImgProp.title);
         return false;
     });
 
@@ -170,9 +168,11 @@ $(document).ready(function(e) {
         console.log($bigImgProp);
         var popupContent = $('<div class="popup_header"><figcaption>' + $bigImgProp.title + '</figcaption></div><div class="popup_body"><figure class="popup-img_big"><img class="popup_img" src="' + $bigImgProp.src + '" alt="' + $bigImgProp.alt + '" title="' + $bigImgProp.title + '"/></figure></div><div class="popup_footer"></div>')
         $('.gallery-popup-content').append(popupContent);
-        var cloneGalleryThumbs = $('.gallery-box .thumbnails').find('.thumb-prev, .thumb-next, .thumbnails-wrapper').clone(true);
+        var cloneGalleryThumbs = $('.gallery-box .thumbnails').find('.thumbnails-wrapper').clone(true);
         console.log(cloneGalleryThumbs);
         $('.gallery-popup-content .popup_footer').append(cloneGalleryThumbs);
+        var cloneThumbsBtns = $('.gallery-box .thumbnails').find('.thumb-prev, .thumb-next').clone(true);
+        $('.gallery-popup-content .popup_footer .thumbnails-wrapper').after(cloneThumbsBtns);
         var popupBodyArrowBtns = $('<a href="#" class="prev"></a><a href="#" class="next"></a>');
         if (countElems > 1) {
             $('.gallery-popup-content .popup_body figure').append(popupBodyArrowBtns);
@@ -189,22 +189,97 @@ $(document).ready(function(e) {
             dirAutoSlide: false                     
         });
 
-        var coordButton;
-        var $popupFigure = $('.popup-img_big');
-        var $widthFigure = $popupFigure.outerWidth();
+        $('.popup .popup_body .popup-img_big').on('click', '.next', function() {                // При нажатии на кнопку "вперед"
+        var countPopup = $('.popup_footer .thumbnails-wrapper ul > li').length;   // Общее количество изображений
+        console.log('Кол-во картинок: ' + countPopup);
+        var nPopup = parseInt($('.popup_footer .thumbnails-wrapper ul > li').index($('.popup_footer .current')) + 1); // Порядковый номер текущего изображения
+        console.log('Номер текущего: ' + nPopup);
+        var activeImgPopup = $('.popup_footer .thumbnails-wrapper .current');     // Активное на данный момент изображение
+        console.log(activeImgPopup);
+        var nextSrcPopup, nextImgPropPopup;
+
+        if (countPopup != nPopup) {   // - Если изображение не последнее
+        nextSrcPopup = activeImgPopup.next().find('img');
+        nextImgPropPopup = getAttributes(nextSrcPopup);   // В переменную записываются атрибуты следующего изображения
+        $('.popup_footer .thumbnails-wrapper .current').removeClass('current');   // Удаляется класс .current с предыдущей миниатюры
+        activeImgPopup.next().addClass('current');  // На миниатюру следующего изображения вешается класс .current
+        } else {      // - Если текущее изображение последнее в списке
+        nextSrcPopup = $('.popup_footer .thumbnails-wrapper ul > li').first().find('img'); // В переменную записываются атрибуты первого изображения
+        console.log(nextSrcPopup);
+        nextImgPropPopup = getAttributes(nextSrcPopup);
+        $('.popup_footer .thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
+        $('.popup_footer .thumbnails-wrapper ul > li').first().addClass('current');  // На первую миниатюру вешается класс .current
+        }
+        $('.popup-img_big img').attr(nextImgPropPopup);  // Подменяем адрес большого изображения на адрес следующего
+        $('.popup_header figcaption').text(nextImgPropPopup.title);
+        return false;
+    });
+
+
+    $('.popup .popup_body .popup-img_big').on('click', '.prev', function() {   // При нажатии на кнопку "назад"
+        var countPopup = $('.popup_footer .thumbnails-wrapper ul > li').length; // Общее количество изображений
+        var nPopup = parseInt($('.popup_footer .thumbnails-wrapper ul > li').index($('.popup_footer .current')) + 1); // Порядковый номер текущего изображения
+        var activeImgPopup = $('.popup_footer .thumbnails-wrapper .current');  // Активное на данный момент изображение
+        var prevSrcPopup, prevImgPropPopup;
+
+        if (nPopup != 1) {          // - Если текущее изображение не первое
+        prevSrcPopup = activeImgPopup.prev().find('img');  // В переменную записываются атрибуты предыдущего изображения
+        prevImgPropPopup = getAttributes(prevSrcPopup);
+        console.log(prevImgPropPopup);
+        $('.popup_footer .thumbnails-wrapper .current').removeClass('current');  // Удаляется класс .current активной до этого миниатюры
+        activeImgPopup.prev().addClass('current'); // На миниатюру изображения слева вешается класс .current
+        } else {  // - Если текущее изображение первое
+        prevSrcPopup = $('.popup_footer .thumbnails-wrapper ul > li:last').find('img'); // В переменную записываются атрибуты последнего изображения
+        prevImgPropPopup = getAttributes(prevSrcPopup);
+        console.log(prevImgPropPopup);
+        $('.popup_footer .thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
+        $('.popup_footer .thumbnails-wrapper ul > li:last').addClass('current');  // На последнюю миниатюру вешается класс .current
+        }
+        $('.popup-img_big img').attr(prevImgPropPopup);  // Подменяется адрес большого изображения на адрес следующего
+        $('.popup_header figcaption').text(prevImgPropPopup.title);
+        return false;
+    });
+
+        var $prevBtn = $('.popup-img_big .prev'),
+            $nextBtn = $('.popup-img_big .next'),
+            $bigImg = $('.popup-img_big img'),
+            $popupFigure = $('.popup-img_big'),
+            $widthFigure = $popupFigure.outerWidth(),
+            $widthImg = parseFloat(($bigImg.outerWidth()), 3),
+            $widthButton = $prevBtn.outerWidth(),
+            coordButton;
         console.log($widthFigure);
-        var $widthImg = $('.popup-img_big img').outerWidth();
         console.log($widthImg);
-        var $widthButton = $('.popup-img_big .prev').outerWidth();
         console.log($widthButton);
+        console.log(countElems);
         
         coordButton = ($widthFigure - $widthImg) / 2 - $widthButton;
         console.log(coordButton);
 
-        $('.popup-img_big .prev').css({'left': coordButton});
-        $('.popup-img_big .next').css({'right': coordButton});
+        // $('.popup-img_big .prev').css({'left': coordButton});
+        // $('.popup-img_big .next').css({'right': coordButton});
+        
+        function updateButtonsPosition() {
+            var imgOffset = $bigImg.offset();
+            var prevBtnOffset, nextBtnOffset;
+            console.log(imgOffset);
+            $prevBtn.offset({
+                left: imgOffset.left - ($widthButton + $widthButton/4)
+            });
+            prevBtnOffset = $prevBtn.offset();
+            console.log(prevBtnOffset);
+            $nextBtn.offset({
+                left: imgOffset.left + $widthImg + $widthButton/2
+            });
+            nextBtnOffset = $nextBtn.offset();
+            console.log(nextBtnOffset);
+            console.log('End');
+        }
+        
+        // updateButtonsPosition();
         
         modal('open');
+        // $(window).resize(updateButtonsPosition); 
     });
 
     $('body').on('click', '.popup_close, #overlay', function() {    // Событие клика на затемненный фон и на кнопку X
