@@ -55,13 +55,39 @@ $(document).ready(function(e) {
         var pause = false;
         var rotator = function(){
                 if(!pause){slideTime = setTimeout(function(){animSlide('next')}, hwTimeOut);}
-            }
+            };
         $('.promo-slider').hover(    
             function(){clearTimeout(slideTime); pause = true;},
             function(){pause = false; rotator();
             });
         rotator();
     })(jQuery);
+
+    /*---------------- Tabs------------*/
+
+	$(".tab_item").not(":first").hide();
+	$(".tab_wrapper .tab").click(function() {
+		$(".tab_wrapper .tab").removeClass("tab--active").eq($(this).index()).addClass("tab--active");
+		$(".tab_item").hide().eq($(this).index()).fadeIn()
+	}).eq(0).addClass("tab--active");
+
+	// tabs();
+
+	// $('.tab-list li').click(function() {
+	// 	var obj = $(this);
+	// 	var container = obj.parents('.tab-container');
+	// 	var index = obj.index();
+	// 	$('.tab-list li', container).removeClass('active').eq(index).addClass('active');
+	// 	$('.tab-pane .pane', container).removeClass('active').eq(index).addClass('active');
+	// });
+
+	// function tabs() {
+	// 	$('.tab-container').each(function() {
+	// 		$('.tab-list li', this).eq(0).addClass('active');
+	// 		$('.tab-pane .pane', this).eq(0).addClass('active');
+	// 	});
+	// }
+
 
     /*-------------- Галерея изображений товара -------*/ 
     

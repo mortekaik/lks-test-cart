@@ -4,14 +4,14 @@
     }
     $cart = new Cart;
     $q = $cart->getCart_small();
-	 ?>
+?>
 
 <!doctype html>
 <html class="no-js">
 
 <head>
     <meta charset="utf-8">
-    <title>ЛКС - лабораторное и промышленное оборудование</title>
+    <title> ЛКС - лабораторное и промышленное оборудование</title>
     <link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
     <link type="text/css" href="css/footer.css" rel="stylesheet">
     <link type="text/css" href="css/upload.css" rel="stylesheet">
@@ -27,7 +27,8 @@
         <script src="scripts/html5shiv-printshiv.min.js"></script>
     <![endif]-->
 
-    <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
+    <script>
+    	(function(e, t, n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
     </script>
 </head>
 
@@ -313,9 +314,35 @@
                             <div class="uploadform_error">Ошибочка!<span></span></div>
                         </form>
                     </div>
-                </div>
+                    <div class="tab_wrapper">
+					    <div class="tabs">
+					        <span class="tab">Description</span>
+					        <span class="tab">Characteristics</span>
+					        <span class="tab">Reviews</span>
+					        <span class="tab">Files</span>        
+					    </div>
+						<div class="tab_content">
+							<div class="tab_item">
+								<h2>Tab Heading 1</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum repudiandae blanditiis quia, enim soluta possimus?</p>
+							</div>
+							<div class="tab_item">
+								<h2>Tab Heading 2</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor laboriosam repudiandae, aliquid explicabo, atque fuga.</p>
+							</div>
+							<div class="tab_item">
+								<h2>Tab Heading 3</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor laboriosam repudiandae, aliquid explicabo, atque fuga.</p>
+							</div>
+							<div class="tab_item">
+								<h2>Tab Heading 4</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor laboriosam repudiandae, aliquid explicabo, atque fuga.</p>
+							</div>
+						</div>
+					</div>
+				</div>
             </div>
-            <div id="side"></div>
+            <div id="side">111</div>
         </div>
         <div id="footer">
             <div class="footer">
