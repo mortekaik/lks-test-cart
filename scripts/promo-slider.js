@@ -1,106 +1,106 @@
 $(document).ready(function(e) { 
-    (function($) {
-        var hwSlideSpeed = 700;
-        var hwTimeOut = 3000;
-        var hwNeedLinks = true;
+	(function($) {
+		var hwSlideSpeed = 700;
+		var hwTimeOut = 3000;
+		var hwNeedLinks = true;
 
-        $('.slide').css(
-            {"position" : "absolute",
-             "top":'0', "left": '0'}).hide().eq(0).show();
-        var slideNum = 0;
-        var slideTime;
-        slideCount = $("#slider .slide").size();
-        var animSlide = function(arrow){
-            clearTimeout(slideTime);
-            $('.slide').eq(slideNum).fadeOut(hwSlideSpeed);
-            if(arrow == "next"){
-                if(slideNum == (slideCount-1)){slideNum=0;}
-                else{slideNum++}
-                }
-            else if(arrow == "prew")
-            {
-                if(slideNum == 0){slideNum=slideCount-1;}
-                else{slideNum-=1}
-            }
-            else{
-                slideNum = arrow;
-                }
-            $('.slide').eq(slideNum).fadeIn(hwSlideSpeed, rotator);
-            $(".control-slide.active").removeClass("active");
-            $('.control-slide').eq(slideNum).addClass('active');
-        };
-            
-        if(hwNeedLinks){
-        var $linkArrow = $('<a id="prewbutton" href="#">&lt;</a><a id="nextbutton" href="#">&gt;</a>')
-            .prependTo('#slider');      
-            $('#nextbutton').click(function(){
-                animSlide("next");
-                return false;
-                })
-            $('#prewbutton').click(function(){
-                animSlide("prew");
-                return false;
-                })
-        }
-        var $adderSpan = '';
-        $('.slide').each(function(index) {
-                $adderSpan += '<span class = "control-slide">' + index + '</span>';
-            });
-        $('<div class ="sli-links">' + $adderSpan +'</div>').appendTo('#slider');
-        $(".control-slide:first").addClass("active");
-        $('.control-slide').click(function(){
-        var goToNum = parseFloat($(this).text());
-        animSlide(goToNum);
-        });
-        var pause = false;
-        var rotator = function(){
-                if(!pause){slideTime = setTimeout(function(){animSlide('next')}, hwTimeOut);}
-            };
-        $('.promo-slider').hover(    
-            function(){clearTimeout(slideTime); pause = true;},
-            function(){pause = false; rotator();
-            });
-        rotator();
-    })(jQuery);
+		$('.slide').css(
+			{"position" : "absolute",
+			"top":'0', "left": '0'}).hide().eq(0).show();
+		var slideNum = 0;
+		var slideTime;
+		slideCount = $("#slider .slide").size();
+		var animSlide = function(arrow){
+			clearTimeout(slideTime);
+			$('.slide').eq(slideNum).fadeOut(hwSlideSpeed);
+			if(arrow == "next"){
+				if(slideNum == (slideCount-1)){slideNum=0;}
+				else{slideNum++}
+			}
+		else if(arrow == "prew")
+		{
+			if(slideNum == 0){slideNum=slideCount-1;}
+			else{slideNum-=1}
+		}
+		else{
+			slideNum = arrow;
+		}
+		$('.slide').eq(slideNum).fadeIn(hwSlideSpeed, rotator);
+		$(".control-slide.active").removeClass("active");
+		$('.control-slide').eq(slideNum).addClass('active');
+	};
 
-    /*---------------- Tabs------------*/
+	if(hwNeedLinks){
+		var $linkArrow = $('<a id="prewbutton" href="#">&lt;</a><a id="nextbutton" href="#">&gt;</a>')
+		.prependTo('#slider');      
+		$('#nextbutton').click(function(){
+			animSlide("next");
+			return false;
+		})
+		$('#prewbutton').click(function(){
+			animSlide("prew");
+			return false;
+		})
+	}
+	var $adderSpan = '';
+	$('.slide').each(function(index) {
+		$adderSpan += '<span class = "control-slide">' + index + '</span>';
+	});
+	$('<div class ="sli-links">' + $adderSpan +'</div>').appendTo('#slider');
+	$(".control-slide:first").addClass("active");
+	$('.control-slide').click(function(){
+		var goToNum = parseFloat($(this).text());
+		animSlide(goToNum);
+	});
+	var pause = false;
+	var rotator = function(){
+		if(!pause){slideTime = setTimeout(function(){animSlide('next')}, hwTimeOut);}
+	};
+	$('.promo-slider').hover(    
+		function(){clearTimeout(slideTime); pause = true;},
+		function(){pause = false; rotator();
+		});
+	rotator();
+})(jQuery);
 
-	$(".tab_item").not(":first").hide();
-	$(".tab_wrapper .tab").click(function() {
-		$(".tab_wrapper .tab").removeClass("tab--active").eq($(this).index()).addClass("tab--active");
-		$(".tab_item").hide().eq($(this).index()).fadeIn()
-	}).eq(0).addClass("tab--active");
+/*---------------- Tabs------------*/
 
-	// tabs();
+	// $(".tab_item").not(":first").hide();
+	// $(".tab_wrapper .tab").click(function() {
+	// 	$(".tab_wrapper .tab").removeClass("tab--active").eq($(this).index()).addClass("tab--active");
+	// 	$(".tab_item").hide().eq($(this).index()).fadeIn(1000)
+	// }).eq(0).addClass("tab--active");
 
-	// $('.tab-list li').click(function() {
-	// 	var obj = $(this);
-	// 	var container = obj.parents('.tab-container');
-	// 	var index = obj.index();
-	// 	$('.tab-list li', container).removeClass('active').eq(index).addClass('active');
-	// 	$('.tab-pane .pane', container).removeClass('active').eq(index).addClass('active');
-	// });
+	function tabs() {
+		$('.tab_wrapper').each(function() {
+			$(".tab_item").not(":first").hide();
+			$('.tabs .tab').eq(0).addClass('tab--active');
+		});
+	}
 
-	// function tabs() {
-	// 	$('.tab-container').each(function() {
-	// 		$('.tab-list li', this).eq(0).addClass('active');
-	// 		$('.tab-pane .pane', this).eq(0).addClass('active');
-	// 	});
-	// }
+	tabs();
 
+	$('.tab_wrapper').on('click', '.tab', function() {
+		var obj = $(this);
+		var $tabs = $('.tabs .tab');
+		var container = obj.parents('.tab_wrapper');
+		var index = obj.index();
+		$($tabs, container).removeClass('tab--active').eq(index).addClass('tab--active');
+		$(".tab_item").hide().eq(index).show();
+	});
 
-    /*-------------- Галерея изображений товара -------*/ 
-    
-    function getAttributes ( $node ) {
-        var attrs = {};
-        $.each( $node[0].attributes, function ( index, attribute ) {
-            attrs[attribute.name] = attribute.value;
-        });
-        return attrs;
-    }
+	/*-------------- Галерея изображений товара -------*/ 
 
-    var $elemThumbOrder = $('.thumbnails-wrapper ul > li');
-    console.log($elemThumbOrder);
+	function getAttributes ( $node ) {
+		var attrs = {};
+		$.each( $node[0].attributes, function ( index, attribute ) {
+			attrs[attribute.name] = attribute.value;
+		});
+		return attrs;
+	}
+
+	var $elemThumbOrder = $('.thumbnails-wrapper ul > li');
+	console.log($elemThumbOrder);
     var countElems = $elemThumbOrder.length;   // Общее количество изображений
     console.log(countElems);
     var marginRightProp = parseInt($elemThumbOrder.css('marginRight'));
@@ -108,17 +108,17 @@ $(document).ready(function(e) {
     var elemOuterWidth = $elemThumbOrder.outerWidth() + marginRightProp;
     console.log(elemOuterWidth);
     if (countElems > 4) {
-        $('.thumb-prev, .thumb-next').css({'visibility': 'visible'});
+    	$('.thumb-prev, .thumb-next').css({'visibility': 'visible'});
     } else if (countElems <= 4 && countElems > 1) {
-        $('.thumbs-list').css({'width': elemOuterWidth * countElems, 'margin': '0 auto'});
+    	$('.thumbs-list').css({'width': elemOuterWidth * countElems, 'margin': '0 auto'});
     } else {
-        $('.gallery-box figure > a, .popup_body figure > a').css({'display': 'none'});
-        $('.thumbs-list').css({'width': elemOuterWidth * countElems, 'margin': '0 auto'});
+    	$('.gallery-box figure > a, .popup_body figure > a').css({'display': 'none'});
+    	$('.thumbs-list').css({'width': elemOuterWidth * countElems, 'margin': '0 auto'});
     }
     $('.thumbnails-wrapper').on('click', '.thumbs-item a', function() {   // При нажатии на миниатюру
-        var images = $(this).find('img');
-        var imgProp = getAttributes(images);
-        console.log(imgProp);
+    	var images = $(this).find('img');
+    	var imgProp = getAttributes(images);
+    	console.log(imgProp);
 
         $(".big-image img, .popup-img_big img").attr(imgProp); // Подменяем аттрибуты большого изображения на аттрибуты выбранного
         $('.big-image figcaption, .popup_header figcaption').text(imgProp.title);
@@ -135,7 +135,7 @@ $(document).ready(function(e) {
         var nextSrc, nextImgProp;
 
         if (count != n) {   // - Если изображение не последнее
-        nextSrc = activeImg.next().find('img');
+        	nextSrc = activeImg.next().find('img');
         nextImgProp = getAttributes(nextSrc);   // В переменную записываются атрибуты следующего изображения
         $('.thumbnails-wrapper .current').removeClass('current');   // Удаляется класс .current с предыдущей миниатюры
         activeImg.next().addClass('current');  // На миниатюру следующего изображения вешается класс .current
@@ -144,7 +144,7 @@ $(document).ready(function(e) {
         nextImgProp = getAttributes(nextSrc);
         $('.thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
         $('.thumbnails-wrapper ul > li').first().addClass('current');  // На первую миниатюру вешается класс .current
-        }
+    }
         $('.big-image img').attr(nextImgProp);  // Подменяем адрес большого изображения на адрес следующего
         $('.big-image figcaption').text(nextImgProp.title);
         return false;
@@ -169,14 +169,14 @@ $(document).ready(function(e) {
         console.log(prevImgProp);
         $('.thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
         $('.thumbnails-wrapper ul > li:last').addClass('current');  // На последнюю миниатюру вешается класс .current
-        }
+    }
         $('.big-image img').attr(prevImgProp);  // Подменяется адрес большого изображения на адрес следующего
         $('.big-image figcaption').text(prevImgProp.title);
         return false;
     });
 
     function modal(data) {
-        if (data == 'open') {
+    	if (data == 'open') {
             $('#overlay').css('display', 'block'); // показываем подложку
             $('.gallery-popup').css('visibility', 'visible'); // показываем окно
             $('body').toggleClass('lock');
@@ -201,18 +201,18 @@ $(document).ready(function(e) {
         $('.gallery-popup-content .popup_footer .thumbnails-wrapper').after(cloneThumbsBtns);
         var popupBodyArrowBtns = $('<a href="#" class="prev"></a><a href="#" class="next"></a>');
         if (countElems > 1) {
-            $('.gallery-popup-content .popup_body figure').append(popupBodyArrowBtns);
+        	$('.gallery-popup-content .popup_body figure').append(popupBodyArrowBtns);
         }
 
         $('.gallery-popup .popup_footer .thumbnails-wrapper').Carousel({
-            visible: 4,
-            rotateBy: 1,
-            speed: 600,
-            btnPrev: '.gallery-popup .popup_footer .thumb-prev',
-            btnNext: '.gallery-popup .popup_footer .thumb-next',
-            auto: false,
-            position: "h",
-            dirAutoSlide: false                     
+        	visible: 4,
+        	rotateBy: 1,
+        	speed: 600,
+        	btnPrev: '.gallery-popup .popup_footer .thumb-prev',
+        	btnNext: '.gallery-popup .popup_footer .thumb-next',
+        	auto: false,
+        	position: "h",
+        	dirAutoSlide: false                     
         });
 
         $('.popup .popup_body .popup-img_big').on('click', '.next', function() {                // При нажатии на кнопку "вперед"
@@ -225,7 +225,7 @@ $(document).ready(function(e) {
         var nextSrcPopup, nextImgPropPopup;
 
         if (countPopup != nPopup) {   // - Если изображение не последнее
-        nextSrcPopup = activeImgPopup.next().find('img');
+        	nextSrcPopup = activeImgPopup.next().find('img');
         nextImgPropPopup = getAttributes(nextSrcPopup);   // В переменную записываются атрибуты следующего изображения
         $('.popup_footer .thumbnails-wrapper .current').removeClass('current');   // Удаляется класс .current с предыдущей миниатюры
         activeImgPopup.next().addClass('current');  // На миниатюру следующего изображения вешается класс .current
@@ -235,7 +235,7 @@ $(document).ready(function(e) {
         nextImgPropPopup = getAttributes(nextSrcPopup);
         $('.popup_footer .thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
         $('.popup_footer .thumbnails-wrapper ul > li').first().addClass('current');  // На первую миниатюру вешается класс .current
-        }
+    }
         $('.popup-img_big img').attr(nextImgPropPopup);  // Подменяем адрес большого изображения на адрес следующего
         $('.popup_header figcaption').text(nextImgPropPopup.title);
         return false;
@@ -260,46 +260,46 @@ $(document).ready(function(e) {
         console.log(prevImgPropPopup);
         $('.popup_footer .thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
         $('.popup_footer .thumbnails-wrapper ul > li:last').addClass('current');  // На последнюю миниатюру вешается класс .current
-        }
+    }
         $('.popup-img_big img').attr(prevImgPropPopup);  // Подменяется адрес большого изображения на адрес следующего
         $('.popup_header figcaption').text(prevImgPropPopup.title);
         return false;
     });
 
-        var $prevBtn = $('.popup-img_big .prev'),
-            $nextBtn = $('.popup-img_big .next'),
-            $bigImg = $('.popup-img_big img'),
-            $popupFigure = $('.popup-img_big'),
-            $widthFigure = $popupFigure.outerWidth(),
-            $widthImg = parseFloat(($bigImg.outerWidth()), 3),
-            $widthButton = $prevBtn.outerWidth(),
-            coordButton;
-        console.log($widthFigure);
-        console.log($widthImg);
-        console.log($widthButton);
-        console.log(countElems);
-        
-        coordButton = ($widthFigure - $widthImg) / 2 - $widthButton;
-        console.log(coordButton);
+    var $prevBtn = $('.popup-img_big .prev'),
+    $nextBtn = $('.popup-img_big .next'),
+    $bigImg = $('.popup-img_big img'),
+    $popupFigure = $('.popup-img_big'),
+    $widthFigure = $popupFigure.outerWidth(),
+    $widthImg = parseFloat(($bigImg.outerWidth()), 3),
+    $widthButton = $prevBtn.outerWidth(),
+    coordButton;
+    console.log($widthFigure);
+    console.log($widthImg);
+    console.log($widthButton);
+    console.log(countElems);
+
+    coordButton = ($widthFigure - $widthImg) / 2 - $widthButton;
+    console.log(coordButton);
 
         // $('.popup-img_big .prev').css({'left': coordButton});
         // $('.popup-img_big .next').css({'right': coordButton});
         
         function updateButtonsPosition() {
-            var imgOffset = $bigImg.offset();
-            var prevBtnOffset, nextBtnOffset;
-            console.log(imgOffset);
-            $prevBtn.offset({
-                left: imgOffset.left - ($widthButton + $widthButton/4)
-            });
-            prevBtnOffset = $prevBtn.offset();
-            console.log(prevBtnOffset);
-            $nextBtn.offset({
-                left: imgOffset.left + $widthImg + $widthButton/2
-            });
-            nextBtnOffset = $nextBtn.offset();
-            console.log(nextBtnOffset);
-            console.log('End');
+        	var imgOffset = $bigImg.offset();
+        	var prevBtnOffset, nextBtnOffset;
+        	console.log(imgOffset);
+        	$prevBtn.offset({
+        		left: imgOffset.left - ($widthButton + $widthButton/4)
+        	});
+        	prevBtnOffset = $prevBtn.offset();
+        	console.log(prevBtnOffset);
+        	$nextBtn.offset({
+        		left: imgOffset.left + $widthImg + $widthButton/2
+        	});
+        	nextBtnOffset = $nextBtn.offset();
+        	console.log(nextBtnOffset);
+        	console.log('End');
         }
         
         // updateButtonsPosition();
@@ -309,11 +309,11 @@ $(document).ready(function(e) {
     });
 
     $('body').on('click', '.popup_close, #overlay', function() {    // Событие клика на затемненный фон и на кнопку X
-        modal('close');
-        var $popupContent = $('.gallery-popup-content');
-        var $popupBlocks = $popupContent.find('.popup_header, .popup_body, .popup_footer');
+    	modal('close');
+    	var $popupContent = $('.gallery-popup-content');
+    	var $popupBlocks = $popupContent.find('.popup_header, .popup_body, .popup_footer');
         setTimeout(function() { // Выставляем таймер
           $popupBlocks.remove(); // Удаляем разметку всплывающего окна
-        }, 400);
+      }, 400);
     });
 });
