@@ -690,6 +690,23 @@ body {
 	width: 100%;
 	resize: vertical;
 }
+/*---- preloader ----*/
+
+.desc-edit .loading_box{
+	width: 50%;
+	border: 1px solid #000;
+	margin: 10px auto;
+	display: none;
+}
+.desc-edit .loading_box img,
+.desc-edit .loading_box span {
+	display: block;
+} 
+.desc-edit .loading_box img {
+	max-width: 100%;
+	margin: 5px auto;
+}
+
 
 /*----- Стили для промо-слайдера ------- */
 .promo-slider {

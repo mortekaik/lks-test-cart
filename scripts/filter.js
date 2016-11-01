@@ -147,6 +147,9 @@ $(document).ready(function () {
 					post: 'search',
 					searchField: $term
 				},
+				beforeSend: function (data) {
+					$('#loading_box').show();
+				},
 				success: function(data) {
 					response(data);
 				}

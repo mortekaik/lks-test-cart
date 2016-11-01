@@ -51,6 +51,9 @@ $q = $cart->getCart_small();
 							<form id="searchForm" action="search.php" method="post">
 								<label for="search-type">Search</label>
 								<input type="text" id="search-type" name="search" placeholder="Input something"><br>
+								<div class="loading_box">
+									<img src="img/preloaders/ajax-loader.gif" alt="Loading">
+								</div>
 								<div id="log-search"></div>
 							</form>
 							<form id="main-search-form" action="search.php" class="header-search-form-section" method="post" novalidate="novalidate">
@@ -217,6 +220,10 @@ $q = $cart->getCart_small();
 								<p>
 									<input name="button" type="submit" value="Сохранить" id="send-desc"> 
 								</p>
+								<div class="loading_box">
+									<img src="img/preloaders/ajax-loader.gif" alt="Loading">
+									<span>Loading</span>
+								</div>
 								<p>
 									<span id="resp">Original Description</span>
 								</p>
