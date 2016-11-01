@@ -65,28 +65,14 @@ $(document).ready(function(e) {
 
 /*---------------- Tabs------------*/
 
-	// $(".tab_item").not(":first").hide();
-	// $(".tab_wrapper .tab").click(function() {
-	// 	$(".tab_wrapper .tab").removeClass("tab--active").eq($(this).index()).addClass("tab--active");
-	// 	$(".tab_item").hide().eq($(this).index()).fadeIn(1000)
-	// }).eq(0).addClass("tab--active");
-
-	function tabs() {
-		$('.tab_wrapper').each(function() {
-			$(".tab_item").not(":first").hide();
-			$('.tabs .tab').eq(0).addClass('tab--active');
+	$(".tabs").on("click", "span.tab:not(.tab--active)", function() {
+		var n = $(this).parents(".tab_wrapper");
+		$(this).addClass("tab--active").siblings().removeClass("tab--active");
+		n.find(".tab_item").eq($(this).index()).show(1, function() {
+			$(this).addClass("open_tab");
+		}).siblings(".tab_item").hide(1, function() {
+			$(this).removeClass("open_tab");
 		});
-	}
-
-	tabs();
-
-	$('.tab_wrapper').on('click', '.tab', function() {
-		var obj = $(this);
-		var $tabs = $('.tabs .tab');
-		var container = obj.parents('.tab_wrapper');
-		var index = obj.index();
-		$($tabs, container).removeClass('tab--active').eq(index).addClass('tab--active');
-		$(".tab_item").hide().eq(index).show();
 	});
 
 	/*-------------- Галерея изображений товара -------*/ 
