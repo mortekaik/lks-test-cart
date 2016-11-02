@@ -63,17 +63,14 @@ $(document).ready(function(e) {
 	rotator();
 })(jQuery);
 
-/*---------------- Tabs------------*/
+	/*---------------- Tabs------------*/
 
-	$(".tabs").on("click", "span.tab:not(.tab--active)", function() {
-		var n = $(this).parents(".tab_wrapper");
-		$(this).addClass("tab--active").siblings().removeClass("tab--active");
-		n.find(".tab_item").eq($(this).index()).show(1, function() {
-			$(this).addClass("open_tab");
-		}).siblings(".tab_item").hide(1, function() {
-			$(this).removeClass("open_tab");
-		});
-	});
+	// $('.tabs').on('click', '.tab:not(.tab--active)', function() {
+	// 	var n = $(this).parents('.tab_wrapper');
+	// 	n.find('.tab').removeClass('tab--active').eq($(this).index()).addClass('tab--active');
+	// 	n.find('.tab_item').hide().eq($(this).index()).show();
+	// }).eq(0).addClass('tab--active');
+
 
 	/*-------------- Галерея изображений товара -------*/ 
 

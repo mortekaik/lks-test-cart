@@ -1199,6 +1199,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 	max-width: 650px;
 	min-height: 150px;
 	margin-top: 10px;
+	margin-bottom: 50px;
 }
 /*  блок вкладок  */
 .tabs {
@@ -1211,10 +1212,11 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 	padding: 0;
 	font-size: 0;
 }
+
 /* каждая вкладка */
 .tab {
 	box-sizing: border-box;
-	display: inline-block;
+	display: block;
 	flex-grow: 1;
 	max-width: 100%;
 	cursor: pointer;
@@ -1232,22 +1234,32 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 .tab.tab--active { 
 	color: #f00;
 	background: #fff;
+	border-top: 1px solid #f00;
 }
 /* блоки вкладок с содержанием */
+.tab_content {
+	padding: 20px;
+	overflow: hidden;
+	position: relative;
+	background: white;
+}
 .tab_item {
 	display: none;
 	padding: 15px;
+	margin-right: 40px;
 	background-color: #fff;
+	font-size: 1em;
+	text-align: left;
 }
 .tab_item h2 {
 	padding-bottom: 5px;
-	font-size: 20px;
+	font-size: 1.5em;
 	font-weight: bold;
 }
 /* активный блок при загрузке */
-.tab_item--visible,
-.open_tab {
-    display: block;
+.tab_item--visible
+ {
+	display: block;
 }
 /* картинки внутри вкладок */
 /*.tab_item img {
@@ -1268,12 +1280,12 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }*/
 
 /* убираем выравнивание на маленьких экранах */
-@media (max-width: 320px) {
+/*@media (max-width: 320px) {
     .tabs,
     .tab {
         display: block;
     }
-}
+}*/
 
 /*----- Конец стилей для блока Tab'ов ------- */
 
