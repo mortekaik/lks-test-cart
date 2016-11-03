@@ -324,16 +324,16 @@ $q = $cart->getCart_small();
 							<div class="uploadform_error">Ошибочка!<span></span></div>
 						</form>
 					</div>
-					<!-- <div class="tab_wrapper">
-						<div class="tabs clearfix">
-							<div class="tab tab--active">Description</div>
-							<div class="tab">Characteristics</div>
-							<div class="tab">Reviews</div>
-							<div class="tab">Files</div>
-							<div class="tab">Reviews</div>
-							<div class="tab">Files</div>
-						</div>
-						<div class="tab_content clearfix">
+					<div class="tab_wrapper">
+						<ul class="tabs">
+							<li class="tab tab--active">Description</li>
+							<li class="tab">Characteristics</li>
+							<li class="tab">Reviews</li>
+							<li class="tab">Files</li>
+							<li class="tab">Reviews</li>
+							<li class="tab">Files</li>
+						</ul>
+						<div class="tab_content">
 							<div class="tab_item tab_item--visible">
 								<h2>Tab Heading 1</h2>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ullam explicabo perferendis est pariatur? Vitae?</p>
@@ -359,7 +359,43 @@ $q = $cart->getCart_small();
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi laudantium rerum, reprehenderit praesentium repellat minus officia cum eos veritatis quo, quod natus velit aliquam quisquam quae. Dicta deserunt officia et!</p>
 							</div>
 						</div>
-					</div> -->
+					</div>
+					<div class="tab_wrapper">
+						<ul class="tabs">
+							<li class="tab">Description</li>
+							<li class="tab">Characteristics</li>
+							<li class="tab tab--active">Reviews</li>
+							<li class="tab">Files</li>
+							<li class="tab">Reviews</li>
+							<li class="tab">Files</li>
+						</ul>
+						<div class="tab_content">
+							<div class="tab_item">
+								<h2>Tab Heading 1</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ullam explicabo perferendis est pariatur? Vitae?</p>
+							</div>
+							<div class="tab_item">
+								<h2>Tab Heading 2</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum labore laboriosam quo pariatur, soluta omnis doloribus, ullam atque ipsam, corporis voluptate dignissimos officiis minima tempore?</p>
+							</div>
+							<div class="tab_item tab_item--visible">
+								<h2>Tab Heading 3</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, commodi? Dicta harum error blanditiis labore eveniet libero, officiis aperiam necessitatibus quibusdam eos! Aspernatur dolore adipisci ratione quos, aliquid laboriosam ad voluptatem? Quas, nisi quisquam aperiam labore quae. Consequuntur ab consequatur qui. Voluptatem soluta ipsam, obcaecati.</p>
+							</div>
+							<div class="tab_item">
+								<h2>Tab Heading 4</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum tempora voluptatem vel. Nesciunt, impedit neque itaque quasi illum non, id ipsam quam. Consequatur nesciunt, quaerat rerum excepturi, obcaecati fuga natus sequi cupiditate ut, cum tempore incidunt amet nam expedita. Ipsum maiores a fugiat sit inventore odit dolores fuga explicabo. Voluptatibus quas, omnis, molestias commodi incidunt quos. Quam vero voluptas voluptatem.</p>
+							</div>
+							<div class="tab_item">
+								<h2>Tab Heading 5</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum illum atque nisi, quasi in, laboriosam sint quaerat saepe accusamus.</p>
+							</div>
+							<div class="tab_item">
+								<h2>Tab Heading 6</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi laudantium rerum, reprehenderit praesentium repellat minus officia cum eos veritatis quo, quod natus velit aliquam quisquam quae. Dicta deserunt officia et!</p>
+							</div>
+						</div>
+					</div>
 					<div class="tab_container">
 						<div class="main_tabs">
 							<input class="tab1" id="tab1" type="radio" name="tabs1" checked>
@@ -390,13 +426,13 @@ $q = $cart->getCart_small();
 					</div>
 					<div class="tab_container">
 						<div class="main_tabs">
-							<input class="tab1" id="tab11" type="radio" name="tabs2" checked>
+							<input class="tab1" id="tab11" type="radio" name="tabs2">
 							<label for="tab11" title="Wordpress">Description</label>
 
 							<input class="tab2" id="tab12" type="radio" name="tabs2">
 							<label for="tab12" title="Windows">Characteristics</label>
 
-							<input class="tab3" id="tab13" type="radio" name="tabs2">
+							<input class="tab3" id="tab13" type="radio" name="tabs2" checked>
 							<label for="tab13" title="HTML5">Reviews</label>
 
 							<input class="tab4" id="tab14" type="radio" name="tabs2">

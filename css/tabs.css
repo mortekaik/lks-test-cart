@@ -5,7 +5,7 @@
 	max-width: 650px;
 	min-height: 150px;
 	margin-top: 10px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 /* Базовый контейнер табов */
 .main_tabs {
@@ -60,6 +60,9 @@
 	border-bottom: 1px solid #fff;
 	border-right: none;
 	background: #fff;
+}
+.main_tabs input:checked + label:last-of-type {
+	border-right: 1px solid #ddd;
 }
 /* активация секций с помощью переключателя :checked */
 .tab1:checked ~ .content1, .tab2:checked ~ .content2,
