@@ -91,6 +91,21 @@ $(document).ready(function(e) {
 	// 	n.find('.tab_item').hide().eq($(this).index()).show();
 	// }).eq(0).addClass('tab--active');
 
+	/*---------------- Accordion------------*/
+
+	
+
+	// Аккордеон на jqueryUI
+	// $('.acc_panels').accordion({
+	// 	collapsible: true,
+	// 	animate: 300,
+	// 	active: 1,
+	// 	heightStyle: "content",
+	// 	icons: {
+	// 		header: "ui-icon-plus",
+	// 		activeHeader: "ui-icon-minus"
+	// 	}
+	// });
 
 	/*-------------- Галерея изображений товара -------*/
 

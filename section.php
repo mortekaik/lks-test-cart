@@ -18,21 +18,6 @@ $q = $cart->getCart_small();
 	<link type="text/css" href="css/footer.css" rel="stylesheet">
 	<link type="text/css" href="css/upload.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/tabs.css">
-	<script src="scripts/jquery-1.12.4.min.js"></script>
-	<script src="scripts/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="scripts/1.js"></script>
-	<script type="text/javascript" src="scripts/cart.js"></script>
-	<script type="text/javascript" src="scripts/filter.js"></script>
-	<script type="text/javascript" src="scripts/carousel.js"></script>
-	<script type="text/javascript" src="scripts/promo-slider.js"></script>
-	<!--[if lt IE 9]>
-		<script src="scripts/html5shiv.min.js"></script>
-		<script src="scripts/html5shiv-printshiv.min.js"></script>
-	<![endif]-->
-
-	<script>
-		(function(e, t, n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
-	</script>
 </head>
 
 <body>
@@ -360,7 +345,7 @@ $q = $cart->getCart_small();
 							</div>
 						</div>
 					</div>
-					<div class="tab_wrapper">
+					<!-- <div class="tab_wrapper">
 						<ul class="tabs">
 							<li class="tab">Description</li>
 							<li class="tab">Characteristics</li>
@@ -395,7 +380,7 @@ $q = $cart->getCart_small();
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi laudantium rerum, reprehenderit praesentium repellat minus officia cum eos veritatis quo, quod natus velit aliquam quisquam quae. Dicta deserunt officia et!</p>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="tab_container">
 						<div class="main_tabs">
 							<input class="tab1" id="tab1" type="radio" name="tabs1" checked>
@@ -424,7 +409,7 @@ $q = $cart->getCart_small();
 							</section>
 						</div>
 					</div>
-					<div class="tab_container">
+					<!-- <div class="tab_container">
 						<div class="main_tabs">
 							<input class="tab1" id="tab11" type="radio" name="tabs2">
 							<label for="tab11" title="Wordpress">Description</label>
@@ -451,6 +436,31 @@ $q = $cart->getCart_small();
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum quam nisi quasi possimus ipsum accusamus dolores recusandae enim impedit modi eligendi consequatur doloremque, optio molestiae culpa odio assumenda ea veniam, facere perferendis quibusdam. Quidem magni, eos eveniet vel. Inventore fugiat delectus provident, quia a. Consequatur aut autem sit magni eos porro quibusdam provident voluptatem.</p>
 							</section>
 						</div>
+					</div> -->
+					<div class="acc_container">
+						<div class="acc_panels">
+							<div class="acc_panel-title">
+								<span>+</span>
+								<h2>Panel 1</h2>
+							</div>
+							<div class="acc_panel-info">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum numquam, provident culpa quidem quaerat, quasi quae cupiditate. Et debitis unde provident perferendis quo consectetur iste sint, sed nam quia eius nisi exercitationem magni, vitae nesciunt harum atque a reiciendis ea. Officia sunt qui, ad quibusdam vero quae nemo quaerat amet veniam commodi eveniet eius reiciendis maxime tenetur velit in porro.</p>
+							</div>
+							<div class="acc_panel-title">
+								<span>+</span>
+								<h2>Panel 2</h2>
+							</div>
+							<div class="acc_panel-info">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat suscipit veritatis saepe voluptatem deserunt. Ea debitis rem, similique aut, maiores aspernatur libero voluptatem cupiditate ipsam.</p>
+							</div>
+							<div class="acc_panel-title">
+								<span>+</span>
+								<h2>Panel 3</h2>
+							</div>
+							<div class="acc_panel-info">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quis repudiandae, rem provident tempore magni earum, consectetur fugit eius quos ea placeat cum accusantium minus! Repudiandae, libero, cum! Sint, accusamus.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -475,6 +485,22 @@ $q = $cart->getCart_small();
 		</div>
 		<div id="overlay"></div> <!-- Пoдлoжкa -->
 	</div>
+
+	<script src="scripts/jquery-1.12.4.min.js"></script>
+	<script src="scripts/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="scripts/1.js"></script>
+	<script type="text/javascript" src="scripts/cart.js"></script>
+	<script type="text/javascript" src="scripts/filter.js"></script>
+	<script type="text/javascript" src="scripts/carousel.js"></script>
+	<script type="text/javascript" src="scripts/promo-slider.js"></script>
+	<!--[if lt IE 9]>
+		<script src="scripts/html5shiv.min.js"></script>
+		<script src="scripts/html5shiv-printshiv.min.js"></script>
+	<![endif]-->
+
+	<script>
+		(function(e, t, n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
+	</script>
 </body>
 
 </html>
