@@ -18,6 +18,15 @@ $q = $cart->getCart_small();
 	<link type="text/css" href="css/footer.css" rel="stylesheet">
 	<link type="text/css" href="css/upload.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/tabs.css">
+
+	<!--[if lt IE 9]>
+		<script src="scripts/html5shiv.min.js"></script>
+		<script src="scripts/html5shiv-printshiv.min.js"></script>
+	<![endif]-->
+
+	<script>
+		(function(e, t, n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
+	</script>
 </head>
 
 <body>
@@ -493,14 +502,7 @@ $q = $cart->getCart_small();
 	<script type="text/javascript" src="scripts/filter.js"></script>
 	<script type="text/javascript" src="scripts/carousel.js"></script>
 	<script type="text/javascript" src="scripts/promo-slider.js"></script>
-	<!--[if lt IE 9]>
-		<script src="scripts/html5shiv.min.js"></script>
-		<script src="scripts/html5shiv-printshiv.min.js"></script>
-	<![endif]-->
 
-	<script>
-		(function(e, t, n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);
-	</script>
 </body>
 
 </html>
