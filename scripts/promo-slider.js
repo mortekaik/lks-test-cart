@@ -93,7 +93,17 @@ $(document).ready(function(e) {
 
 	/*---------------- Accordion------------*/
 
-	
+	$('.acc_panels > .acc_panel_info').not(':first').hide();
+	$('.acc_panels > .acc_panel_title:first').addClass('acc_panel_title--active');
+	$('.acc_panels').on('click', '> .acc_panel_title', function() {
+		
+		var accPanelInfo = $(this).next();
+		var accPanels = $(this).closest('.acc_panels');
+		
+		accPanelInfo.slideToggle('fast').siblings('.acc_panel_info:visible').slideUp('fast');
+		$(this).toggleClass('acc_panel_title--active');
+		$(this).siblings('.acc_panel_title').removeClass('acc_panel_title--active');
+	});
 
 	// Аккордеон на jqueryUI
 	// $('.acc_panels').accordion({

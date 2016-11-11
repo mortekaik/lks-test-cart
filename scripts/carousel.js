@@ -259,7 +259,7 @@ $(document).ready(function() {
         speed: 2000,
         btnNext: '.carousel .carousel-button-right',
         btnPrev: '.carousel .carousel-button-left',
-        auto: true,
+        auto: false,
         position: "h",                        
         dirAutoSlide: false,            
     });         

@@ -15,6 +15,7 @@ $q = $cart->getCart_small();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> ЛКС - лабораторное и промышленное оборудование</title>
 	<link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.min.css">
 	<link type="text/css" href="css/footer.css" rel="stylesheet">
 	<link type="text/css" href="css/upload.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/tabs.css">
@@ -49,7 +50,7 @@ $q = $cart->getCart_small();
 								<label for="search-type">Search</label>
 								<input type="text" id="search-type" name="search" placeholder="Input something"><br>
 								<div class="loading_box">
-									<img src="img/preloaders/ajax-loader.gif" alt="Loading">
+									<!-- <img src="img/preloaders/ajax-loader.gif" alt="Loading"> -->
 								</div>
 								<div id="log-search"></div>
 							</form>
@@ -226,6 +227,11 @@ $q = $cart->getCart_small();
 								</p>
 							</form>
 						</div>
+						<div class="date_container">
+							<div id="pickdate">
+								<input id="datetimepicker" type="text">
+							</div>
+						</div>
 					</div>
 					<div class="deals">
 						<div class="product">
@@ -251,7 +257,7 @@ $q = $cart->getCart_small();
 					</div>
 					<div class="slider-wrap">
 						<div class="carousel-header">
-							<h3>Brands</h3>
+							<h2>Brands</h2>
 						</div>
 						<div class="carousel shadow">
 							<div class="carousel-button-left"><a href="#"></a></div>
@@ -448,26 +454,40 @@ $q = $cart->getCart_small();
 					</div> -->
 					<div class="acc_container">
 						<div class="acc_panels">
-							<div class="acc_panel-title">
+							<div class="acc_panel_title">
 								<span>+</span>
 								<h2>Panel 1</h2>
 							</div>
-							<div class="acc_panel-info">
+							<div class="acc_panel_info">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum numquam, provident culpa quidem quaerat, quasi quae cupiditate. Et debitis unde provident perferendis quo consectetur iste sint, sed nam quia eius nisi exercitationem magni, vitae nesciunt harum atque a reiciendis ea. Officia sunt qui, ad quibusdam vero quae nemo quaerat amet veniam commodi eveniet eius reiciendis maxime tenetur velit in porro.</p>
 							</div>
-							<div class="acc_panel-title">
+							<div class="acc_panel_title">
 								<span>+</span>
 								<h2>Panel 2</h2>
 							</div>
-							<div class="acc_panel-info">
+							<div class="acc_panel_info">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat suscipit veritatis saepe voluptatem deserunt. Ea debitis rem, similique aut, maiores aspernatur libero voluptatem cupiditate ipsam.</p>
 							</div>
-							<div class="acc_panel-title">
+							<div class="acc_panel_title">
 								<span>+</span>
 								<h2>Panel 3</h2>
 							</div>
-							<div class="acc_panel-info">
+							<div class="acc_panel_info">
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores quis repudiandae, rem provident tempore magni earum, consectetur fugit eius quos ea placeat cum accusantium minus! Repudiandae, libero, cum! Sint, accusamus.</p>
+							</div>
+							<div class="acc_panel_title">
+								<span>+</span>
+								<h2>Panel 4</h2>
+							</div>
+							<div class="acc_panel_info">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est sit soluta expedita, sequi ipsam, vero consectetur dolorem hic placeat quos, excepturi tenetur asperiores impedit. Fuga at, voluptatibus amet. Corporis, ex officiis laboriosam culpa enim sapiente.</p>
+							</div>
+							<div class="acc_panel_title">
+								<span>+</span>
+								<h2>Panel 5</h2>
+							</div>
+							<div class="acc_panel_info">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis nemo accusantium totam molestiae necessitatibus, et? Culpa dignissimos accusamus perspiciatis corporis rerum, dolorem unde ipsam cumque. Illum velit laborum recusandae! Pariatur praesentium quo sit quisquam dignissimos, iusto sint, dolorem ad itaque a molestiae voluptatibus minus dolores cum. Consequuntur, optio veniam incidunt!</p>
 							</div>
 						</div>
 					</div>
@@ -497,11 +517,13 @@ $q = $cart->getCart_small();
 
 	<script src="scripts/jquery-1.12.4.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
+	<script src="scripts/jquery.datetimepicker.full.min.js"></script>
 	<script type="text/javascript" src="scripts/1.js"></script>
 	<script type="text/javascript" src="scripts/cart.js"></script>
 	<script type="text/javascript" src="scripts/filter.js"></script>
 	<script type="text/javascript" src="scripts/carousel.js"></script>
 	<script type="text/javascript" src="scripts/promo-slider.js"></script>
+	<script src="scripts/datepicker.js"></script>
 
 </body>
 
