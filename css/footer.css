@@ -718,14 +718,10 @@ body {
 	height: auto;
 	border: 1px solid red;
 }
-.xdsoft_datetimepicker.xdsoft_inline {
+#air_pickdate {
 	display: block;
-	width: 100%;
 	position: relative;
-}
-.xdsoft_datetimepicker .xdsoft_datepicker {
-	margin: 0 auto;
-	float: none;
+	margin: 5px auto;
 }
 /*----- Стили для промо-слайдера ------- */
 .promo-slider {
