@@ -10,24 +10,76 @@ $(document).ready(function() {
 		monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
 	};
 
-	pickmeup('#input_pickdate', {
+	var pickDateInput = document.getElementById('input_pickdate');
+	var pickedDate = {};
+	pickmeup(pickDateInput, {
+		locale: 'ru',
 		position: 'right',
-		hide_on_select: true
+		hide_on_select: true,
+		default_date: false,
+		mode: 'multiple',
+		format: 'd-m-Y',
+		separator: ';',
+		change: pickDateInput.addEventListener('pickmeup-change', function (e) {
+			pickedDate = e.detail.formatted_date;
+			console.log(pickedDate);
+			getDate(pickedDate);
+		})
 	});
-	
 
-	pickmeup('#pickdate', {
+	var pickDateId = document.getElementById('pickdate');
+	pickmeup(pickDateId, {
 		flat: true,
 		mode: 'multiple',
-		locale: 'ru'
+		locale: 'ru',
+		default_date: false,
+		format: 'd-m-Y',
+		separator: ';',
+		change: pickDateId.addEventListener('pickmeup-change', function (e) {
+			pickedDate = e.detail.formatted_date;
+			console.log(pickedDate);
+			getDate(pickedDate);
+		})
+	});
+
+	function getDate($el) {
+		$.ajax({
+				type: 'POST',
+				url: 'input.php',
+				cache: false,
+				data: {
+					post: 'selected_date',
+					selectedDate: $el
+				},
+				success: function (data) {
+					if (data !== '') {
+						console.log(data);
+					}
+				},
+				error: function (error) {
+					alert('Something wrong: ' + error.statusText);
+					console.log(error);
+				}
+			});
+	}
+
+	$('.pickmeup_clear').click(function() {
+		pickmeup('#pickdate').clear();
 	});
 
 	/*---- Air-datepicker ----*/
 
+	$('#input_air_pickdate').datepicker({
+		multipleDates: true,
+		multipleDatesSeparator: '; ',
+		todayButton: new Date(),
+		clearButton: true
+	});
+
 	$('#air_pickdate').datepicker({
 		multipleDates: true,
 		// range: true,
-		// multipleDatesSeparator: ','
+		multipleDatesSeparator: '; ',
 		todayButton: new Date(),
 		clearButton: true
 	});

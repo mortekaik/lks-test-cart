@@ -718,6 +718,22 @@ body {
 	height: auto;
 	border: 1px solid red;
 }
+	/* PickMeUp Datepicker */
+#pickdate {
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+}
+.pickmeup_clear {
+	border-bottom: 1px solid gray;
+	margin-bottom: 5px;
+}
+.pickmeup_clear button {
+	display: block;
+	margin: 5px auto;
+}
+
+	/* Air Datepicker */
 #air_pickdate {
 	display: block;
 	position: relative;

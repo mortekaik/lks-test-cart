@@ -229,8 +229,13 @@ $q = $cart->getCart_small();
 							</form>
 						</div>
 						<div class="date_container">
+							<!-- PickMeUp Datepicker -->
 							<input id="input_pickdate" type="text">
 							<div id="pickdate"></div>
+							<div class="pickmeup_clear">
+								<button name="clear">Clear</button>
+							</div>
+							<!-- Air Datepicker -->
 							<input id="input_air_pickdate" type="text">
 							<div id="air_pickdate"></div>
 						</div>
@@ -362,42 +367,6 @@ $q = $cart->getCart_small();
 							</div>
 						</div>
 					</div>
-					<!-- <div class="tab_wrapper">
-						<ul class="tabs">
-							<li class="tab">Description</li>
-							<li class="tab">Characteristics</li>
-							<li class="tab tab--active">Reviews</li>
-							<li class="tab">Files</li>
-							<li class="tab">Reviews</li>
-							<li class="tab">Files</li>
-						</ul>
-						<div class="tab_content">
-							<div class="tab_item">
-								<h2>Tab Heading 1</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis ullam explicabo perferendis est pariatur? Vitae?</p>
-							</div>
-							<div class="tab_item">
-								<h2>Tab Heading 2</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum labore laboriosam quo pariatur, soluta omnis doloribus, ullam atque ipsam, corporis voluptate dignissimos officiis minima tempore?</p>
-							</div>
-							<div class="tab_item tab_item--visible">
-								<h2>Tab Heading 3</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, commodi? Dicta harum error blanditiis labore eveniet libero, officiis aperiam necessitatibus quibusdam eos! Aspernatur dolore adipisci ratione quos, aliquid laboriosam ad voluptatem? Quas, nisi quisquam aperiam labore quae. Consequuntur ab consequatur qui. Voluptatem soluta ipsam, obcaecati.</p>
-							</div>
-							<div class="tab_item">
-								<h2>Tab Heading 4</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum tempora voluptatem vel. Nesciunt, impedit neque itaque quasi illum non, id ipsam quam. Consequatur nesciunt, quaerat rerum excepturi, obcaecati fuga natus sequi cupiditate ut, cum tempore incidunt amet nam expedita. Ipsum maiores a fugiat sit inventore odit dolores fuga explicabo. Voluptatibus quas, omnis, molestias commodi incidunt quos. Quam vero voluptas voluptatem.</p>
-							</div>
-							<div class="tab_item">
-								<h2>Tab Heading 5</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum illum atque nisi, quasi in, laboriosam sint quaerat saepe accusamus.</p>
-							</div>
-							<div class="tab_item">
-								<h2>Tab Heading 6</h2>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi laudantium rerum, reprehenderit praesentium repellat minus officia cum eos veritatis quo, quod natus velit aliquam quisquam quae. Dicta deserunt officia et!</p>
-							</div>
-						</div>
-					</div> -->
 					<div class="tab_container">
 						<div class="main_tabs">
 							<input class="tab1" id="tab1" type="radio" name="tabs1" checked>
@@ -426,34 +395,6 @@ $q = $cart->getCart_small();
 							</section>
 						</div>
 					</div>
-					<!-- <div class="tab_container">
-						<div class="main_tabs">
-							<input class="tab1" id="tab11" type="radio" name="tabs2">
-							<label for="tab11" title="Wordpress">Description</label>
-
-							<input class="tab2" id="tab12" type="radio" name="tabs2">
-							<label for="tab12" title="Windows">Characteristics</label>
-
-							<input class="tab3" id="tab13" type="radio" name="tabs2" checked>
-							<label for="tab13" title="HTML5">Reviews</label>
-
-							<input class="tab4" id="tab14" type="radio" name="tabs2">
-							<label for="tab14" title="CSS3">Files</label>
-
-							<section class="content1">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi voluptatem laborum maiores libero quidem aut.</p>
-							</section>  
-							<section class="content2">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas odit ut minus velit quam doloribus, quod magni tenetur amet maiores, quo quibusdam totam, nisi ratione.</p>
-							</section> 
-							<section class="content3">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci fuga provident facilis nemo nam veritatis voluptatibus, nulla rerum delectus fugiat quam ipsa quas enim eos modi deserunt? Aut esse, corporis voluptatum nemo cupiditate repellat deserunt vitae libero nostrum magnam dolorum.</p>
-							</section> 
-							<section class="content4">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorum quam nisi quasi possimus ipsum accusamus dolores recusandae enim impedit modi eligendi consequatur doloremque, optio molestiae culpa odio assumenda ea veniam, facere perferendis quibusdam. Quidem magni, eos eveniet vel. Inventore fugiat delectus provident, quia a. Consequatur aut autem sit magni eos porro quibusdam provident voluptatem.</p>
-							</section>
-						</div>
-					</div> -->
 					<div class="acc_container">
 						<div class="acc_panels">
 							<div class="acc_panel_title">
