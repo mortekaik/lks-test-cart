@@ -37,24 +37,92 @@ body {
 	font-size: 14px;
 	line-height: 1.4;
 }
-.lock {
-	overflow: hidden;
+
+#wrap {
+	min-height: 100%;
+	border: 1px solid red;
 }
 
+.block {
+	position: relative;
+	margin: 0 auto;
+	width: 960px;
+	-border: 1px solid red;
+}
 /*шапка*/
 
+.header {
+	width: 960px;
+	margin: 0 auto;
+	height: 150px;
+	background: white;
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+.block-header {
+	width: 960px;
+	height: 150px;
+}
+
+.logo {
+	position: relative;
+	left: 40px;
+	width: 80px;
+	border: 1px solid red;
+}
 /*фиксированное плавающее меню*/
 
 #top_nav {
-	bottom: 0;
 	position: fixed;
+	bottom: 0;
+	top: 120px;
 	z-index: 1000;
-	width: 950px;
-	height: 25px;
+	width: 100%;
+	height: 30px;
+	margin: 0 auto;
 	background: #eee;
-	padding-left: 10px;
-	padding-top: 5px;
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+.top-menu {
+	position: absolute;
+	/*height: 30px;*/
+	/*width: 920px;*/
+	/*top: 120px;*/
+}
+.main-menu {
+	list-style: none;
+	width: 300px;
+	margin: 0px;
+	padding: 0px;
+	-border: 1px solid red;
+}
+
+.main-menu li {
+	margin-bottom: 8px;
+	margin: 0px;
+}
+
+.main-menu a {
+	display: block;
+	padding: 8px 14px;
+	color: black;
+	-border: 1px solid red;
+	margin-bottom: -1px;
+	text-decoration: none;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+/*------ Content ------*/
+
+#main {
+	overflow: auto;
+	padding-bottom: 250px;
+}
+
+.block-content {
+	min-height: 400px;
+	margin-top: 10px;
 }
 
 .button {
@@ -84,14 +152,6 @@ body {
 	cursor: pointer;
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
 }
-.header {
-	width: 960px;
-	margin-left: auto;
-	margin-right: auto;
-	height: 150px;
-	background: white;
-	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-}
 .price {
 	display: block;
 	float: right;
@@ -104,21 +164,6 @@ body {
 	white-space: nowrap;
 	line-height: 1;
 	text-shadow: -0.05em -0.02em 0px #FFF, -0.07em 0.05em 0px #FFF, 0.07em -0.05em 0px #FFF, 0.05em 0.05em 0px #FFF, 0.08em 0.08em 0px #707070, -0.03em 0.08em 0px #707070;
-}
-
-.block {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	width: 960px;
-	-border: 1px solid red;
-}
-
-.top-menu {
-	position: absolute;
-	height: 30px;
-	width: 920px;
-	top: 120px;
 }
 
 .product {
@@ -142,21 +187,6 @@ body {
 	width: 80px;
 	margin-top: 0;
 	margin-left: 20px;
-}
-
-.block-header {
-	height: 150px;
-}
-
-.block-footer {
-	height: 200px;
-	margin-top: 10px;
-	border: 1px solid red;
-}
-
-.block-content {
-	min-height: 400px;
-	margin-top: 10px;
 }
 
 .left-menu {
@@ -718,22 +748,8 @@ body {
 	height: auto;
 	border: 1px solid red;
 }
-	/* PickMeUp Datepicker */
-#pickdate {
-	display: block;
-	text-align: center;
-	margin-top: 10px;
-}
-.pickmeup_clear {
-	border-bottom: 1px solid gray;
-	margin-bottom: 5px;
-}
-.pickmeup_clear button {
-	display: block;
-	margin: 5px auto;
-}
-
-	/* Air Datepicker */
+	
+/* Air Datepicker */
 #air_pickdate {
 	display: block;
 	position: relative;
@@ -1420,22 +1436,6 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 
 /*----- Конец стилей для аккордеона ------- */
 
-.logo {
-	position: relative;
-	left: 40px;
-	width: 80px;
-	border: 1px solid red;
-}
-
-#wrap {
-	min-height: 100%;
-	border: 1px solid red;
-}
-
-#main {
-	overflow: auto;
-	padding-bottom: 250px;
-}
 
 
 /* must be same height as the footer */
@@ -1449,38 +1449,18 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 	background: white;
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px -3px 4px -3px rgba(0, 0, 0, 0.3);
 }
-
 .footer {
 	height: 200px;
 	clear: both;
 	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px -3px 4px -3px rgba(0, 0, 0, 0.3);
 }
-
-.main-menu {
-	list-style: none;
-	width: 300px;
-	margin: 0px;
-	padding: 0px;
-	-border: 1px solid red;
+.block-footer {
+	height: 200px;
+	margin-top: 10px;
+	border: 1px solid red;
 }
 
-.main-menu li {
-	margin-bottom: 8px;
-	margin: 0px;
-}
-
-.main-menu a {
-	display: block;
-	padding: 8px 14px;
-	color: black;
-	-border: 1px solid red;
-	margin-bottom: -1px;
-	text-decoration: none;
-	font-family: Arial, sans-serif;
-	font-size: 12px;
-	line-height: 1.4;
-}
-
+/* ------ Clearfix ------- */
 .clearfix::before {
 	content: '';
 	clear: both;
@@ -1491,6 +1471,7 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 	clear: both;
 }
 
+/* ----- Link to Top ------ */
 #top-link {
 	position: fixed;
 	right: 10px;
@@ -1498,10 +1479,10 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 	display: none;
 }
 
-/* filter */
-
-
-
+/*------ Lock Overlay -------*/
+.lock {
+	overflow: hidden;
+}
 
 /*Opera Fix*/
 

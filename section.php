@@ -14,12 +14,11 @@ $q = $cart->getCart_small();
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title> ЛКС - лабораторное и промышленное оборудование</title>
-	<link type="text/css" href="css/jquery-ui.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/jquery.pickmeup.css">
-	<link rel="stylesheet" type="text/css" href="css/jquery.air-datepicker.css">
-	<link type="text/css" href="css/footer.css" rel="stylesheet">
-	<link type="text/css" href="css/upload.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/tabs.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/air-datepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/footer.css">
+	<link rel="stylesheet" type="text/css" href="css/upload.css">
+	<link rel="stylesheet" type="text/css" href="css/tabs.css">
 
 	<!--[if lt IE 9]>
 		<script src="scripts/html5shiv.min.js"></script>
@@ -229,14 +228,9 @@ $q = $cart->getCart_small();
 							</form>
 						</div>
 						<div class="date_container">
-							<!-- PickMeUp Datepicker -->
-							<input id="input_pickdate" type="text">
-							<div id="pickdate"></div>
-							<div class="pickmeup_clear">
-								<button name="clear">Clear</button>
-							</div>
 							<!-- Air Datepicker -->
 							<input id="input_air_pickdate" type="text">
+							<!-- <input id="input_alt_pickdate" type="text"> -->
 							<div id="air_pickdate"></div>
 						</div>
 					</div>
@@ -460,14 +454,13 @@ $q = $cart->getCart_small();
 
 	<script src="scripts/jquery-1.12.4.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
-	<script src="scripts/jquery.pickmeup.min.js"></script>
 	<script src="scripts/jquery.air-datepicker.min.js"></script>
-	<script type="text/javascript" src="scripts/1.js"></script>
-	<script type="text/javascript" src="scripts/cart.js"></script>
-	<script type="text/javascript" src="scripts/filter.js"></script>
-	<script type="text/javascript" src="scripts/carousel.js"></script>
-	<script type="text/javascript" src="scripts/promo-slider.js"></script>
+	<script src="scripts/1.js"></script>
+	<script src="scripts/carousel.js"></script>
+	<script src="scripts/cart.js"></script>
 	<script src="scripts/datepicker.js"></script>
+	<script src="scripts/filter.js"></script>
+	<script src="scripts/promo-slider.js"></script>
 
 </body>
 

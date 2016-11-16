@@ -1,52 +1,11 @@
 $(document).ready(function() {
-	
-	/*---- PickMeUP - datepicker ----*/
 
-	pickmeup.defaults.locales['ru'] = {
-		days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-		daysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-		daysMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-		months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-		monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']
-	};
-
-	var pickDateInput = document.getElementById('input_pickdate');
-	var pickedDate = {};
-	pickmeup(pickDateInput, {
-		locale: 'ru',
-		position: 'right',
-		hide_on_select: true,
-		default_date: false,
-		mode: 'multiple',
-		format: 'd-m-Y',
-		separator: ';',
-		change: pickDateInput.addEventListener('pickmeup-change', function (e) {
-			pickedDate = e.detail.formatted_date;
-			console.log(pickedDate);
-			getDate(pickedDate);
-		})
-	});
-
-	var pickDateId = document.getElementById('pickdate');
-	pickmeup(pickDateId, {
-		flat: true,
-		mode: 'multiple',
-		locale: 'ru',
-		default_date: false,
-		format: 'd-m-Y',
-		separator: ';',
-		change: pickDateId.addEventListener('pickmeup-change', function (e) {
-			pickedDate = e.detail.formatted_date;
-			console.log(pickedDate);
-			getDate(pickedDate);
-		})
-	});
-
-	function getDate($el) {
+	function sendDate($el) {
 		$.ajax({
 				type: 'POST',
 				url: 'input.php',
 				cache: false,
+				dataType: 'json',
 				data: {
 					post: 'selected_date',
 					selectedDate: $el
@@ -63,25 +22,38 @@ $(document).ready(function() {
 			});
 	}
 
-	$('.pickmeup_clear').click(function() {
-		pickmeup('#pickdate').clear();
-	});
-
 	/*---- Air-datepicker ----*/
 
-	$('#input_air_pickdate').datepicker({
+	var airPickdateInput = $('#input_air_pickdate');
+	var airPickdateId = $('#air_pickdate');
+	var airPickedDate;
+
+	$(airPickdateInput).datepicker({
 		multipleDates: true,
 		multipleDatesSeparator: '; ',
 		todayButton: new Date(),
-		clearButton: true
+		clearButton: true,
+		// position: 'top left',
+		onSelect: function(formattedDate, date, el) {
+			airPickedDate = formattedDate.split(';/\n');
+			console.log(airPickedDate);
+			sendDate(airPickedDate);
+		}
 	});
 
-	$('#air_pickdate').datepicker({
-		multipleDates: true,
-		// range: true,
+	$(airPickdateId).datepicker({
+		multipleDates: 3,
 		multipleDatesSeparator: '; ',
 		todayButton: new Date(),
-		clearButton: true
+		clearButton: true,
+		dateFormat: 'dd-mm-yyyy',
+		// altField: $('#input_alt_pickdate'),
+		// altFieldDateFormat: 'dd/mm/yyyy',
+		onSelect: function(formattedDate, date, el) {
+			airPickedDate = formattedDate.split(';/\n');
+			console.log(airPickedDate);
+			sendDate(airPickedDate);
+		}
 	});
 
 }); // End of Ready Function
