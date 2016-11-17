@@ -16,6 +16,7 @@ $q = $cart->getCart_small();
 	<title> ЛКС - лабораторное и промышленное оборудование</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/air-datepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/rateyo.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
 	<link rel="stylesheet" type="text/css" href="css/upload.css">
 	<link rel="stylesheet" type="text/css" href="css/tabs.css">
@@ -35,7 +36,16 @@ $q = $cart->getCart_small();
 		<div class="header">
 			<div class="block block-header">
 				<img src="img/lks-logo.jpg" class="logo" width="80px" />
-				<div class="top-menu" id="top_nav"></div>
+				<div id="top_nav">
+					<ul class="top_menu">
+						<li class="top_menu_item"><a href="#">List-Item 1</a></li>
+						<li class="top_menu_item"><a href="#">List-Item 2</a></li>
+						<li class="top_menu_item"><a href="#">List-Item 3</a></li>
+						<li class="top_menu_item"><a href="#">List-Item 4</a></li>
+						<li class="top_menu_item"><a href="#">List-Item 5</a></li>
+						<li class="top_menu_item"><a href="#">List-Item 6</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<div id="main">
@@ -238,9 +248,17 @@ $q = $cart->getCart_small();
 						<div class="product">
 							<span class="price">1000.-</span>
 							<span class="<? $cart->check_product('1'); ?>" id="product_1"></span>
+							<div class="deal-rate">
+								<div data-rating="2" data-voteid=""></div>
+								<span class="counter"></span>
+							</div>
 						</div>
 						<div class="product">
 							<span class="price">2000.-</span>
+							<div class="deal-rate">
+								<div data-rating="3" data-voteid=""></div>
+								<span class="counter"></span>
+							</div>
 							<span class="<? $cart->check_product('2'); ?>" id="product_2"></span>
 						</div>
 						<div class="product">
@@ -455,10 +473,12 @@ $q = $cart->getCart_small();
 	<script src="scripts/jquery-1.12.4.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
 	<script src="scripts/jquery.air-datepicker.min.js"></script>
+	<script src="scripts/jquery.rateyo.min.js"></script>
 	<script src="scripts/1.js"></script>
 	<script src="scripts/carousel.js"></script>
 	<script src="scripts/cart.js"></script>
 	<script src="scripts/datepicker.js"></script>
+	<script src="scripts/deal-rate.js"></script>
 	<script src="scripts/filter.js"></script>
 	<script src="scripts/promo-slider.js"></script>
 
