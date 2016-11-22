@@ -54,13 +54,15 @@ body {
 .header {
 	width: 960px;
 	margin: 0 auto;
-	height: 150px;
+	margin-bottom: 350px; /* временный отступ*/
+	height: 160px;
 	background: white;
-	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
+	-border: 1px solid red;
 }
 .block-header {
 	width: 960px;
-	height: 150px;
+	height: 160px;
 }
 
 .logo {
@@ -71,42 +73,97 @@ body {
 }
 /*----- фиксированное плавающее меню ------*/
 
-#top_nav {
+#header_bottom {
 	position: fixed;
 	bottom: 0;
 	top: 120px;
 	z-index: 1000;
 	max-width: 960px;
 	width: 100%;
-	height: 30px;
+	height: 40px;
 	margin: 0 auto;
 	background: #eee;
-	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
 }
 
-.main-menu {
-	list-style: none;
+.header_catalog {
+	box-sizing: border-box;
+	position: relative;
 	width: 300px;
-	margin: 0px;
-	padding: 0px;
-	-border: 1px solid red;
+	height: 100%;
+	text-align: center;
+	background: #eee;
 }
-
-.main-menu li {
-	margin-bottom: 8px;
-	margin: 0px;
-}
-
-.main-menu a {
+.header_catalog > a {
 	display: block;
-	padding: 8px 14px;
-	color: black;
-	-border: 1px solid red;
-	margin-bottom: -1px;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #bbb;
+	text-transform: uppercase;
 	text-decoration: none;
-	font-family: Arial, sans-serif;
+}
+.header_catalog:hover {
+	background: #fff;
+}
+.header_catalog:hover > a {
+	color: #f00;
+}
+.header_catalog > a::after {
+	content: '';
+	/* если хотим через position - absolute, то: */
+	display: block;
+	position: absolute;
+	top: 15px;
+	right: 20px;
+	/* если хотим через float, то: */
+	/*display: inline-block;
+	float: right;
+	width: 0;
+	height: 0;
+	margin-top: 15px;
+	margin-right: 20px;*/
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 10px solid #f00;
+	transition: all 0.2s ease-in-out;
+}
+.header_catalog:hover > a::after {
+	border-top: none;
+	border-bottom: 10px solid #f00;
+}
+.header_catalog:hover .catalog_menu {
+	visibility: visible;
+	opacity: 1;
+}
+.catalog_menu {
+	box-sizing: border-box;
+	width: 300px;
+	position: relative;
+	visibility: hidden;
+	opacity: 0;
+	background: #fff;
+	border: 1px solid #eee;
+	transition: all 0.5s ease-in-out 0.1s;
+}
+
+.catalog_menu > li {
+	margin: 5px 0;
+	border-bottom: 1px solid #eee;
+}
+.catalog_menu > li:last-of-type {
+	border-bottom: none;
+}
+
+.catalog_menu > li a {
+	display: block;
 	font-size: 12px;
 	line-height: 1.4;
+	color: #bbb;
+	padding: 8px 14px;
+	text-decoration: none;
 }
 
 /*------ Content ------*/

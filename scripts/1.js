@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $(window).scroll(function() { // скроллинг горизонтального меню
     	var top = $(this).scrollTop();
-    	var elem = $('#top_nav');
+    	var elem = $('#header_bottom');
     	if (top + h_mrg < h_hght) {
     		elem.css('top', (h_hght - top));
     		$("#top-link").css("display", "none");

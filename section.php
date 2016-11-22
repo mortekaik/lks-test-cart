@@ -33,21 +33,25 @@ $q = $cart->getCart_small();
 
 <body>
 	<div id="wrap">
-		<div class="header">
+		<header class="header">
 			<div class="block block-header">
 				<img src="img/lks-logo.jpg" class="logo" width="80px" />
-				<div id="top_nav">
-					<ul class="top_menu">
-						<li class="top_menu_item"><a href="#">List-Item 1</a></li>
-						<li class="top_menu_item"><a href="#">List-Item 2</a></li>
-						<li class="top_menu_item"><a href="#">List-Item 3</a></li>
-						<li class="top_menu_item"><a href="#">List-Item 4</a></li>
-						<li class="top_menu_item"><a href="#">List-Item 5</a></li>
-						<li class="top_menu_item"><a href="#">List-Item 6</a></li>
-					</ul>
+				<div id="header_bottom">
+					<nav class="header_catalog"><a href="#">Product Catalog</a>
+						<ul class="catalog_menu">
+							<li class="catalog_menu_item"><a href="#">List-Item 1</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 2</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 3</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 4</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 5</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 6</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 7</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 8</a></li>
+						</ul>
+					</nav>
 				</div>
 			</div>
-		</div>
+		</header>
 		<div id="main">
 			<div id="content">
 				<div class="block block-content clearfix">
@@ -263,14 +267,26 @@ $q = $cart->getCart_small();
 						</div>
 						<div class="product">
 							<span class="price">3000.-</span>
+							<div class="deal-rate">
+								<div data-rating="1" data-voteid=""></div>
+								<span class="counter"></span>
+							</div>
 							<span class="<? $cart->check_product('3'); ?>" id="product_3"></span>
 						</div>
 						<div class="product">
 							<span class="price">4000.-</span>
+							<div class="deal-rate">
+								<div data-rating="5" data-voteid=""></div>
+								<span class="counter"></span>
+							</div>
 							<span class="<? $cart->check_product('4'); ?>" id="product_4"></span>
 						</div>
 						<div class="product">
 							<span class="price">5000.-</span>
+							<div class="deal-rate">
+								<div data-rating="4" data-voteid=""></div>
+								<span class="counter"></span>
+							</div>
 							<span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
 						</div>
 					</div>
