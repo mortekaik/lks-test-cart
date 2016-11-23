@@ -35,12 +35,20 @@ $q = $cart->getCart_small();
 	<div id="wrap">
 		<header class="header">
 			<div class="block block-header">
-				<img src="img/lks-logo.jpg" class="logo" width="80px" />
+				<img src="img/lks-logo.jpg" class="logo" />
 				<div id="header_bottom">
 					<nav class="header_catalog"><a href="#">Product Catalog</a>
 						<ul class="catalog_menu">
 							<li class="catalog_menu_item"><a href="#">List-Item 1</a></li>
-							<li class="catalog_menu_item"><a href="#">List-Item 2</a></li>
+							<li class="catalog_menu_item catalog_menu_item--active"><a href="#">List-Item 2</a>
+								<ul class="catalog_sub-menu">
+									<li class="sub-menu_item"><a href="#">Sub-menu Item 01</a></li>
+									<li class="sub-menu_item"><a href="#">Sub-menu Item 02</a></li>
+									<li class="sub-menu_item"><a href="#">Sub-menu Item 03</a></li>
+									<li class="sub-menu_item"><a href="#">Sub-menu Item 04</a></li>
+									<li class="sub-menu_item"><a href="#">Sub-menu Item 05</a></li>
+								</ul>
+							</li>
 							<li class="catalog_menu_item"><a href="#">List-Item 3</a></li>
 							<li class="catalog_menu_item"><a href="#">List-Item 4</a></li>
 							<li class="catalog_menu_item"><a href="#">List-Item 5</a></li>

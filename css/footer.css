@@ -1,6 +1,11 @@
 * {
+	/*box-sizing: border-box;*/
 	outline: none;
 }
+/**::before,
+*::after {
+	box-sizing: border-box;
+}*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -76,13 +81,13 @@ body {
 #header_bottom {
 	position: fixed;
 	bottom: 0;
-	top: 120px;
+	top: 121px;
 	z-index: 1000;
 	max-width: 960px;
 	width: 100%;
 	height: 40px;
 	margin: 0 auto;
-	background: #eee;
+	background: #ccc;
 	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
 }
 
@@ -90,9 +95,10 @@ body {
 	box-sizing: border-box;
 	position: relative;
 	width: 300px;
-	height: 100%;
+	height: 40px;
 	text-align: center;
 	background: #eee;
+	border: 1px solid #f00;
 }
 .header_catalog > a {
 	display: block;
@@ -135,35 +141,80 @@ body {
 	border-bottom: 10px solid #f00;
 }
 .header_catalog:hover .catalog_menu {
-	visibility: visible;
-	opacity: 1;
+	/*visibility: visible;*/
+	/*opacity: 1;*/
 }
 .catalog_menu {
 	box-sizing: border-box;
 	width: 300px;
 	position: relative;
-	visibility: hidden;
-	opacity: 0;
+	/*visibility: hidden;*/
+	/*opacity: 0;*/
+	visibility: visible;
+	opacity: 1;
+	margin-top: -1px;
+	margin-left: -1px;
 	background: #fff;
-	border: 1px solid #eee;
+	border: 1px solid #f00;
 	transition: all 0.5s ease-in-out 0.1s;
 }
-
 .catalog_menu > li {
-	margin: 5px 0;
+	/*position: relative;*/
 	border-bottom: 1px solid #eee;
 }
-.catalog_menu > li:last-of-type {
-	border-bottom: none;
-}
-
-.catalog_menu > li a {
+.catalog_menu li a {
 	display: block;
 	font-size: 12px;
 	line-height: 1.4;
-	color: #bbb;
 	padding: 8px 14px;
+	color: #ff2233;
 	text-decoration: none;
+}
+.catalog_menu li a:hover {
+	background-color: #f5f5f5;
+}
+.catalog_menu > li.catalog_menu_item--active {
+	/*border-bottom: 1px solid #fff;*/
+}
+.catalog_menu > li.catalog_menu_item--active > a {
+	background-color: #ff2233;
+	color: #fff;
+}
+.catalog_menu ul {
+	box-sizing: border-box;
+	position: absolute;
+	width: 250px;
+	min-height: 100%;
+	height: auto;
+	top: 0;
+	left: 100%;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	border: 1px solid #f00;
+	visibility: visible;
+	opacity: 1;
+	/*visibility: hidden;*/
+	/*opacity: 0;*/
+	/*transition: all 0.5s ease-in-out 0.1s;*/
+}
+.catalog_menu li:hover ul {
+	/*visibility: visible;*/
+	/*opacity: 1;*/
+}
+
+.catalog_menu ul li {
+	border-bottom: 1px solid #eee;
+}
+.catalog_menu ul li a {
+	font-size: 12px;
+	line-height: 1.4;
+	padding: 8px 14px;
+	color: #ff2233;
+	text-decoration: none;
+}
+.catalog_menu ul li a:hover {
+	background-color: #f5f5f5;
 }
 
 /*------ Content ------*/
@@ -176,57 +227,6 @@ body {
 .block-content {
 	min-height: 400px;
 	margin-top: 10px;
-}
-
-.button {
-	display: block;
-	position: absolute;
-	bottom: 10px;
-	left: 35px;
-	width: 50px;
-	height: 15px;
-	background: red;
-	cursor: pointer;
-	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-}
-.btn-added {
-	display: block;
-	position: absolute;
-	bottom: 10px;
-	left: 35px;
-	width: 50px;
-	height: 15px;
-	padding: 2px;
-	text-align: center;
-	font-size: 0.9em;
-	font-weight: bold;
-	color: red;
-	background: white;
-	cursor: pointer;
-	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
-}
-.price {
-	display: block;
-	float: right;
-	z-index: 1000;
-	font-family: "Impact", "Price", sans-serif;
-	font-style: italic;
-	font-size: 25px;
-	color: red;
-	text-align: right;
-	white-space: nowrap;
-	line-height: 1;
-	text-shadow: -0.05em -0.02em 0px #FFF, -0.07em 0.05em 0px #FFF, 0.07em -0.05em 0px #FFF, 0.05em 0.05em 0px #FFF, 0.08em 0.08em 0px #707070, -0.03em 0.08em 0px #707070;
-}
-
-.product {
-	position: relative;
-	float: left;
-	margin-right: 10px;
-	width: 120px;
-	height: 200px;
-	background: white;
-	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
 }
 
 .img {
@@ -1157,12 +1157,62 @@ body {
 
 /*----- End of cтилей для галереи товара ------- */
 
+/*----- Product card section ------*/
 .deals {
 	float: right;
 	width: 650px;
 	min-height: 150px;
 	border: 1px solid red;
 	margin-top: 10px;
+}
+.product {
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	width: 120px;
+	height: 200px;
+	background: white;
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+.price {
+	display: block;
+	float: right;
+	z-index: 1000;
+	font-family: "Impact", "Price", sans-serif;
+	font-style: italic;
+	font-size: 25px;
+	color: red;
+	text-align: right;
+	white-space: nowrap;
+	line-height: 1;
+	text-shadow: -0.05em -0.02em 0px #FFF, -0.07em 0.05em 0px #FFF, 0.07em -0.05em 0px #FFF, 0.05em 0.05em 0px #FFF, 0.08em 0.08em 0px #707070, -0.03em 0.08em 0px #707070;
+}
+.button {
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	left: 35px;
+	width: 50px;
+	height: 15px;
+	background: red;
+	cursor: pointer;
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
+}
+.btn-added {
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	left: 35px;
+	width: 50px;
+	height: 15px;
+	padding: 2px;
+	text-align: center;
+	font-size: 0.9em;
+	font-weight: bold;
+	color: red;
+	background: white;
+	cursor: pointer;
+	box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);
 }
 
 /*----- Стили для карусели ------- */

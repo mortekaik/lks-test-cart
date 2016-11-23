@@ -6,7 +6,7 @@ $(document).ready(function() {
     	var top = $(this).scrollTop();
     	var elem = $('#header_bottom');
     	if (top + h_mrg < h_hght) {
-    		elem.css('top', (h_hght - top));
+    		elem.css('top', (h_hght - top + 1));
     		$("#top-link").css("display", "none");
     	} else {
     		elem.css('top', h_mrg);
