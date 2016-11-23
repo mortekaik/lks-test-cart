@@ -21,6 +21,10 @@ $(document).ready(function() {
     	return false;
     });
 
+    /*-------- Catalog Menu ----------*/
+
+    
+
     /*-------- форма загрузки файлов на сервер ----------*/
 
     //feature detection for drag&drop upload

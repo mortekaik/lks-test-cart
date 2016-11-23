@@ -40,18 +40,78 @@ $q = $cart->getCart_small();
 					<nav class="header_catalog"><a href="#">Product Catalog</a>
 						<ul class="catalog_menu">
 							<li class="catalog_menu_item"><a href="#">List-Item 1</a></li>
-							<li class="catalog_menu_item catalog_menu_item--active"><a href="#">List-Item 2</a>
+							<li class="catalog_menu_item"><a href="#">List-Item 2</a>
 								<ul class="catalog_sub-menu">
 									<li class="sub-menu_item"><a href="#">Sub-menu Item 01</a></li>
 									<li class="sub-menu_item"><a href="#">Sub-menu Item 02</a></li>
 									<li class="sub-menu_item"><a href="#">Sub-menu Item 03</a></li>
-									<li class="sub-menu_item"><a href="#">Sub-menu Item 04</a></li>
+									<li class="sub-menu_item"><a href="#">Sub-menu Item 04</a>
+										<ul class="sub-menu_category-list">
+											<li>
+												<div>
+													<a href="#">Expanded Sub-menu Items</a>
+													<ol>
+														<li><a href="#">Category Item 01</a></li>
+														<li><a href="#">Category Item 02</a></li>
+														<li><a href="#">Category Item 03</a></li>
+														<li><a href="#">Category Item 04</a></li>
+														<li><a href="#">Category Item 05</a></li>
+														<li><a href="#">Category Item 06</a></li>
+														<li><a href="#">Category Item 07</a></li>
+														<li><a href="#">Category Item 08</a></li>
+														<li><a href="#">Category Item 09</a></li>
+														<li><a href="#">Category Item 10</a></li>
+														<li><a href="#">Category Item 11</a></li>
+														<li><a href="#">Category Item 12</a></li>
+														<li><a href="#">Category Item 13</a></li>
+														<li><a href="#">Category Item 14</a></li>
+														<li><a href="#">Category Item 15</a></li>
+														<li><a href="#">Category Item 16</a></li>
+														<li><a href="#">Category Item 17</a></li>
+														<li><a href="#">Category Item 18</a></li>
+														<li><a href="#">Category Item 19</a></li>
+														<li><a href="#">Category Item 20</a></li>
+													</ol>
+												</div>
+											</li>
+										</ul>
+									</li>
 									<li class="sub-menu_item"><a href="#">Sub-menu Item 05</a></li>
 								</ul>
 							</li>
 							<li class="catalog_menu_item"><a href="#">List-Item 3</a></li>
 							<li class="catalog_menu_item"><a href="#">List-Item 4</a></li>
-							<li class="catalog_menu_item"><a href="#">List-Item 5</a></li>
+							<li class="catalog_menu_item"><a href="#">List-Item 5</a>
+								<ul class="sub-menu_category-list expand-list">
+											<li>
+												<div>
+													<a href="#">Expanded List-Items</a>
+													<ol>
+														<li><a href="#">Category Item 01</a></li>
+														<li><a href="#">Category Item 02</a></li>
+														<li><a href="#">Category Item 03</a></li>
+														<li><a href="#">Category Item 04</a></li>
+														<li><a href="#">Category Item 05</a></li>
+														<li><a href="#">Category Item 06</a></li>
+														<li><a href="#">Category Item 07</a></li>
+														<li><a href="#">Category Item 08</a></li>
+														<li><a href="#">Category Item 09</a></li>
+														<li><a href="#">Category Item 10</a></li>
+														<li><a href="#">Category Item 11</a></li>
+														<li><a href="#">Category Item 12</a></li>
+														<li><a href="#">Category Item 13</a></li>
+														<li><a href="#">Category Item 14</a></li>
+														<li><a href="#">Category Item 15</a></li>
+														<li><a href="#">Category Item 16</a></li>
+														<li><a href="#">Category Item 17</a></li>
+														<li><a href="#">Category Item 18</a></li>
+														<li><a href="#">Category Item 19</a></li>
+														<li><a href="#">Category Item 20</a></li>
+													</ol>
+												</div>
+											</li>
+										</ul>
+							</li>
 							<li class="catalog_menu_item"><a href="#">List-Item 6</a></li>
 							<li class="catalog_menu_item"><a href="#">List-Item 7</a></li>
 							<li class="catalog_menu_item"><a href="#">List-Item 8</a></li>

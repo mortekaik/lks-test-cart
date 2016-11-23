@@ -90,15 +90,17 @@ body {
 	background: #ccc;
 	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
 }
-
-.header_catalog {
+#header_bottom * {
 	box-sizing: border-box;
+}
+
+/* --- "Кнопка" каталога --- */
+.header_catalog {
 	position: relative;
-	width: 300px;
+	width: 250px;
 	height: 40px;
 	text-align: center;
 	background: #eee;
-	border: 1px solid #f00;
 }
 .header_catalog > a {
 	display: block;
@@ -131,92 +133,145 @@ body {
 	height: 0;
 	margin-top: 15px;
 	margin-right: 20px;*/
-	border-left: 7px solid transparent;
-	border-right: 7px solid transparent;
-	border-top: 10px solid #f00;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 8px solid #f00;
 	transition: all 0.2s ease-in-out;
 }
 .header_catalog:hover > a::after {
 	border-top: none;
-	border-bottom: 10px solid #f00;
+	border-bottom: 8px solid #f00;
 }
 .header_catalog:hover .catalog_menu {
-	/*visibility: visible;*/
-	/*opacity: 1;*/
-}
-.catalog_menu {
-	box-sizing: border-box;
-	width: 300px;
-	position: relative;
-	/*visibility: hidden;*/
-	/*opacity: 0;*/
 	visibility: visible;
 	opacity: 1;
-	margin-top: -1px;
-	margin-left: -1px;
-	background: #fff;
-	border: 1px solid #f00;
-	transition: all 0.5s ease-in-out 0.1s;
 }
-.catalog_menu > li {
+/* --- Главное меню категорий --- */
+.catalog_menu {
+	width: 250px;
+	position: relative;
+	visibility: hidden;
+	opacity: 0;
+	/*visibility: visible;*/
+	/*opacity: 1;*/
+	transition: all 0.5s ease-in-out 0.1s;
+	background: #fff;
+	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
+}
+.catalog_menu li {
 	/*position: relative;*/
-	border-bottom: 1px solid #eee;
+	/*padding: 0 15px;*/
 }
 .catalog_menu li a {
 	display: block;
-	font-size: 12px;
-	line-height: 1.4;
 	padding: 8px 14px;
 	color: #ff2233;
 	text-decoration: none;
+	box-shadow: 0 1px 0 #e7e7e7;
 }
-.catalog_menu li a:hover {
-	background-color: #f5f5f5;
+.catalog_menu > li:last-child  a{
+	box-shadow: none;	
 }
-.catalog_menu > li.catalog_menu_item--active {
-	/*border-bottom: 1px solid #fff;*/
+.catalog_menu > li:hover > a {
+	background-color: #ff2233;
+	color: #fff;
+	box-shadow: none;
 }
 .catalog_menu > li.catalog_menu_item--active > a {
 	background-color: #ff2233;
 	color: #fff;
+	border-bottom: 1px solid #fff;
 }
-.catalog_menu ul {
-	box-sizing: border-box;
-	position: absolute;
-	width: 250px;
-	min-height: 100%;
-	height: auto;
-	top: 0;
-	left: 100%;
-	margin: 0;
-	padding: 0;
-	background: #fff;
-	border: 1px solid #f00;
+.catalog_menu li:hover > ul {
 	visibility: visible;
 	opacity: 1;
-	/*visibility: hidden;*/
-	/*opacity: 0;*/
-	/*transition: all 0.5s ease-in-out 0.1s;*/
-}
-.catalog_menu li:hover ul {
-	/*visibility: visible;*/
-	/*opacity: 1;*/
 }
 
-.catalog_menu ul li {
-	border-bottom: 1px solid #eee;
+/* --- Подменю (.catalog_sub-menu) --- */
+.catalog_menu ul {
+	position: absolute;
+	width: 250px;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	background: #fff;
+	visibility: visible;
+	opacity: 1;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.5s ease-in-out 0.1s;
+	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
 }
-.catalog_menu ul li a {
-	font-size: 12px;
-	line-height: 1.4;
-	padding: 8px 14px;
-	color: #ff2233;
-	text-decoration: none;
+.catalog_menu ul > li {
+	padding: 0 15px;
 }
-.catalog_menu ul li a:hover {
-	background-color: #f5f5f5;
+.catalog_menu ul > li:hover > a {
+	color: #aaa;
+	box-shadow: none;
 }
-
+/* --- Расширенный список для пунктов подменю --- */
+ul.sub-menu_category-list {
+	width: 460px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: all 0.5s ease-in-out 0.1s;
+	background: #fff;
+	border-left: 1px solid #e5e5e5;
+	/*box-shadow: 4px 2px 6px rgba(0,0,0,0.2);*/
+	overflow: auto;
+}
+ul.sub-menu_category-list > li {
+	padding: 0 10px;
+}
+ul.sub-menu_category-list li div {
+	margin: 0 -10px;
+}
+ul.sub-menu_category-list li div > a {
+	display: block;
+	padding-left: 15px;
+	font-weight: bold;
+	color: #8E2E29;
+	text-align: left;
+}
+ul.sub-menu_category-list li:hover div > a {
+	background: #e7e7e7;
+	box-shadow: none;
+}
+ul.sub-menu_category-list ol {
+	overflow: hidden;
+}
+ul.sub-menu_category-list ol li {
+	float: left;
+	width: 50%;
+}
+ul.sub-menu_category-list li ol a {
+	display: block;
+	position: relative;
+	padding: 8px 0;
+	/*padding-left: 40px;*/
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	/*text-align: left;*/
+	box-shadow: none;
+}
+ul.sub-menu_category-list li ol a:hover {
+	background: #e7e7e7;
+}
+/* --- Расширенный список, когда нет подменю --- */
+.sub-menu_category-list.expand-list {
+	visibility: hidden;
+	opacity: 0;
+	min-width: 710px;
+}
+ul.sub-menu_category-list.expand-list ol li {
+	float: left;
+	width: 33.33%;
+}
 /*------ Content ------*/
 
 #main {
