@@ -136,26 +136,22 @@ body {
 	border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
 	border-top: 8px solid #f00;
-	transition: all 0.2s ease-in-out;
+	/*transition: all 0.2s ease-in-out;*/
 }
 .header_catalog:hover > a::after {
 	border-top: none;
 	border-bottom: 8px solid #f00;
 }
 .header_catalog:hover .catalog_menu {
-	visibility: visible;
-	opacity: 1;
+	display: block;
 }
 /* --- Главное меню категорий --- */
 .catalog_menu {
-	width: 250px;
+	display: none;
 	position: relative;
-	visibility: hidden;
-	opacity: 0;
-	/*visibility: visible;*/
-	/*opacity: 1;*/
-	transition: all 0.5s ease-in-out 0.1s;
+	width: 250px;
 	background: #fff;
+	/*transition: all 0.5s ease-in-out 0.1s;*/
 	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
 }
 .catalog_menu li {
@@ -183,23 +179,18 @@ body {
 	border-bottom: 1px solid #fff;
 }
 .catalog_menu li:hover > ul {
-	visibility: visible;
-	opacity: 1;
+	display: block;
 }
 
 /* --- Подменю (.catalog_sub-menu) --- */
 .catalog_menu ul {
+	display: none;
 	position: absolute;
 	width: 250px;
 	top: 0;
 	bottom: 0;
 	left: 100%;
 	background: #fff;
-	visibility: visible;
-	opacity: 1;
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.5s ease-in-out 0.1s;
 	/*box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 3px 4px -3px rgba(0, 0, 0, 0.3);*/
 }
 .catalog_menu ul > li {
@@ -211,14 +202,12 @@ body {
 }
 /* --- Расширенный список для пунктов подменю --- */
 ul.sub-menu_category-list {
+	display: none;
 	width: 460px;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 100%;
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.5s ease-in-out 0.1s;
 	background: #fff;
 	border-left: 1px solid #e5e5e5;
 	/*box-shadow: 4px 2px 6px rgba(0,0,0,0.2);*/
@@ -252,11 +241,9 @@ ul.sub-menu_category-list li ol a {
 	display: block;
 	position: relative;
 	padding: 8px 0;
-	/*padding-left: 40px;*/
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	/*text-align: left;*/
 	box-shadow: none;
 }
 ul.sub-menu_category-list li ol a:hover {
@@ -264,8 +251,7 @@ ul.sub-menu_category-list li ol a:hover {
 }
 /* --- Расширенный список, когда нет подменю --- */
 .sub-menu_category-list.expand-list {
-	visibility: hidden;
-	opacity: 0;
+	display: none;
 	min-width: 710px;
 }
 ul.sub-menu_category-list.expand-list ol li {
