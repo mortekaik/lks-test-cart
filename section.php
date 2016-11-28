@@ -7,7 +7,7 @@ $q = $cart->getCart_small();
 ?>
 
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="ru">
 
 <head>
 	<meta charset="utf-8">
