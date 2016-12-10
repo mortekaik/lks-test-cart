@@ -1,13 +1,20 @@
-# Jquery Files
+# jQuery Files
 
 jquery*.js
 jquery*.css
+
+# libs
+
+owl.carousel*.js
+owl.carousel*.css
 
 # PHP files
 
 Database*.php
 Router*.php
+
 # Folders
 
 /css/images
 img/preloaders/
+img/sprites/
