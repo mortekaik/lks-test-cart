@@ -7,6 +7,9 @@ jquery*.css
 
 owl.carousel*.js
 owl.carousel*.css
+slick*.css
+slick*.js
+
 
 # PHP files
 
