@@ -143,7 +143,7 @@ body {
 	border-bottom: 8px solid #f00;
 }
 .header_catalog:hover .catalog_menu {
-	display: block;
+	/*display: block;*/
 }
 /* --- Главное меню категорий --- */
 .catalog_menu {
@@ -849,6 +849,7 @@ ul.sub-menu_category-list.expand-list ol li {
 	position: relative;
 	margin: 5px auto;
 }
+
 /*----- Стили для промо-слайдера ------- */
 .promo-slider {
 	position: relative;
@@ -856,82 +857,26 @@ ul.sub-menu_category-list.expand-list ol li {
 	width: 650px;
 	min-height: 250px;
 	border: 1px solid red;
-	background: #b0b0b0;
+	/*background: #b0b0b0;*/
 }
 
-#slider {
+.slider-box {
 	/* Оболочка слайдера */
-	position: relative; /* позиционируем блок относительно основной области карусели */
+	/*позиционируем блок относительно основной области карусели*/
+	position: relative;
 	width: 100%;
-	height: 250px;
-	overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области*/
+	/*скрываем содержимое, выходящее за рамки основной области*/
+	overflow: hidden;
 }
 .slide {
 	/* Слайд */
 	width: 100%;
 	height: 100%;
 }
-
-.sli-links {
-	/* Кнопки смены слайдов */
-	position: absolute;
-	margin: auto;
-	bottom: 10px;
-	left: 0;
-	right: 0;
-	text-align: center;
-}
-
-.sli-links .control-slide {
-	margin: 2px;
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	overflow: hidden;
-	text-indent: -9999px;
-	background: url('../img/slider/radioBg.png') center bottom no-repeat;
-	opacity: .5;
-}
-
-.sli-links .control-slide:hover {
-	cursor: pointer;
-	background-position: center center;
-}
-
-.sli-links .control-slide.active {
-	background-position: center top;
-}
-
-#prewbutton,
-#nextbutton {
-	/* Ссылка "Следующий" и "Предыдущий" */
+.slide img {
 	display: block;
-	width: 15px;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	overflow: hidden;
-	text-indent: -999px;
-	background: url('../img/slider/arrowBg.png') left center no-repeat;
-	opacity: 0.7;
-	z-index: 3;
-	outline: none !important;
+	width: 100%;
 }
-
-#prewbutton {
-	left: 10px;
-}
-
-#nextbutton {
-	right: 10px;
-	background: url('../img/slider/arrowBg.png') right center no-repeat;
-}
-
-#prewbutton:hover,
-#nextbutton:hover {
-	opacity: 1;
-}
-
 
 /*----- End of cтилей для промо-слайдера ------- */
 
@@ -1579,8 +1524,6 @@ box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
 }
 
 /*----- Конец стилей для аккордеона ------- */
-
-
 
 /* must be same height as the footer */
 

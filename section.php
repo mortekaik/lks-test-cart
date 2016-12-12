@@ -16,6 +16,7 @@ $q = $cart->getCart_small();
 	<title> ЛКС - лабораторное и промышленное оборудование</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/air-datepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
 	<link rel="stylesheet" type="text/css" href="css/rateyo.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
 	<link rel="stylesheet" type="text/css" href="css/upload.css">
@@ -151,12 +152,10 @@ $q = $cart->getCart_small();
 					</div>
 					<div class="promo-slider">
 						<div class="slider-box">
-							<ul id="slider">
-								<li class="slide"><a href="#"><img src="img/slider/10574.jpg" width="650" height="250"></a></li>
-								<li class="slide"><a href="#"><img src="img/slider/6586.jpg" width="650" height="250"></a></li>
-								<li class="slide"><a href="#"><img src="img/slider/113.jpg" width="650" height="250"></a></li>
-								<li class="slide"><a href="#"><img src="img/slider/113_1.jpg" width="650" height="250"></a></li>
-							</ul>
+							<div class="slide"><a href="#"><img src="img/slider/10574.jpg" width="650" height="250"></a></div>
+							<div class="slide"><a href="#"><img src="img/slider/6586.jpg" width="650" height="250"></a></div>
+							<div class="slide"><a href="#"><img src="img/slider/113.jpg" width="650" height="250"></a></div>
+							<div class="slide"><a href="#"><img src="img/slider/113_1.jpg" width="650" height="250"></a></div>
 						</div>
 					</div>
 					<div class="gallery-box">
@@ -557,6 +556,7 @@ $q = $cart->getCart_small();
 	<script src="scripts/jquery-1.12.4.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
 	<script src="scripts/jquery.air-datepicker.min.js"></script>
+	<script src="scripts/slick.min.js"></script>
 	<script src="scripts/jquery.rateyo.min.js"></script>
 	<script src="scripts/1.js"></script>
 	<script src="scripts/carousel.js"></script>
