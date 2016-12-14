@@ -21,6 +21,8 @@ $q = $cart->getCart_small();
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
 	<link rel="stylesheet" type="text/css" href="css/upload.css">
 	<link rel="stylesheet" type="text/css" href="css/tabs.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css"> -->
 
 	<!--[if lt IE 9]>
 		<script src="scripts/html5shiv.min.js"></script>
@@ -557,6 +559,7 @@ $q = $cart->getCart_small();
 	<script src="scripts/jquery-ui.min.js"></script>
 	<script src="scripts/jquery.air-datepicker.min.js"></script>
 	<script src="scripts/slick.min.js"></script>
+	<!-- <script src="scripts/owl.carousel.min.js"></script> -->
 	<script src="scripts/jquery.rateyo.min.js"></script>
 	<script src="scripts/1.js"></script>
 	<script src="scripts/carousel.js"></script>

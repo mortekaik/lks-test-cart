@@ -11,7 +11,6 @@ $(document).ready(function(e) {
 			pauseOnHover: true
 		});
 
-
 	/*---------------- Tabs------------*/
 
 	// $('tab_content > tab_item:not(:first)').hide();
