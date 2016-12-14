@@ -4,7 +4,7 @@ $(document).ready(function(e) {
 		$('.slider-box').slick({
 			// infinite: false,
 			arrows: false,
-			autoplay: true,
+			// autoplay: true,
 			speed: 1500,
 			autoplaySpeed: 3000,
 			// draggable: false,
