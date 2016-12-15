@@ -16,13 +16,12 @@ $q = $cart->getCart_small();
 	<title> ЛКС - лабораторное и промышленное оборудование</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/air-datepicker.css">
-	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/slick.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/rateyo.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
 	<link rel="stylesheet" type="text/css" href="css/upload.css">
 	<link rel="stylesheet" type="text/css" href="css/tabs.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/owl.theme.default.min.css"> -->
 
 	<!--[if lt IE 9]>
 		<script src="scripts/html5shiv.min.js"></script>
@@ -153,7 +152,7 @@ $q = $cart->getCart_small();
 						</div>
 					</div>
 					<div class="promo-slider">
-						<div class="slider-box">
+						<div class="slider-box bxslider">
 							<div class="slide"><a href="#"><img src="img/slider/10574.jpg" width="650" height="250"></a></div>
 							<div class="slide"><a href="#"><img src="img/slider/6586.jpg" width="650" height="250"></a></div>
 							<div class="slide"><a href="#"><img src="img/slider/113.jpg" width="650" height="250"></a></div>
@@ -558,8 +557,8 @@ $q = $cart->getCart_small();
 	<script src="scripts/jquery-1.12.4.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
 	<script src="scripts/jquery.air-datepicker.min.js"></script>
-	<script src="scripts/slick.min.js"></script>
-	<!-- <script src="scripts/owl.carousel.min.js"></script> -->
+	<!-- <script src="scripts/slick.min.js"></script> -->
+	<script src="scripts/jquery.bxslider.min.js"></script>
 	<script src="scripts/jquery.rateyo.min.js"></script>
 	<script src="scripts/1.js"></script>
 	<script src="scripts/carousel.js"></script>

@@ -1,15 +1,25 @@
 $(document).ready(function(e) {
 	/*---------------- Promo-Slider------------*/
 
-		$('.slider-box').slick({
-			// infinite: false,
-			arrows: false,
-			// autoplay: true,
+		$('.slider-box').bxSlider({
+			auto: true,
+			pause: 5000,
 			speed: 1500,
-			autoplaySpeed: 3000,
-			// draggable: false,
-			pauseOnHover: true
+			autoHover: true,
+			// autoDelay: 2000,
+			pager: false,
+			controls: false
 		});
+
+		// $('.slider-box').slick({
+		// 	// infinite: false,
+		// 	arrows: false,
+		// 	// autoplay: true,
+		// 	speed: 1500,
+		// 	autoplaySpeed: 3000,
+		// 	// draggable: false,
+		// 	pauseOnHover: true
+		// });
 
 	/*---------------- Tabs------------*/
 
