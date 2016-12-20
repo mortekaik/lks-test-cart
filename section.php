@@ -16,7 +16,7 @@ $q = $cart->getCart_small();
 	<title> ЛКС - лабораторное и промышленное оборудование</title>
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
 	<link rel="stylesheet" type="text/css" href="css/air-datepicker.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/slick.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
 	<!-- <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/rateyo.css">
 	<link rel="stylesheet" type="text/css" href="css/footer.css">
@@ -557,8 +557,8 @@ $q = $cart->getCart_small();
 	<script src="scripts/jquery-1.12.4.min.js"></script>
 	<script src="scripts/jquery-ui.min.js"></script>
 	<script src="scripts/jquery.air-datepicker.min.js"></script>
-	<!-- <script src="scripts/slick.min.js"></script> -->
-	<script src="scripts/jquery.bxslider.min.js"></script>
+	<script src="scripts/slick.min.js"></script>
+	<!-- <script src="scripts/jquery.bxslider.min.js"></script> -->
 	<script src="scripts/jquery.rateyo.min.js"></script>
 	<script src="scripts/1.js"></script>
 	<script src="scripts/carousel.js"></script>

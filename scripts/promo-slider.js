@@ -1,25 +1,27 @@
 $(document).ready(function(e) {
 	/*---------------- Promo-Slider------------*/
 
-		$('.slider-box').bxSlider({
-			auto: true,
-			pause: 5000,
-			speed: 1500,
-			autoHover: true,
-			// autoDelay: 2000,
-			pager: false,
-			controls: false
-		});
-
-		// $('.slider-box').slick({
-		// 	// infinite: false,
-		// 	arrows: false,
-		// 	// autoplay: true,
-		// 	speed: 1500,
-		// 	autoplaySpeed: 3000,
-		// 	// draggable: false,
-		// 	pauseOnHover: true
+		// $('.slider-box').bxSlider({
+		// 	responsive: true,
+		// 	touchEnabled: true,
+		// 	// auto: true,
+		// 	// pause: 5000,
+		// 	// speed: 1500,
+		// 	// autoHover: true,
+		// 	// autoDelay: 2000,
+		// 	pager: false,
+		// 	controls: false
 		// });
+
+		$('.slider-box').slick({
+			// infinite: false,
+			arrows: false,
+			autoplay: true,
+			speed: 1500,
+			autoplaySpeed: 3000,
+			// draggable: false,
+			pauseOnHover: true
+		});
 
 	/*---------------- Tabs------------*/
 
