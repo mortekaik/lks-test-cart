@@ -16,13 +16,29 @@ $(document).ready(function(e) {
 		$('.slider-box').slick({
 			// infinite: false,
 			arrows: false,
-			autoplay: true,
+			// autoplay: true,
 			speed: 1500,
 			autoplaySpeed: 3000,
 			// draggable: false,
 			pauseOnHover: true
 		});
+		/*---------------- Brand Carousel ------------*/
 
+	$('.carousel-items').slick({
+			// infinite: false,
+			slidesToShow: 4,
+  		slidesToScroll: 2,
+			prevArrow: $('.carousel-button-left'),
+			nextArrow: $('.carousel-button-right'),
+			// appendArrows: $('.carousel-content'),
+			// arrows: false,
+			autoplay: true,
+			speed: 1500,
+			autoplaySpeed: 3000,
+			draggable: false,
+			pauseOnHover: true
+		});
+	
 	/*---------------- Tabs------------*/
 
 	// $('tab_content > tab_item:not(:first)').hide();

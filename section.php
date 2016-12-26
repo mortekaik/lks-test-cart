@@ -358,53 +358,51 @@ $q = $cart->getCart_small();
 							<span class="<? $cart->check_product('5'); ?>" id="product_5"></span>
 						</div>
 					</div>
-					<div class="slider-wrap">
+					<div class="brands-carousel">
 						<div class="carousel-header">
 							<h2>Brands</h2>
 						</div>
-						<div class="carousel shadow">
+						<div class="carousel-content">
 							<div class="carousel-button-left"><a href="#"></a></div>
 							<div class="carousel-button-right"><a href="#"></a></div>
-							<div class="carousel-wrapper"> 
-								<ul class="carousel-items clearfix">
-									<li class="carousel-block">
-										<a class="q-item-info" href="#">0
-											<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-											<div class="q-item-text"><span>Весы A&D</span></div>
-										</a>
-									</li>
-									<li class="carousel-block">
-										<a class="q-item-info" href="#">1
-											<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-											<div class="q-item-text"><span>Весы A&D</span></div>
-										</a>
-									</li>
-									<li class="carousel-block">
-										<a class="q-item-info" href="#">2
-											<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-											<div class="q-item-text"><span>Весы A&D</span></div>
-										</a>
-									</li>
-									<li class="carousel-block">
-										<a class="q-item-info" href="#">3
-											<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-											<div class="q-item-text"><span>Весы A&D</span></div>
-										</a>
-									</li>
-									<li class="carousel-block">
-										<a class="q-item-info" href="#">4
-											<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-											<div class="q-item-text"><span>Весы A&D</span></div>
-										</a>
-									</li>
-									<li class="carousel-block">
-										<a class="q-item-info" href="#">5
-											<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
-											<div class="q-item-text"><span>Весы A&D</span></div>
-										</a>
-									</li>
-								</ul>
-							</div>
+							<ul class="carousel-items">
+								<li class="carousel-item">
+									<a class="q-item-info" href="#">0
+										<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+										<div class="q-item-text"><span>Весы A&D</span></div>
+									</a>
+								</li>
+								<li class="carousel-item">
+									<a class="q-item-info" href="#">1
+										<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+										<div class="q-item-text"><span>Весы A&D</span></div>
+									</a>
+								</li>
+								<li class="carousel-item">
+									<a class="q-item-info" href="#">2
+										<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+										<div class="q-item-text"><span>Весы A&D</span></div>
+									</a>
+								</li>
+								<li class="carousel-item">
+									<a class="q-item-info" href="#">3
+										<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+										<div class="q-item-text"><span>Весы A&D</span></div>
+									</a>
+								</li>
+								<li class="carousel-item">
+									<a class="q-item-info" href="#">4
+										<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+										<div class="q-item-text"><span>Весы A&D</span></div>
+									</a>
+								</li>
+								<li class="carousel-item">
+									<a class="q-item-info" href="#">5
+										<img class="q-item-img" alt="A&D" src="img/and-logo-rus.jpg">
+										<div class="q-item-text"><span>Весы A&D</span></div>
+									</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div class="vendors" id="del_all">

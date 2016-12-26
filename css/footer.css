@@ -1202,7 +1202,7 @@ ul.sub-menu_category-list.expand-list ol li {
 }
 
 /*----- Стили для карусели ------- */
-.slider-wrap {
+.brands-carousel {
 	float: right;
 	width: 650px;
 	min-height: 100px;
@@ -1218,45 +1218,35 @@ ul.sub-menu_category-list.expand-list ol li {
 	font-family: Helvetica, Arial, sans-serif;
 	text-align: center;
 }
-.carousel  {
+.carousel-content  {
 	position: relative;
-	/*width: 350px;*/
-	max-width: 100%;  /*ширина всего блока */
+	width: 100%;  /*ширина всего блока */
 	margin: 5px auto;
-}
-.carousel-wrapper {
-	position: relative;
-	overflow: hidden;  /*скрываем содержимое, выходящее за рамки основной области */
-	margin: 0px 25px; /* отступы для стрелок */
+	/*border: 1px solid #0f0;*/
 }
 .carousel-items {
-	position: relative; /* позиционируем блок относительно основной области карусели */
-	width: 10000px; /* устанавливаем большую ширину для набора элементов */
+	position: relative; /*позиционируем блок относительно основной области карусели */
+	margin: 0px 25px; /*отступы для стрелок*/
 }
-.carousel-block {
-	display: block;
-	position: relative;
-	float: left; /*выстраиваем все элементы карусели в ряд */
-	width: 122px;  /*задаём ширину каждого элемента */
-	padding: 10px 10px 0 10px;  /*делаем отступы, чтобы элементы не сливались */
-	margin-right: 10px;
-	margin-bottom: 2px;
+.carousel-item {
+	padding: 10px 10px 0 10px; /*делаем отступы, чтобы элементы не сливались*/
+	margin: 5px;
 	text-align: center;
 	background: #fff;
 	border-radius: 5px;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 	transition: box-shadow 0.2s;
 }
-.carousel-block:hover {
+.carousel-item:hover {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
 }
-.carousel-block a {
+.carousel-item a {
 	display: block;
 	height: 100%;
 	width: 100%;
 	text-decoration: none;
 }
-.carousel-block img {
+.carousel-item img {
 	display: block;
 	margin: 0 auto;
 	max-width: 90%;
@@ -1269,7 +1259,7 @@ ul.sub-menu_category-list.expand-list ol li {
 }
 
 /*********** BUTTONS ***********/
-.carousel-button-left, .carousel-button-right {
+.carousel-content .slick-arrow {
 	width: 30px;
 	height: 30px;
 	position: absolute;
@@ -1299,15 +1289,11 @@ ul.sub-menu_category-list.expand-list ol li {
 .carousel-button-right:hover {
 	border-bottom: 1px solid #dddddd;
 }
-.carousel-button-left.locked,
-.carousel-button-right.locked {
+.carousel-button-left.slick-disabled,
+.carousel-button-right.slick-disabled {
 	opacity: 0.25;
 }
 
-/*********** SHADOW ***********/
-/*.shadow{
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-}*/
 
 /*----- Конец стилей для карусели ------- */
 

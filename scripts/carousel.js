@@ -252,23 +252,8 @@ $(document).ready(function() {
 		});
 	};
 	})(jQuery);
-
-
-
-
 	
 	// запускаем карусель
-	$('.carousel-wrapper').Carousel({
-		visible: 4,
-		rotateBy: 4,
-		speed: 2000,
-		btnNext: '.carousel .carousel-button-right',
-		btnPrev: '.carousel .carousel-button-left',
-		auto: false,
-		position: "h",                        
-		dirAutoSlide: false
-	});         
-
 	$('.gallery-box .thumbnails-wrapper').Carousel({
 		visible: 4,
 		rotateBy: 1,
