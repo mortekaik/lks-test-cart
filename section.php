@@ -140,7 +140,7 @@ $q = $cart->getCart_small();
 							</form>
 							<form id="main-search-form" action="search.php" class="header-search-form-section" method="post" novalidate="novalidate">
 								<div class="header-search-form input-autocomplete">
-									<input placeholder="Поиск" class="header-search-input  sel-field-search valid" autocomplete="off" type="text" id="frm-search-text">
+									<input placeholder="Поиск" class="header-search-input sel-field-search valid" autocomplete="off" type="text" id="frm-search-text">
 									<span class="font-icon icon-zoom header-search-icon">
 										<input type="submit" class="header-search-btn" value="">
 									</span>

@@ -96,7 +96,7 @@ $(document).ready(function () {
 	  	console.log(value1 + ', ' + value2);
 
 	  	console.log($checkIdArr);
-		console.log($checkValArr);
+			console.log($checkValArr);
 
 	  	$.ajax({
 	        type: 'POST',
@@ -104,10 +104,10 @@ $(document).ready(function () {
 	        dataType: 'json',
 	        data: {
 	        	post: 'input-maxPrice',
-	        	checkboxValue: $checkValArr,
-				checkboxId: $checkIdArr,
-	        	min_price: value1,
-	        	max_price: value2
+						checkboxValue: $checkValArr,
+						checkboxId: $checkIdArr,
+						min_price: value1,
+						max_price: value2
 	        },
 	        cache: false,
 	        success: function(data){

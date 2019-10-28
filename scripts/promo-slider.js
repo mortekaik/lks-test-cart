@@ -106,11 +106,11 @@ $(document).ready(function(e) {
 	var $elemThumbOrder = $('.thumbnails-wrapper ul > li');
 	console.log($elemThumbOrder);
 	var countElems = $elemThumbOrder.length; // Общее количество изображений
-	console.log(countElems);
+	console.log('countElems ==> ' + countElems);
 	var marginRightProp = parseInt($elemThumbOrder.css('marginRight'));
-	console.log(marginRightProp);
+	console.log('marginRightProp ==> ' + marginRightProp);
 	var elemOuterWidth = $elemThumbOrder.outerWidth() + marginRightProp;
-	console.log(elemOuterWidth);
+	console.log('elemOuterWidth ==> ' + elemOuterWidth);
 	if (countElems > 4) {
 		$('.thumb-prev, .thumb-next').css({ 'visibility': 'visible' });
 	} else if (countElems <= 4 && countElems > 1) {
@@ -142,6 +142,7 @@ $(document).ready(function(e) {
 		if (count != n) { // - Если изображение не последнее
 			nextSrc = activeImg.next().find('img');
 			nextImgProp = getAttributes(nextSrc); // В переменную записываются атрибуты следующего изображения
+			console.log('nextImgProp ==> ' + nextImgProp);
 			$('.thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
 			activeImg.next().addClass('current'); // На миниатюру следующего изображения вешается класс .current
 		} else { // - Если текущее изображение последнее в списке
@@ -164,13 +165,13 @@ $(document).ready(function(e) {
 		if (n != 1) { // - Если текущее изображение не первое
 		    prevSrc = activeImg.prev().find('img'); // В переменную записываются атрибуты предыдущего изображения
 		    prevImgProp = getAttributes(prevSrc);
-		    console.log(prevImgProp);
+		    console.log('prevImgProp ==> ' + prevImgProp);
 		    $('.thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current активной до этого миниатюры
 		    activeImg.prev().addClass('current'); // На миниатюру изображения слева вешается класс .current
 		} else { // - Если текущее изображение первое
 		    prevSrc = $('.thumbnails-wrapper ul > li:last').find('img'); // В переменную записываются атрибуты последнего изображения
 		    prevImgProp = getAttributes(prevSrc);
-		    console.log(prevImgProp);
+		    console.log('prevImgProp1 ==> ' + prevImgProp);
 		    $('.thumbnails-wrapper .current').removeClass('current'); // Удаляется класс .current с предыдущей миниатюры
 		    $('.thumbnails-wrapper ul > li:last').addClass('current'); // На последнюю миниатюру вешается класс .current
 		}
