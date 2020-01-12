@@ -639,7 +639,7 @@ ul.sub-menu_category-list.expand-list ol li {
 	border-bottom: 1px dashed #f00;
 }
 #cart span.page-cart:hover {
-	border-bottom: none;
+	border-bottom-color: transparent;
 }
 
 /* Начало стилей модального окна корзины */
